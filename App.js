@@ -1,6 +1,6 @@
 // Launch App: 
-// Make sure in Desktop/Apps/MappApp directory
-//  $ npm start
+// Make sure in directory:  Desktop/Apps/MappApp or wherever it is stored locally
+// To start the app use command: npm start
 
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
