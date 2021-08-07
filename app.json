@@ -3,7 +3,7 @@
     "name": "MapApp",
     "slug": "MapApp",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
@@ -27,6 +27,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "A Map which displays commemorative plaques on the UWA campus."
   }
 }
