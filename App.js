@@ -14,7 +14,10 @@ import {
   Button,
   Platform,
   TouchableOpacity} from 'react-native';
-  //import { useDimensions } from '@react-native-community/hooks';
+  import { 
+    useDimensions, 
+    useDeviceOrientation 
+  } from '@react-native-community/hooks';
   
   function padding(a, b, c, d) {
     return {
@@ -25,15 +28,16 @@ import {
     }
   }
   export default function App() {
+    const {landscape} = useDeviceOrientation();
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <View style={{
+      <View style={{
           backgroundColor: 'dodgerblue',
           width: "100%",
           height: "30%",
         }}
-      ></View> */}
+      ></View>
      
       <Text style={{...padding(10, 20, 40, 20), color: "black", fontSize: 20, fontFamily: 'Verdana', fontWeight: 'bold'}}>This is a Map in a App!</Text>
       <TouchableOpacity onPress={() => console.log("Image tapped")}>
