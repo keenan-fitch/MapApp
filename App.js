@@ -32,14 +32,14 @@ import {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{
+      {/* <View style={{
           backgroundColor: 'dodgerblue',
           width: "100%",
-          height: "30%",
+          height: landscape ? '100%',
         }}
-      ></View>
+      ></View> */}
      
-      <Text style={{...padding(10, 20, 40, 20), color: "black", fontSize: 20, fontFamily: 'Verdana', fontWeight: 'bold'}}>This is a Map in a App!</Text>
+      <Text style={{...padding(10, 20, 40, 20), color: "black", fontSize: 20, fontFamily: 'Verdana', fontWeight: 'bold'}}>This is a Map in an App!</Text>
       <TouchableOpacity onPress={() => console.log("Image tapped")}>
         <Image source={{
           width: 150,
