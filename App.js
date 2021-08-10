@@ -56,7 +56,7 @@ import {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ececec', // UWA Silver as BG Color
     fontFamily: "Verdana",
     fontSize: 14,
     alignItems: 'center',
