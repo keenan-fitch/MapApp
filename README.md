@@ -56,20 +56,3 @@ To start the app use command:
 ```
 npm start
 ```
-
-## UWA Style Themes:
-
-### Primary Colors:
-
-UWA Blue: #27348b
-UWA Gold: #e2b600
-UWA Silver: #ececec
-
-### Secondary Colors:
-
-UWA Green-dark: # 265521
-UWA Green-light: # 3e8638
-
-UWA: Custome Bespoke
-
-More styling guide: https://www.digital.uwa.edu.au/__data/assets/pdf_file/0005/2981309/UWA-Brand-Architecture-November-2016.pdf
