@@ -2,7 +2,7 @@
 
 ## Some softwares / packages are required to download:
 
-### SOFTWARE:
+### SOFTWARES:
 
 VS Code:
 https://code.visualstudio.com/download
@@ -56,3 +56,5 @@ To start the app use command:
 ```
 npm start
 ```
+
+UWA Style Guide:
