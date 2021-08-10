@@ -56,6 +56,3 @@ To start the app use command:
 ```
 npm start
 ```
-
-
-This is an example of a change
