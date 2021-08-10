@@ -2,7 +2,7 @@
 
 ## Some softwares / packages are required to download:
 
-### SOFTWARES:
+### SOFTWARE:
 
 VS Code:
 https://code.visualstudio.com/download
