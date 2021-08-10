@@ -4,6 +4,7 @@
 
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
 import { 
   Dimensions,
   StyleSheet, 
@@ -32,13 +33,30 @@ import {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <View style={{
-          backgroundColor: 'dodgerblue',
-          width: "100%",
-          height: landscape ? '100%',
-        }}
-      ></View> */}
-     
+      <MapView 
+      style={StyleSheet.absoluteFillObject}
+      showsUserLocation={true}
+      provider={MapView.PROVIDER_GOOGLE}
+          initialRegion={{
+            latitude: -31.97930264357072,
+            longitude: 115.81842394700632,
+            latitudeDelta: 0.012,
+            longitudeDelta: 0.012,
+
+          }}  
+      >
+        <Marker 
+          coordinate={{
+            latitude: -31.97930264357072,
+            longitude: 115.81842394700632,
+          }}
+          image={require('../assets/map_marker.png')}
+          title="Test Title"
+          description="This is a test description"
+        />
+      
+      </MapView>
+      
       <Text style={{...padding(10, 20, 40, 20), color: "black", fontSize: 20, fontFamily: 'Verdana', fontWeight: 'bold'}}>This is a Map in an App!</Text>
       <TouchableOpacity onPress={() => console.log("Image tapped")}>
         <Image source={{
