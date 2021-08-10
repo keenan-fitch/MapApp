@@ -5,6 +5,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import MapView, {PROVIDER_GOOGLE, Marker, Callout} from 'react-native-maps';
+import PropTypes from "prop-types";
 import { 
   Dimensions,
   StyleSheet, 
@@ -36,7 +37,44 @@ import {
       <MapView 
       style={StyleSheet.absoluteFillObject}
       showsUserLocation={true}
-      provider={MapView.PROVIDER_GOOGLE}
+      
+                provider={PROVIDER_GOOGLE}
+          customMapStyle={[
+
+            {
+              featureType: "poi",
+              stylers: [
+                {
+                  visibility: "off"
+                }
+              ]
+            },
+            {
+              featureType: "poi.park",
+              stylers: [
+                {
+                  visibility: "on"
+                }
+              ]
+            },
+            {
+              featureType: "road",
+              elementType: "labels.icon",
+              stylers: [
+                {
+                  visibility: "off"
+                }
+              ]
+            },
+            {
+              featureType: "transit",
+              stylers: [
+                {
+                  visibility: "off"
+                }
+              ]
+            }
+          ]}
           initialRegion={{
             latitude: -31.97930264357072,
             longitude: 115.81842394700632,
@@ -47,24 +85,53 @@ import {
       >
         <Marker 
           coordinate={{
-            latitude: -31.97930264357072,
-            longitude: 115.81842394700632,
+            latitude: -31.976588426732672,
+            longitude: 115.8165190925955,
           }}
-          image={require('../assets/map_marker.png')}
-          title="Test Title"
-          description="This is a test description"
+          title="Sunken Garden"
+          description="This famous Sunken Garden built in 1947"
+        >
+          {/* <Callout tooltip>
+            <View>
+              <View style={styles.bubble}
+                <Text style={styles.name}>  </Text>
+              </View>
+            </View>
+          </Callout> */}
+        </Marker>
+
+
+
+        <Marker 
+          coordinate={{
+            latitude: -31.978249265606806,
+            longitude: 115.81809998169155,
+          }}
+          title="Queen Elizabeth's Tree"
+          description="Ficus hilliiwas Tree planted by Queen Elizabeth II during her visit in 1963"
         />
+        
+        <Marker 
+          coordinate={{
+            latitude: -31.979937061434793,
+            longitude: 115.81714537400859,
+          }}
+          title="Irwin Street Building"
+          description="The Irwin Street Building was fully restored and officially re-opened on 15 February 1987 by then Governor His Excellency Professor Gordon Reid."
+        />
+
+
       
       </MapView>
       
-      <Text style={{...padding(10, 20, 40, 20), color: "black", fontSize: 20, fontFamily: 'Verdana', fontWeight: 'bold'}}>This is a Map in an App!</Text>
+      {/* <Text style={{...padding(10, 20, 40, 20), color: "black", fontSize: 20, fontFamily: 'Verdana', fontWeight: 'bold'}}>This is a Map in an App!</Text>
       <TouchableOpacity onPress={() => console.log("Image tapped")}>
         <Image source={{
           width: 150,
           height: 200,
           uri: "https://d33wubrfki0l68.cloudfront.net/1484aa80faa12a0025d69af681b6428147f1104f/5a9c3/assets/logos/uwa.png"
         }} />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     
     
     </SafeAreaView>
@@ -80,4 +147,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
 });
