@@ -67,8 +67,8 @@ UWA Silver: #ececec
 
 ### Secondary Colors:
 
-UWA Green-dark: # 265521
-UWA Green-light: # 3e8638
+UWA Green-dark: #265521
+UWA Green-light: #3e8638
 
 UWA: Custome Bespoke
 
