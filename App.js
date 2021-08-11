@@ -50,6 +50,14 @@ import {
               ]
             },
             {
+              featureType: "landscape",
+              stylers: [
+                {
+                  visibility: "on"
+                }
+              ]
+            },
+            {
               featureType: "poi.park",
               stylers: [
                 {
@@ -59,7 +67,7 @@ import {
             },
             {
               featureType: "road",
-              elementType: "labels.icon",
+              //elementType: "labels.icon",
               stylers: [
                 {
                   visibility: "off"
