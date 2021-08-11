@@ -1,4 +1,4 @@
-var mapStyle = [
+export var mapStyle = [
     {"elementType": "geometry","stylers": [{"color": "#ebe3cd"}]},
     {"elementType": "labels.text.fill","stylers": [{"color": "#523735"}]},
     {"elementType": "labels.text.stroke","stylers": [{"color": "#f5f1e6"}]},
