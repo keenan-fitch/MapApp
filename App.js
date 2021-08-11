@@ -5,11 +5,13 @@
 import React from 'react';
 import { View } from 'react-native';
 import WelcomeScreen from './app/screens/WelcomeScreen';
+//import MapScreen from './app/screens/MapScreen';
 
-
-  
+ 
 export default function App() {
   return <WelcomeScreen />;
 
+// export default function App() {
+//   return <MapScreen />;
 
 }

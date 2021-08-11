@@ -1,8 +1,7 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 //import {StackNavigator} from 'react-navigation';
-
-
+//import MapScreen from './MapScreen';
 
 function WelcomeScreen(props) {
     return (
@@ -24,7 +23,6 @@ function WelcomeScreen(props) {
 
     );
 }
-
 export default WelcomeScreen;
 
 const styles = StyleSheet.create({
