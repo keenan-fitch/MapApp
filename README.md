@@ -42,6 +42,16 @@ On Phone devices download the app: ExpoClient
 Iphone: https://apps.apple.com/us/app/expo-go/id982107779
 Android: https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_AU&gl=US
 
+React Native Navigation:
+
+```
+npm install @react-navigation/native @react-navigation/stack
+```
+
+```
+udo expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
 ## Launching the App:
 
 Make sure you're in correct directory: Desktop/Apps/MappApp or wherever it is stored locally

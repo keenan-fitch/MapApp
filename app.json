@@ -1,12 +1,11 @@
 {
   "expo": {
-    "name": "MapApp",
-    "slug": "MapApp",
+    "name": "MapApp_Nav",
+    "slug": "mapapp_nav",
     "version": "1.0.0",
     "orientation": "default",
-    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./app/assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -18,18 +17,19 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "config": {"googleMapsApiKey": "AIzaSyCkzlOtRvPuztAapptx3nFenF5-2cOvUBc"}
+      "config": {
+        "googleMapsApiKey": "AIzaSyCkzlOtRvPuztAapptx3nFenF5-2cOvUBc"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF",
-        "config": {"googleMapsApiKey": "AIzaSyCkzlOtRvPuztAapptx3nFenF5-2cOvUBc"}
+        "foregroundImage": "./app/assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./app/assets/favicon.png"
     },
-    "description": "A Map which displays commemorative plaques on the UWA campus."
+    "description": "A Map which displays commemorative plaques on the UWA campus. With Added Navigation"
   }
 }
