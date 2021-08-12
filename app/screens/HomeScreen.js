@@ -1,7 +1,15 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-function WelcomeScreen(props) {
+function HomeScreen({ navigation }) {
+    
+    const pressHandler = () => {
+        navigation.navigate('MapScreen')
+
+    }
+    const pressHandlerTour = () => {
+        navigation.navigate('ToursScreen')
+    }
     return (
         <ImageBackground
             style={styles.background}
@@ -10,18 +18,22 @@ function WelcomeScreen(props) {
         >
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={{uri: 'https://crowdresearch.uwa.edu.au/wp-content/uploads/2015/12/cropped-uwa-crest-512.png',}}></Image>
-                <Text style={styles.textHome}> WELCOME SCREEN TEST </Text>
+                <Text style={styles.textHome}> A Map in an App! </Text>
             </View>
 
-            <TouchableOpacity style={styles.roundButton}>
+            <TouchableOpacity style={styles.roundButton} onPress={pressHandler}>
                 <Text style={styles.mapText}>Go to Map!</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
+                <Text style={styles.tourText}>Take a tour!</Text>
             </TouchableOpacity>
 
         </ImageBackground>
 
     );
 }
-export default WelcomeScreen;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
     background: {
@@ -36,7 +48,7 @@ const styles = StyleSheet.create({
     },
     logoContainer: {
         position: 'absolute',
-        top: 200,
+        top: 120,
         alignItems: 'center',
 
     },
@@ -67,6 +79,19 @@ const styles = StyleSheet.create({
         fontSize:  33,
         marginTop: '70%'
       },
+    tourText: {
+        backgroundColor: '#e2b600',
+        color: 'black',
+        width: "100%",
+        borderRadius: 25,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        //marginLeft: '11%',
+        padding: "5%",
+        fontSize:  27,
+        //marginTop: '10%',
+        alignSelf: "center"
+      },
     mapText: {
         backgroundColor: '#27348b',
         color: 'white',
@@ -75,7 +100,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontWeight: 'bold',
         //marginLeft: '11%',
-        padding: "2%",
+        padding: "5%",
         fontSize:  27,
         marginTop: '10%',
         alignSelf: "center"
