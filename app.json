@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MapApp",
-    "slug": "MapApp",
+    "name": "MapApp_Nav",
+    "slug": "mapapp_nav",
     "version": "1.0.0",
     "orientation": "default",
     "splash": {
@@ -17,7 +17,9 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "config": {"googleMapsApiKey": "AIzaSyCkzlOtRvPuztAapptx3nFenF5-2cOvUBc"}
+      "config": {
+        "googleMapsApiKey": "AIzaSyCkzlOtRvPuztAapptx3nFenF5-2cOvUBc"
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -28,6 +30,6 @@
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "description": "A Map which displays commemorative plaques on the UWA campus."
+    "description": "A Map which displays commemorative plaques on the UWA campus. With Added Navigation"
   }
 }
