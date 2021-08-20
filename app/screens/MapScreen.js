@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import mapStyle from '../../constants/mapStyle.json';
 import { Dimensions, StyleSheet, Text, View, Image, SafeAreaView, Button, Platform, TouchableOpacity} from 'react-native';
 import { useDimensions, useDeviceOrientation} from '@react-native-community/hooks';
-import mapData from '../../constants/ParisLocations.json';
+import mapData from '../../constants/Plaques_SmallDB.json';
+//import mapData from '../../constants/ParisLocations.json';
 
 class MapScreen extends Component {
         constructor()
@@ -17,17 +18,16 @@ class MapScreen extends Component {
                                 showsUserLocation={true}
                                 customMapStyle={mapStyle}
                                 provider={PROVIDER_GOOGLE}
-                                initialRegion={{
-                                        latitude: 48.869312339207,
-                                        longitude: 2.337119507571479,
-                                        latitudeDelta: 0.162,
-                                        longitudeDelta: 0.162
+                                region={{
+                                        latitude: -31.9795,
+                                        longitude: 115.819,
+                                        latitudeDelta: 0.0075,
+                                        longitudeDelta: 0.0075
                                         }}>
                                 {this.state.data.map((dynamicData,i) =>  <Marker coordinate={{latitude:dynamicData.Latitude,longitude:dynamicData.Longitude}} 
                                                                                 description={dynamicData.Description}
-                                                                                title={dynamicData.siteName}>
+                                                                                title={dynamicData.Title}>
                                                                         </Marker>)}
-
                         </MapView>
                 )
         }
