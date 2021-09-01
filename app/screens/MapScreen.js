@@ -24,12 +24,49 @@ class MapScreen extends Component {
                                         latitudeDelta: 0.0075,
                                         longitudeDelta: 0.0075
                                         }}>
-                                {this.state.data.map((dynamicData,i) =>  <Marker coordinate={{latitude:dynamicData.Latitude,longitude:dynamicData.Longitude}} 
-                                                                                description={dynamicData.Description}
-                                                                                title={dynamicData.Title}>
+                                {this.state.data.map((dynamicData,i) =>  <Marker coordinate={{latitude:dynamicData.Latitude,longitude:dynamicData.Longitude}}>
+                                                                                <Callout>
+                                                                                        <View style={{flexDirection:"col", width: 320}}>
+                                                                                                <Text style={styles.name}>{dynamicData.Title}</Text>
+                                                                                                <Text>{dynamicData.Description}</Text>
+                                                                                        </View>
+                                                                                </Callout>     
                                                                         </Marker>)}
                         </MapView>
                 )
         }
 }
 export default MapScreen;
+const styles = StyleSheet.create({
+        bubble: {
+                flexDirection: "row",
+                alignSelf: "flex-start",
+                backgroundColor: "#fff",
+                borderRadius: 6,
+                borderColor: "#ccc",
+                borderWidth: 0.5,
+                padding: 15,
+                width: 150,
+        },
+        name: {
+                fontSize: 16,
+                marginBottom: 5,
+                fontWeight: 'bold',
+        },
+        arrow: {
+                backgroundColor: 'transparent',
+                borderColor: 'transparent',
+                borderTopColor: '#fff',
+                borderWidth: 16,
+                alignSelf: 'center',
+                marginTop: -32,
+        },
+        arrowBorder: {
+                backgroundColor: 'transparent',
+                borderColor: 'transparent',
+                borderTopColor: '#007a87',
+                borderWidth: 16,
+                alignSelf: 'center',
+                marginTop: -0.5,
+        }
+})
