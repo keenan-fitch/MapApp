@@ -41,8 +41,7 @@ const styles = StyleSheet.create({
     },
     textHome: {
         top: 30,
-        fontSize: 30,
-        fontFamily: "Helvetica",     
+        fontSize: 30,   
     },
     tourWindow: {
         //position: 'absolute',
