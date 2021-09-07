@@ -11,7 +11,7 @@ function TourOneScreen({ navigation }) {
         navigation.navigate('ToursScreen')
     }
     return (
-        <ImageBackground
+        <ImageBackground>
         //     style={styles.background}
         //     //source={require("./assets/gradient_bg.png")}
         //     source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcTfwdWoZixKTatNicGmIV-u-wpPnpS2voaw&usqp=CAU',}}

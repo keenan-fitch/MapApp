@@ -24,11 +24,11 @@ class MapScreen extends Component {
                                         latitudeDelta: 0.0075,
                                         longitudeDelta: 0.0075
                                         }}>
-                                {this.state.data.map((dynamicData,i) =>  <Marker coordinate={{latitude:dynamicData.Latitude,longitude:dynamicData.Longitude}}>
+                                {this.state.data.map((dynamicData,i) =>  <Marker key={i} coordinate={{latitude:dynamicData.Latitude,longitude:dynamicData.Longitude}}>
                                                                                 <Callout>
                                                                                         <View style={{flexDirection:"col", width: 320}}>
-                                                                                                <Text style={styles.name}>{dynamicData.Title}</Text>
-                                                                                                <Text>{dynamicData.Description}</Text>
+                                                                                                <Text style={styles.name}>key={i} {dynamicData.Title}</Text>
+                                                                                                <Text> key={i} {dynamicData.Description}</Text>
                                                                                         </View>
                                                                                 </Callout>     
                                                                         </Marker>)}
