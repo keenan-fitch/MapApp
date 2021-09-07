@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {addPlaque, getPlaque} from '../../api/PlaqueApiKeenan';
 
 function ToursScreen(props) {
     return (
@@ -12,11 +13,8 @@ function ToursScreen(props) {
                 <TouchableOpacity>
                     <Image source={require("../assets/treasures.png")} ></Image>
                 </TouchableOpacity>
-                
             </View>
-        
         </ImageBackground>
-
     );
 }
 export default ToursScreen;
@@ -41,8 +39,7 @@ const styles = StyleSheet.create({
     },
     textHome: {
         top: 30,
-        fontSize: 30,
-        fontFamily: "Helvetica",     
+        fontSize: 30,   
     },
     tourWindow: {
         //position: 'absolute',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-function HomeScreen({ navigation }) {
+function TourOneScreen({ navigation }) {
     
     const pressHandler = () => {
         navigation.navigate('MapScreen')
@@ -11,29 +11,29 @@ function HomeScreen({ navigation }) {
         navigation.navigate('ToursScreen')
     }
     return (
-        <ImageBackground
-            style={styles.background}
-            //source={require("./assets/gradient_bg.png")}
-            source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcTfwdWoZixKTatNicGmIV-u-wpPnpS2voaw&usqp=CAU',}}
-        >
-            <View style={styles.logoContainer}>
-                <Image style={styles.logo} source={{uri: 'https://crowdresearch.uwa.edu.au/wp-content/uploads/2015/12/cropped-uwa-crest-512.png',}}></Image>
-                <Text style={styles.textHome}> A Map in an App! </Text>
-            </View>
+        <ImageBackground>
+        //     style={styles.background}
+        //     //source={require("./assets/gradient_bg.png")}
+        //     source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcTfwdWoZixKTatNicGmIV-u-wpPnpS2voaw&usqp=CAU',}}
+        // >
+        //     <View style={styles.logoContainer}>
+        //         <Image style={styles.logo} source={{uri: 'https://crowdresearch.uwa.edu.au/wp-content/uploads/2015/12/cropped-uwa-crest-512.png',}}></Image>
+        //         <Text style={styles.textHome}> A Map in an App! </Text>
+        //     </View>
 
-            <TouchableOpacity style={styles.roundButton} onPress={pressHandler}>
-                <Text style={styles.mapText}>Go to Map!</Text>
-            </TouchableOpacity>
+        //     <TouchableOpacity style={styles.roundButton} onPress={pressHandler}>
+        //         <Text style={styles.mapText}>Go to Map!</Text>
+        //     </TouchableOpacity>
 
-            <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
-                <Text style={styles.tourText}>Take a tour!</Text>
-            </TouchableOpacity>
+        //     <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
+        //         <Text style={styles.tourText}>Take a tour!</Text>
+        //     </TouchableOpacity>
 
         </ImageBackground>
 
     );
 }
-export default HomeScreen;
+export default TourOneScreen;
 
 const styles = StyleSheet.create({
     background: {
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     },
     textHome: {
         top: 30,
-        fontSize: 30,  
+        fontSize: 30,    
     },
     logo: {
         width: 150,

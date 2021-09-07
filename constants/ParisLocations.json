@@ -1,0 +1,37 @@
+[
+  {
+    "siteName": "Louvre Museum",
+    "Latitude": 48.86074344,
+    "Longitude": 2.337659481,
+    "latlng": "48.860743444869, 2.33765948065037",
+    "Description": "Former historic palace housing huge art collection, from Roman sculptures to da Vinci's 'Mona Lisa.'"
+  },
+  {
+    "siteName": "Arc de Triomphe",
+    "Latitude": 48.87389506,
+    "Longitude": 2.295039178,
+    "latlng": "48.8738950614665, 2.29503917806517",
+    "Description": "Iconic triumphal arch built to commemorate Napoleon's victories, with an observation deck."
+  },
+  {
+    "siteName": "Eiffel Tower",
+    "Latitude": 48.85841765,
+    "Longitude": 2.294465185,
+    "latlng": "48.8584176451512, 2.29446518532972",
+    "Description": "Gustave Eiffel's iconic, wrought-iron 1889 tower, with steps and elevators to observation decks."
+  },
+  {
+    "siteName": "Cathédrale Notre-Dame",
+    "Latitude": 48.85294707,
+    "Longitude": 2.350142233,
+    "latlng": "48.8529470652812, 2.35014223335425",
+    "Description": "Towering, 13th-century cathedral with flying buttresses & gargoyles, setting for Hugo's novel."
+  },
+  {
+    "siteName": "Sacré-Cœur",
+    "Latitude": 48.88670304,
+    "Longitude": 2.343082828,
+    "latlng": "48.88670304, 2.343082828",
+    "Description": "Iconic, domed white church, completed in 1914, with interior mosaics, stained-glass windows & crypt."
+  }
+ ]
