@@ -28,15 +28,6 @@ if (!firebase.apps.length) {
 
 const dbh = firebase.firestore();
 
-dbh.collection("characters").doc("mario").set({
-  employment: "plumber",
-  outfitColor: "red",
-  specialAttack: "fireball",
-});
-
-// export default function App() {
-//   return <WelcomeScreen />;
-
 export default function App() {
   return <Navigator />;
 }
