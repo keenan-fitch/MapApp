@@ -20,8 +20,11 @@ const firebaseConfig = {
   appId: "1:379875741857:web:1a621c346fc873ff4760e0",
   measurementId: "G-08Y6D94TDZ",
 };
-
-firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app(); // if already initialized, use that one
+}
 
 const dbh = firebase.firestore();
 
