@@ -15,6 +15,9 @@ function HomeScreen({ navigation }) {
   const pressHandlerTour = () => {
     navigation.navigate("ToursScreen");
   };
+  const pressHandlerTest= () => {
+    navigation.navigate("TestScreen");
+  };
   return (
     <ImageBackground
       style={styles.background}
@@ -40,6 +43,11 @@ function HomeScreen({ navigation }) {
       <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
         <Text style={styles.tourText}>Take a tour!</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
+        <Text style={styles.testText}>Go Test Screen</Text>
+      </TouchableOpacity>
+
     </ImageBackground>
   );
 }
@@ -91,6 +99,19 @@ const styles = StyleSheet.create({
   tourText: {
     backgroundColor: "#e2b600",
     color: "black",
+    width: "100%",
+    borderRadius: 25,
+    textAlign: "center",
+    fontWeight: "bold",
+    //marginLeft: '11%',
+    padding: "5%",
+    fontSize: 27,
+    //marginTop: '10%',
+    alignSelf: "center",
+  },
+  testText: {
+    backgroundColor: "#265521",
+    color: "white",
     width: "100%",
     borderRadius: 25,
     textAlign: "center",

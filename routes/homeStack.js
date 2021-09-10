@@ -9,11 +9,11 @@ import WelcomeScreen from "../app/screens/WelcomeScreen.js";
 import TestScreen from "../app/screens/TestScreen.js";
 
 const screens = {
-  TestScreen: {
-    screen: TestScreen,
-  },
   HomeScreen: {
     screen: HomeScreen,
+  },
+  TestScreen: {
+    screen: TestScreen,
   },
   SettingsScreen: {
     screen: SettingsScreen,
