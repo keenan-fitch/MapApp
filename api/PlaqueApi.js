@@ -1,5 +1,7 @@
 import firebase from 'react-native-firebase';
-import { forModalPresentationIOS } from 'react-navigation-stack/lib/typescript/src/vendor/TransitionConfigs/CardStyleInterpolators';
+//import { forModalPresentationIOS } from 'react-navigation-stack/lib/typescript/src/vendor/TransitionConfigs/CardStyleInterpolators';
+
+//pod 'RNFirebase', :path => 'pod 'RNFirebase', :path => 'node_modules/react-native-firebase/ios'
 
 firebase.auth()
   .signInAnonymously()
@@ -20,12 +22,11 @@ export function addPlaque(plaque, addComplete) {
     }).then((data) => addComplete(data))
     .catch((error) => console.log(error));
 }
-
-export async function getPlaque(plaquesRestreived) {
+export async function getPlaque(plaquesRetrieved) {
 
   var plaqueList = [];
 
-  var snapshot = awat.firebase.firestore()
+  var snapshot = await firebase.firestore()
     .collection('Plaque')
     .orderBy('createdAt')
     .get()
@@ -34,5 +35,5 @@ export async function getPlaque(plaquesRestreived) {
     plaqueList.push(doc.data());
   });
 
-  plaquesRestreived(plaqueList)
+  plaquesRetrieved(plaqueList)
 }

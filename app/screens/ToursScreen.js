@@ -1,6 +1,9 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import {addPlaque, getPlaque} from '../../api/PlaqueApiKeenan';
+import {addPlaque, getPlaque} from '../../api/PlaqueApi';
+
+
+
 
 function ToursScreen(props) {
     return (
