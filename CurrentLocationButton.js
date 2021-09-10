@@ -5,10 +5,10 @@ import {
     Dimensions,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-const WIDTH = Dimensions.get('window').width;
+const WIDTH = Dimensions.get('window').width; //used for alignment
 const HEIGHT = Dimensions.get('window').height;
 
-export const currentlocationbut = function (props) {
+export const CurrentLocationButton = function (props) {
     //if props.bottom is passed else use 65.
     const bottom = props.bottom ? props.bottom : 65;
     //notify if callback actually passed
@@ -27,7 +27,7 @@ export const currentlocationbut = function (props) {
 //add this into existing style sheet.
 const styles = StyleSheet.create({
     container: {
-        zindex: 9,
+        zIndex: 9,
         position: 'absolute',
         width: 45,
         height: 45,
