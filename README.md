@@ -53,7 +53,10 @@ expo install react-native-reanimated react-native-gesture-handler react-native-s
 ```
 
 Firebase:
+
+```
 expo install firebase
+```
 
 ## Launching the App:
 
