@@ -1,8 +1,8 @@
 import * as firebase from "firebase";
 import "firebase/firestore";
 import "react-native-gesture-handler";
-import React, { useState, Component } from "react";
-import { View, Text } from "react-native";
+import React, { useState, Component, useEffect } from "react";
+import { View, Text, FlatList } from "react-native";
 import { render } from "react-dom";
 
 const firebaseConfig = {
@@ -22,34 +22,46 @@ if (!firebase.apps.length) {
 
 const dbh = firebase.firestore();
 
-async function getDocument(db) {
-  // [START firestore_data_get_as_map]
-  const cityRef = db.collection("test").doc("1");
-  const doc = await cityRef.get();
-  if (!doc.exists) {
-    console.log("No such document!");
-  } else {
-    console.log("Document data:", doc.data().Description);
-    return doc.data().Description;
-  }
-  // [END firestore_data_get_as_map]
-}
+function TestScreen() {
+  const [users, setUsers] = useState([]); // Initial empty array of users
 
-class TestScreen extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        x: getDocument(dbh);
-    }
-  }
+  useEffect(() => {
+    const subscriber = dbh.collection("test").onSnapshot((querySnapshot) => {
+      const users = [];
 
-  render() {
-    return (
-      <View>
-        <Text> {this.x} !!!!!!!!!! </Text>
-      </View>
-    );
-  }
+      querySnapshot.forEach((documentSnapshot) => {
+        users.push({
+          ...documentSnapshot.data(),
+          key: documentSnapshot.id,
+        });
+      });
+
+      setUsers(users);
+    });
+
+    // Unsubscribe from events when no longer in use
+    return () => subscriber();
+  }, []);
+
+  return (
+    <FlatList
+      data={users}
+      renderItem={({ item }) => (
+        <View
+          style={{
+            height: 50,
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text>Description: {item.Description}</Text>
+          <Text>User ID: {item.id}</Text>
+          <Text>Name: {item.name}</Text>
+        </View>
+      )}
+    />
+  );
 }
 
 export default TestScreen;

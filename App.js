@@ -26,8 +26,6 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 }
 
-const dbh = firebase.firestore();
-
 export default function App() {
   return <Navigator />;
 }
