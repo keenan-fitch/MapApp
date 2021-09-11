@@ -15,7 +15,7 @@ function HomeScreen({ navigation }) {
   const pressHandlerTour = () => {
     navigation.navigate("ToursScreen");
   };
-  const pressHandlerTest= () => {
+  const pressHandlerTest = () => {
     navigation.navigate("TestScreen");
   };
   return (
@@ -47,7 +47,6 @@ function HomeScreen({ navigation }) {
       <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
         <Text style={styles.testText}>Go Test Screen</Text>
       </TouchableOpacity>
-
     </ImageBackground>
   );
 }
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
   textHome: {
     top: 30,
     fontSize: 30,
-    fontFamily: "Helvetica",
+    // fontFamily: "Helvetica",
   },
   logo: {
     width: 150,
