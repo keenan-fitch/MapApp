@@ -6,7 +6,9 @@ import { Dimensions, StyleSheet, Text, View, Image, SafeAreaView, Button, Platfo
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 import mapData from '../../constants/Plaques_SmallDB.json';
 import { CurrentLocationButton } from '../../CurrentLocationButton';
+//rimport {useFonts} from 'expo-font'
 //import mapData from '../../constants/ParisLocations.json';
+
 
 class MapScreen extends Component {
         constructor() { super(); this.state = { data: mapData } }
@@ -22,7 +24,12 @@ class MapScreen extends Component {
                 const { latitude,
                         longitude,
                         latitudeDelta,
-                        longitudeDelta } = this.state.region;
+                        longitudeDelta } = {
+                        latitude: location.coords.latitude,
+                        longitude: location.coords.longitude,
+                        latitudeDelta: 0.045,
+                        longitudeDelta: 0.045,
+                };
                 this.map.animateToRegion({
                         latitude,
                         longitude,
@@ -43,6 +50,7 @@ class MapScreen extends Component {
                                         latitudeDelta: 0.0075,
                                         longitudeDelta: 0.0075
                                 }}>
+                                <CurrentLocationButton cb={() => { this.centerMap() }} />
                                 {this.state.data.map((dynamicData, i) => <Marker key={i} coordinate={{ latitude: dynamicData.Latitude, longitude: dynamicData.Longitude }}>
                                         <Callout>
                                                 <View style={{ flexDirection: "col", width: 320 }}>
@@ -51,12 +59,12 @@ class MapScreen extends Component {
                                                 </View>
                                         </Callout>
                                 </Marker>)}
-                                ref = {(map) => _this.map = map}
-                                <CurrentLocationButton cb={() => { this.centerMap() }} />
+                                ref = {(map) => this.map = map}
+
                         </MapView>
                 )
         }
-}
+};
 
 
 
@@ -94,4 +102,4 @@ const styles = StyleSheet.create({
                 alignSelf: 'center',
                 marginTop: -0.5,
         }
-})
+});

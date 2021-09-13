@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         width: 45,
         height: 45,
         backgroundColor: '#fff',
-        left: WIDTH - 60,
+        left: WIDTH - 70,
         elevation: 7,
         shadowColor: '#000000',
         borderRadius: 50,

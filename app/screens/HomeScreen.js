@@ -15,7 +15,7 @@ function HomeScreen({ navigation }) {
   const pressHandlerTour = () => {
     navigation.navigate("ToursScreen");
   };
-  const pressHandlerTest= () => {
+  const pressHandlerTest = () => {
     navigation.navigate("TestScreen");
   };
   return (
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   textHome: {
     top: 30,
     fontSize: 30,
-    fontFamily: "Helvetica",
+    //fontFamily: "Arial",
   },
   logo: {
     width: 150,
