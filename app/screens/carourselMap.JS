@@ -3,12 +3,30 @@ import { StyleSheet, View, Text, Image, Alert, Platform, Dimensions } from 'reac
 import MapView, { PROVIDER_GOOGLE, Marker, Callout, Polygon, Circle } from 'react-native-maps';
 import Carousel from 'react-native-snap-carousel';
 import mapData from '../../constants/Plaques_SmallDB.json';
-
+import { CurrentLocationButton } from '../../CurrentLocationButton';
 export default class CarouselMap extends Component {
 
   static navigationOptions = {
     title: 'Map Page',
   };
+
+  centerMap() {
+    const { latitude,
+      longitude,
+      latitudeDelta,
+      longitudeDelta } = {
+      latitude: location.coords.latitude,
+      longitude: location.coords.longitude,
+      latitudeDelta: 0.045,
+      longitudeDelta: 0.045,
+    };
+    this.map.animateToRegion({
+      latitude,
+      longitude,
+      latitudeDelta,
+      longitudeDelta,
+    })
+  }
 
   state = {
     markers: [],
@@ -54,7 +72,7 @@ export default class CarouselMap extends Component {
           ref={map => this._map = map}
           showsUserLocation={true}
           style={styles.map}
-          initialRegion={{latitude: -31.9795, longitude: 115.819, latitudeDelta: 0.0075, longitudeDelta: 0.0075}}>
+          initialRegion={{ latitude: -31.9795, longitude: 115.819, latitudeDelta: 0.0075, longitudeDelta: 0.0075 }}>
           <Marker
             draggable
             coordinate={{ latitude: 37.7825259, longitude: -122.4351431 }}
@@ -75,7 +93,7 @@ export default class CarouselMap extends Component {
               </Marker>
             ))
           }
-
+          <CurrentLocationButton cb={() => { this.centerMap() }} />
         </MapView>
         <Carousel
           ref={(c) => { this._carousel = c; }}
@@ -125,3 +143,17 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   }
 });
+
+/*
+
+
+        */
+
+
+/*for now double region decl as to not break keenan's existing test alt
+let region = {
+latitude: location.coords.latitude,
+longitude: location.coords.longitude,
+latitudeDelta: 0.045,
+longitudeDelta: 0.045,
+}*/
