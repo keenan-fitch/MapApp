@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image, Alert, Platform, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, Image, Alert, Platform, Dimensions, ScrollView } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout, Polygon, Circle } from 'react-native-maps';
 import Carousel from 'react-native-snap-carousel';
 import mapData from '../../constants/Plaques_SmallDB.json';
-//
+import { LinearGradient } from 'expo-linear-gradient';
+
 export default class CarouselMap extends Component {
 
   static navigationOptions = {
@@ -13,7 +14,7 @@ export default class CarouselMap extends Component {
   state = {
     markers: [],
     coordinates: [
-      { name: 'Prof HE Whitfeld, 1875-1939', latitude: -31.9763010875358, longitude: 115.817898240332, image: require('../assets/plaqueImages/whitefield.png') },
+      { name: 'Prof HE Whitfeld, 1875-1939', description: 'Here is a little description. Longer dscription words...words...words...words...words...words...words...words...words...words...words...words...', latitude: -31.9763010875358, longitude: 115.817898240332, image: require('../assets/plaqueImages/whitfield2.png') },
       { name: 'Seek Wisdom', latitude: -31.9790207288426, longitude: 115.817331455612, image: require('../assets/plaqueImages/wisdom.png') },
       { name: 'Sundial Garden Mosaic Eggs', latitude: -31.9786175502937, longitude: 115.819183586576, image: require('../assets/plaqueImages/testsundial.png') },
       { name: 'Hours to Sunset', latitude: -31.9786567970107, longitude: 115.819195656516, image: require('../assets/plaqueImages/sunset.png') },
@@ -42,8 +43,9 @@ export default class CarouselMap extends Component {
   }
   renderCarouselItem = ({ item }) =>
     <View style={styles.cardContainer}>
-      <Text style={styles.cardTitle}>{item.name}</Text>
-      <Image style={styles.cardImage} source={item.image} />
+        <Text style={styles.cardTitle}>{item.name}</Text>
+        <Image style={styles.cardImage} source={item.image} />
+        {/* <Text style={styles.cardDescription}>{item.description}</Text> */}
     </View>
 
   render() {
@@ -77,6 +79,9 @@ export default class CarouselMap extends Component {
           }
 
         </MapView>
+        <View style={styles.bottomView}>
+          <LinearGradient style={styles.gradient} colors={['rgba(0, 0, 0,0)', 'rgba(0, 0, 0,1)']}/>
+        </View>
         <Carousel
           ref={(c) => { this._carousel = c; }}
           data={this.state.coordinates}
@@ -94,25 +99,47 @@ export default class CarouselMap extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    ...StyleSheet.absoluteFillObject
+    ...StyleSheet.absoluteFillObject,
   },
   map: {
     ...StyleSheet.absoluteFillObject
   },
+  gradient: {
+    ...StyleSheet.absoluteFillObject,
+    height: 5,
+    bottom: 0
+  },
+  bottomView: {
+    width: '100%',
+    // backgroundColor: "red",
+    height:25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute', //Here is the trick
+    bottom: 200, //Here is the trick
+  },
   carousel: {
     position: 'absolute',
     bottom: 0,
-    marginBottom: 48
+    marginBottom: 0,
+    // backgroundColor: 'rgba(255,255,255, 1)',
+    backgroundColor: '#ececec',
+    // borderColor: 'rgba(105,105,105, 1)',
+    // borderTopWidth: 1,
+    height: 220,
+    
   },
   cardContainer: {
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
     height: 200,
     width: 300,
-    padding: 24,
-    borderRadius: 24
+    padding: 15,
+    borderRadius: 24,
+    marginTop: 10
+
   },
   cardImage: {
-    height: 120,
+    height: 150,
     width: 300,
     bottom: 0,
     position: 'absolute',
@@ -121,7 +148,12 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     color: 'white',
-    fontSize: 22,
+    fontSize: 20,
     alignSelf: 'center'
+  },
+  cardDescription: {
+    color: 'white',
+    fontSize: 18,
+    alignSelf: 'flex-start'
   }
 });
