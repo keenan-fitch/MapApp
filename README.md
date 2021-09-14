@@ -58,6 +58,12 @@ Firebase:
 expo install firebase
 ```
 
+install carousel:
+
+```
+npm install --save react-native-snap-carousel
+```
+
 ## Launching the App:
 
 Make sure you're in correct directory: Desktop/Apps/MappApp or wherever it is stored locally

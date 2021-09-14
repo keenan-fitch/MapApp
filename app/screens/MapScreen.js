@@ -5,39 +5,54 @@ import mapStyle from '../../constants/mapStyle.json';
 import { Dimensions, StyleSheet, Text, View, Image, SafeAreaView, Button, Platform, TouchableOpacity} from 'react-native';
 import { useDimensions, useDeviceOrientation} from '@react-native-community/hooks';
 import mapData from '../../constants/Plaques_SmallDB.json';
-//import mapData from '../../constants/ParisLocations.json';
+import Carousel from 'react-native-snap-carousel';
+//import Geolocation from '@react-native-community/geolocation';
 
 class MapScreen extends Component {
         constructor()
         {super();this.state={data: mapData}}
+
+        renderCarouselItem = ({item}) =>
+                <view>
+                        <text>({item.Title})</text>
+                        <text>({item.Description})</text>
+
+                </view>
         render()
         {
                 return(
-                        <MapView 
-                                style={StyleSheet.absoluteFillObject}
-                                showsUserLocation={true}
-                                customMapStyle={mapStyle}
-                                provider={PROVIDER_GOOGLE}
-                                region={{
-                                        latitude: -31.9795,
-                                        longitude: 115.819,
-                                        latitudeDelta: 0.0075,
-                                        longitudeDelta: 0.0075
-                                        }}>
-                                {this.state.data.map((dynamicData,i) =>  <Marker key={i} coordinate={{latitude:dynamicData.Latitude,longitude:dynamicData.Longitude}}>
-                                                                                <Callout>
-                                                                                        <View style={{flexDirection:"col", width: 320}}>
-                                                                                                <Text style={styles.name}>key={i} {dynamicData.Title}</Text>
-                                                                                                <Text> key={i} {dynamicData.Description}</Text>
-                                                                                        </View>
-                                                                                </Callout>     
-                                                                        </Marker>)}
-                        </MapView>
+                        <View style={styles.container}>
+                                <MapView 
+                                        style={StyleSheet.absoluteFillObject}
+                                        showsUserLocation={true}
+                                        customMapStyle={mapStyle}
+                                        provider={PROVIDER_GOOGLE}
+                                        region={{latitude: -31.9795, longitude: 115.819, latitudeDelta: 0.0075, longitudeDelta: 0.0075}}>
+                                        {this.state.data.map((dynamicData,i) =>  <Marker key={i} coordinate={{latitude:dynamicData.Latitude, longitude:dynamicData.Longitude}}>
+                                                                                        <Callout>
+                                                                                                <View style={{flexDirection:"col", width: 320}}>
+                                                                                                        <Text style={styles.name}> {dynamicData.Title}</Text>
+                                                                                                        <Text> {dynamicData.Description}</Text>
+                                                                                                </View>
+                                                                                        </Callout>     
+                                                                                </Marker>)}
+                                </MapView>
+                                <Carousel
+                                        ref={(c) => { this._carousel = c; }}
+                                        data={this.state.mapData}
+                                        renderItem={this.renderCarouselItem}
+                                        sliderWidth={Dimensions.get('window').width}
+                                        itemWidth={300}
+                                        />
+                        </View>
                 )
         }
 }
 export default MapScreen;
 const styles = StyleSheet.create({
+        container: {
+                ...StyleSheet.absoluteFillObject
+        },
         bubble: {
                 flexDirection: "row",
                 alignSelf: "flex-start",

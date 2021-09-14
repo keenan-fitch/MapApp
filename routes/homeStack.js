@@ -7,6 +7,8 @@ import MapScreen from "../app/screens/MapScreen";
 import ToursScreen from "../app/screens/ToursScreen.js";
 import WelcomeScreen from "../app/screens/WelcomeScreen.js";
 import TestScreen from "../app/screens/TestScreen.js";
+import CarouselMap from "../app/screens/carourselMap.js";
+//
 
 const screens = {
   HomeScreen: {
@@ -23,6 +25,9 @@ const screens = {
   },
   ToursScreen: {
     screen: ToursScreen,
+  },
+  carouselMapScreen: {
+    screen: CarouselMap,
   },
   WelcomeScreen: {
     screen: WelcomeScreen,

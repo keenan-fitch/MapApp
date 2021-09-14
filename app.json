@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MapApp_Nav",
-    "slug": "mapapp_nav",
+    "name": "MapApp_Nav 14/10 Carousel",
+    "slug": "mapapp_nav-1410-carousel",
     "version": "1.0.0",
     "orientation": "default",
     "splash": {
@@ -30,6 +30,6 @@
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "description": "A Map which displays commemorative plaques on the UWA campus. With Added Navigation"
+    "description": "A Map which displays commemorative plaques on the UWA campus. With Added Navigation. "
   }
 }
