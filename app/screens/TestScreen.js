@@ -2,7 +2,7 @@ import * as firebase from "firebase";
 import "firebase/firestore";
 import "react-native-gesture-handler";
 import React, { useState, Component, useEffect } from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, SafeAreaView } from "react-native";
 import { render } from "react-dom";
 
 const firebaseConfig = {
@@ -26,7 +26,7 @@ function TestScreen() {
   const [users, setUsers] = useState([]); // Initial empty array of users
 
   useEffect(() => {
-    const subscriber = dbh.collection("test").onSnapshot((querySnapshot) => {
+    const subscriber = dbh.collection("plaques").onSnapshot((querySnapshot) => {
       const users = [];
 
       querySnapshot.forEach((documentSnapshot) => {
@@ -38,7 +38,6 @@ function TestScreen() {
 
       setUsers(users);
     });
-
     // Unsubscribe from events when no longer in use
     return () => subscriber();
   }, []);
@@ -47,18 +46,24 @@ function TestScreen() {
     <FlatList
       data={users}
       renderItem={({ item }) => (
-        <View
+        <SafeAreaView
           style={{
-            height: 50,
+            height: 250,
             flex: 1,
-            alignItems: "center",
+            alignItems: "flex-start",
             justifyContent: "center",
           }}
         >
+
+          <Text>Title: {item.Title}</Text>
+          <Text></Text> 
           <Text>Description: {item.Description}</Text>
-          <Text>User ID: {item.id}</Text>
-          <Text>Name: {item.name}</Text>
-        </View>
+          <Text></Text> 
+          <Text>Latitude: {item.Latitude}</Text>
+          <Text></Text> 
+          <Text>Longitude: {item.Longitude}</Text>
+
+        </SafeAreaView>
       )}
     />
   );
