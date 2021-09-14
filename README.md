@@ -58,10 +58,10 @@ Firebase:
 expo install firebase
 ```
 
-install geo location:
+install carousel:
 
 ```
-npm install @react-native-community/geolocation --save
+npm install --save react-native-snap-carousel
 ```
 
 ## Launching the App:

@@ -15,6 +15,7 @@ class MapScreen extends Component {
         renderCarouselItem = ({item}) =>
                 <view>
                         <text>({item.Title})</text>
+                        <text>({item.Description})</text>
 
                 </view>
         render()

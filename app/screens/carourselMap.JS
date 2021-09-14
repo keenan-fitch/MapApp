@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image, Alert, Platform, Dimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker, Callout, Polygon, Circle } from 'react-native-maps';
-// import { request, PERMISSIONS } from 'react-native-permissions';
-//import Geolocation from '@react-native-community/geolocation';
 import Carousel from 'react-native-snap-carousel';
 import mapData from '../../constants/Plaques_SmallDB.json';
 
@@ -22,63 +20,6 @@ export default class CarouselMap extends Component {
       { name: 'Shann Memorial Sundial', latitude: -31.976767456576, longitude: 115.816682973929, image: require('../assets/plaqueImages/shann.png') },
     ]
   }
-
-//   componentDidMount() {
-//     this.requestLocationPermission();
-//   }
-
-//   showWelcomeMessage = () =>
-//     Alert.alert(
-//       'Welcome to San Francisco',
-//       'The food is amazing',
-//       [
-//         {
-//           text: 'Cancel',
-//           style: 'cancel'
-//         },
-//         {
-//           text: 'Ok'
-//         }
-//       ]
-//     )
-
-//   requestLocationPermission = async () => {
-//     if (Platform.OS === 'ios') {
-//       var response = await request(PERMISSIONS.IOS.LOCATION_WHEN_IN_USE);
-//       console.log('iPhone: ' + response);
-
-//       if (response === 'granted') {
-//         this.locateCurrentPosition();
-//       }
-//     } else {
-//       var response = await request(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION);
-//       console.log('Android: ' + response);
-
-//       if (response === 'granted') {
-//         this.locateCurrentPosition();
-//       }
-//     }
-//   }
-
-//   locateCurrentPosition = () => {
-//     Geolocation.getCurrentPosition(
-//       position => {
-//         console.log(JSON.stringify(position));
-
-//         let initialPosition = {
-//           latitude: position.coords.latitude,
-//           longitude: position.coords.longitude,
-//           latitudeDelta: 0.09,
-//           longitudeDelta: 0.035
-//         }
-
-//         this.setState({ initialPosition });
-//       },
-//       error => Alert.alert(error.message),
-//       { enableHighAccuracy: true, timeout: 10000, maximumAge: 1000 }
-//     )
-//   }
-
   onCarouselItemChange = (index) => {
     let location = this.state.coordinates[index];
 
@@ -88,10 +29,8 @@ export default class CarouselMap extends Component {
       latitudeDelta: 0.0045,
       longitudeDelta: 0.0045
     })
-
     this.state.markers[index].showCallout()
   }
-
   onMarkerPressed = (location, index) => {
     this._map.animateToRegion({
       latitude: location.latitude,
@@ -99,10 +38,8 @@ export default class CarouselMap extends Component {
       latitudeDelta: 0.0045,
       longitudeDelta: 0.0045
     });
-
     this._carousel.snapToItem(index);
   }
-
   renderCarouselItem = ({ item }) =>
     <View style={styles.cardContainer}>
       <Text style={styles.cardTitle}>{item.name}</Text>
@@ -118,11 +55,6 @@ export default class CarouselMap extends Component {
           showsUserLocation={true}
           style={styles.map}
           initialRegion={{latitude: -31.9795, longitude: 115.819, latitudeDelta: 0.0075, longitudeDelta: 0.0075}}>
-
-          {/* <Polygon
-            coordinates={this.state.coordinates}
-            fillColor={'rgba(100, 100, 200, 0.3)'}
-          /> */}
           <Marker
             draggable
             coordinate={{ latitude: 37.7825259, longitude: -122.4351431 }}
@@ -137,14 +69,12 @@ export default class CarouselMap extends Component {
                 onPress={() => this.onMarkerPressed(marker, index)}
                 coordinate={{ latitude: marker.latitude, longitude: marker.longitude }}
               >
-                {/* <Callout>
+                <Callout>
                   <Text>{marker.name}</Text>
-                </Callout> */}
-
+                </Callout>
               </Marker>
             ))
           }
-
 
         </MapView>
         <Carousel
