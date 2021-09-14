@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Image, Alert, Platform, Dimensions } from 'reac
 import MapView, { PROVIDER_GOOGLE, Marker, Callout, Polygon, Circle } from 'react-native-maps';
 import Carousel from 'react-native-snap-carousel';
 import mapData from '../../constants/Plaques_SmallDB.json';
-
+//
 export default class CarouselMap extends Component {
 
   static navigationOptions = {
