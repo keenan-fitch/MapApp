@@ -58,6 +58,12 @@ Firebase:
 expo install firebase
 ```
 
+install geo location:
+
+```
+npm install @react-native-community/geolocation --save
+```
+
 ## Launching the App:
 
 Make sure you're in correct directory: Desktop/Apps/MappApp or wherever it is stored locally
