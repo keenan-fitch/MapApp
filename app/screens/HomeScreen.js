@@ -10,13 +10,13 @@ import {
 
 function HomeScreen({ navigation }) {
   const pressHandler = () => {
-    navigation.navigate("MapScreen");
+    navigation.navigate("carouselMapScreen");
   };
   const pressHandlerTour = () => {
     navigation.navigate("ToursScreen");
   };
   const pressHandlerTest = () => {
-    navigation.navigate("carouselMapScreen");
+    navigation.navigate("TestScreen");
   };
   return (
     <ImageBackground
@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
   textHome: {
     top: 30,
     fontSize: 30,
-    // fontFamily: "Helvetica",
   },
   logo: {
     width: 150,
