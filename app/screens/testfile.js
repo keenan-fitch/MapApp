@@ -28,7 +28,7 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 }
 
-function TestScreen() {
+function TestMapScreen() {
   const [users, setUsers] = useState([]); // Initial empty array of users
   const windowHeight = Dimensions.get("window").height;
 
@@ -56,6 +56,7 @@ function TestScreen() {
   const Load = () => {
     return <Text>loading</Text>;
   };
+  //<Marker coordinate={coordinate} key={`${coordinate.latitude}_${coordinate.longitude}`} />
 
   return (
     <>
@@ -83,4 +84,4 @@ function TestScreen() {
   );
 }
 
-export default TestScreen;
+export default TestMapScreen;

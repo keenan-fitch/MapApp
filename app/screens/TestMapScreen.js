@@ -53,16 +53,16 @@ function TestMapScreen() {
     return () => subscriber();
   }, []);
 
-  // <Marker
-  //   coordinate={coordinate}
-  //   key={`${coordinate.latitude}_${coordinate.longitude}`}
-  // />;
-
   return (
     <>
       <MapView
-        // minZoomeLevel={1}
-        // maxZoomLevel={7}
+        initialRegion={{
+          latitude: -31.98093734685109,
+          longitude: 115.81848976510486,
+          latitudeDelta: 0.01,
+          longitudeDelta: 0.01,
+        }}
+        r
         style={{ flex: 1, minHeight: windowHeight }}
         provider={PROVIDER_GOOGLE}
       >
