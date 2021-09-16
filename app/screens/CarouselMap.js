@@ -46,7 +46,6 @@ export default class CarouselMap extends Component {
     <View style={styles.cardContainer}>
         <Text style={styles.cardTitle}>{item.name}</Text>
         <Image style={styles.cardImage} source={item.image} />
-        {/* <Text style={styles.cardDescription}>{item.description}</Text> */}
     </View>
 
   render() {

@@ -25,7 +25,7 @@ const screens = {
   ToursScreen: {
     screen: ToursScreen,
   },
-  carouselMapScreen: {
+  CarouselMap: {
     screen: CarouselMap,
   },
   WelcomeScreen: {

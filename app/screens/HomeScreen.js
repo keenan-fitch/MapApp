@@ -10,7 +10,7 @@ import {
 
 function HomeScreen({ navigation }) {
   const pressHandler = () => {
-    navigation.navigate("carouselMapScreen");
+    navigation.navigate("CarouselMap");
   };
   const pressHandlerTour = () => {
     navigation.navigate("ToursScreen");
