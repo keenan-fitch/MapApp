@@ -28,7 +28,7 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 }
 
-function TestMapScreen() {
+function TestScreen() {
   const [users, setUsers] = useState([]); // Initial empty array of users
   const windowHeight = Dimensions.get("window").height;
 
@@ -83,4 +83,4 @@ function TestMapScreen() {
   );
 }
 
-export default TestMapScreen;
+export default TestScreen;
