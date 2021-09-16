@@ -53,31 +53,28 @@ function TestMapScreen() {
     return () => subscriber();
   }, []);
 
-  const Load = () => {
-    return <Text>loading</Text>;
-  };
+  // <Marker
+  //   coordinate={coordinate}
+  //   key={`${coordinate.latitude}_${coordinate.longitude}`}
+  // />;
 
   return (
     <>
       <MapView
-        minZoomeLevel={1}
-        maxZoomLevel={7}
+        // minZoomeLevel={1}
+        // maxZoomLevel={7}
         style={{ flex: 1, minHeight: windowHeight }}
         provider={PROVIDER_GOOGLE}
       >
-        {users.length !== 0 ? (
-          users.map((i, index) => (
-            <Marker
-              key={index}
-              coordinate={{
-                latitude: i.Latitude,
-                longitude: i.Longitude,
-              }}
-            />
-          ))
-        ) : (
-          <Load />
-        )}
+        {users.map((i, index) => (
+          <Marker
+            key={index}
+            coordinate={{
+              latitude: i.Latitude,
+              longitude: i.Longitude,
+            }}
+          />
+        ))}
       </MapView>
     </>
   );
