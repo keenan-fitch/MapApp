@@ -73,6 +73,8 @@ function TestMapScreen() {
               latitude: i.Latitude,
               longitude: i.Longitude,
             }}
+            title={i.Title}
+            description={i.Description}
           />
         ))}
       </MapView>
