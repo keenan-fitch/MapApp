@@ -1,16 +1,18 @@
-@@ -1,159 +0,0 @@
-import React, { Component } from 'react';
+//@@ -1,159 +0,0 @@
+import React, { Component, useState } from 'react';
 import { StyleSheet, View, Text, Image, Alert, Platform, Dimensions, ScrollView } from 'react-native';
-import MapView, { PROVIDER_GOOGLE, Marker, Callout, Polygon, Circle } from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Marker, Callout, Polygon, Circle, Polyline } from 'react-native-maps';
 import Carousel from 'react-native-snap-carousel';
 import mapData from '../../constants/Plaques_SmallDB.json';
 import { LinearGradient } from 'expo-linear-gradient';
+
 
 export default class CarouselMap extends Component {
 
   static navigationOptions = {
     title: 'Map Page',
   };
+
 
   state = {
     markers: [],
@@ -22,6 +24,8 @@ export default class CarouselMap extends Component {
       { name: 'Shann Memorial Sundial', latitude: -31.976767456576, longitude: 115.816682973929, image: require('../assets/plaqueImages/shann.png') },
     ]
   }
+
+
   onCarouselItemChange = (index) => {
     let location = this.state.coordinates[index];
 
@@ -44,8 +48,8 @@ export default class CarouselMap extends Component {
   }
   renderCarouselItem = ({ item }) =>
     <View style={styles.cardContainer}>
-        <Text style={styles.cardTitle}>{item.name}</Text>
-        <Image style={styles.cardImage} source={item.image} />
+      <Text style={styles.cardTitle}>{item.name}</Text>
+      <Image style={styles.cardImage} source={item.image} />
     </View>
 
   render() {
@@ -56,7 +60,7 @@ export default class CarouselMap extends Component {
           ref={map => this._map = map}
           showsUserLocation={true}
           style={styles.map}
-          initialRegion={{latitude: -31.9795, longitude: 115.819, latitudeDelta: 0.0075, longitudeDelta: 0.0075}}>
+          initialRegion={{ latitude: -31.9795, longitude: 115.819, latitudeDelta: 0.0075, longitudeDelta: 0.0075 }}>
           <Marker
             draggable
             coordinate={{ latitude: 37.7825259, longitude: -122.4351431 }}
@@ -78,9 +82,16 @@ export default class CarouselMap extends Component {
             ))
           }
 
+          <Polyline
+            coordinates={[{ latitude: -31.9790207288426, longitude: 115.817331455612 }, { latitude: -31.976767456576, longitude: 115.816682973929 }]}
+            strokeColor="#000" //fallback
+            strokeColors={["#7f0000"]}
+            strokeWidth={5}
+            lineDashPattern={[1]}
+          />
         </MapView>
         <View style={styles.bottomView}>
-          <LinearGradient style={styles.gradient} colors={['rgba(0, 0, 0,0)', 'rgba(0, 0, 0,1)']}/>
+          <LinearGradient style={styles.gradient} colors={['rgba(0, 0, 0,0)', 'rgba(0, 0, 0,1)']} />
         </View>
         <Carousel
           ref={(c) => { this._carousel = c; }}
@@ -112,7 +123,7 @@ const styles = StyleSheet.create({
   bottomView: {
     width: '100%',
     // backgroundColor: "red",
-    height:25,
+    height: 25,
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute', //Here is the trick
@@ -127,7 +138,7 @@ const styles = StyleSheet.create({
     // borderColor: 'rgba(105,105,105, 1)',
     // borderTopWidth: 1,
     height: 220,
-    
+
   },
   cardContainer: {
     backgroundColor: 'rgba(0, 0, 0, 0.6)',
