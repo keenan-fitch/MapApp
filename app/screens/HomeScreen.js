@@ -18,21 +18,21 @@ function HomeScreen({ navigation }) {
   const pressHandlerTest= () => {
     navigation.navigate("TestScreen");
   };
+  
+  
   return (
-    <ImageBackground
-      style={styles.background}
-      //source={require("./assets/gradient_bg.png")}
-      source={{
-        uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcTfwdWoZixKTatNicGmIV-u-wpPnpS2voaw&usqp=CAU",
-      }}
+    <ImageBackground style={styles.background} source={require('../assets/#ececec.png')}
+      // source={{
+      //   uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcTfwdWoZixKTatNicGmIV-u-wpPnpS2voaw&usqp=CAU",
+     // }}
     >
       <View style={styles.logoContainer}>
-        <Image
+        {<Image
           style={styles.logo}
           source={{
             uri: "https://crowdresearch.uwa.edu.au/wp-content/uploads/2015/12/cropped-uwa-crest-512.png",
           }}
-        ></Image>
+        ></Image>}
         <Text style={styles.textHome}> A Map in an App! </Text>
       </View>
 
@@ -45,7 +45,7 @@ function HomeScreen({ navigation }) {
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
-        <Text style={styles.testText}>Go Test Screen</Text>
+        <Text style={styles.testText}>Go to Test Screen</Text>
       </TouchableOpacity>
 
     </ImageBackground>
