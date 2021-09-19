@@ -15,8 +15,8 @@ function HomeScreen({ navigation }) {
   const pressHandlerTour = () => {
     navigation.navigate("ToursScreen");
   };
-  const pressHandlerTest= () => {
-    navigation.navigate("TestScreen");
+  const pressHandlerTest = () => {
+    navigation.navigate("TestMapScreen");
   };
   return (
     <ImageBackground
