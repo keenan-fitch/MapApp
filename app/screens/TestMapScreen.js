@@ -36,7 +36,7 @@ function TestMapScreen() {
     const dbh = firebase.firestore();
 
     const subscriber = dbh
-      .collection("Plaques_SmallDB")
+      .collection("Plaques_SmallDB").where('Narrative Tag', '>=', 'Royals & Politicians')
       .onSnapshot((querySnapshot) => {
         const users = [];
 
