@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     height: 50,
   },
   logo: {
-    width: 66,
-    height: 58,
+    width: 200,
+    height: 80,
   },
 });
 
@@ -83,24 +83,12 @@ function TestScreen() {
           <Text>Name: {item.name}</Text>
           <Text></Text>
           <Text>Url:{item.ImageUrl}</Text>
-
           <Image
-            style={styles.tinyLogo}
-            source={{
-              uri: item.image,
-            }}
-          />
-          <Image
-            style={styles.tinyLogo}
+            style={styles.logo}
             source={{
               uri: item.ImageUrl,
             }}
           />
-          {/* <Image style={styles.tinyLogo} source={require(item.ImageUrl)} /> */}
-          {/* <Image
-            style={styles.tinyLogo}
-            source={require("../assets/plaqueImages/sunset.png")}
-          /> */}
         </SafeAreaView>
       )}
     />
