@@ -22,11 +22,14 @@ const firebaseConfig = {
   appId: "1:379875741857:web:1a621c346fc873ff4760e0",
   measurementId: "G-08Y6D94TDZ",
 };
+
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 } else {
   firebase.app(); // if already initialized, use that one
 }
+
+const storage = getStorage(firebaseApp);
 
 function TestMapScreen() {
   const [users, setUsers] = useState([]); // Initial empty array of users
@@ -36,7 +39,8 @@ function TestMapScreen() {
     const dbh = firebase.firestore();
 
     const subscriber = dbh
-      .collection("Plaques_SmallDB").where('Narrative Tag', '>=', 'Royals & Politicians')
+      .collection("Plaques_SmallDB")
+      .where("Narrative Tag", ">=", "Royals & Politicians")
       .onSnapshot((querySnapshot) => {
         const users = [];
 
