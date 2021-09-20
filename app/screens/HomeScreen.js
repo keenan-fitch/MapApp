@@ -33,19 +33,19 @@ function HomeScreen({ navigation }) {
             uri: "https://crowdresearch.uwa.edu.au/wp-content/uploads/2015/12/cropped-uwa-crest-512.png",
           }}
         ></Image>}
-        <Text style={styles.textHome}> A Map in an App! </Text>
+        <Text style={styles.textHome}> HISTORIA </Text>
       </View>
 
       <TouchableOpacity style={styles.roundButton} onPress={pressHandler}>
-        <Text style={styles.mapText}>Go to Map!</Text>
+        <Text style={styles.mapText}>GO TO MAP</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
-        <Text style={styles.tourText}>Take a tour!</Text>
+        <Text style={styles.tourText}>TAKE A TOUR</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
-        <Text style={styles.testText}>Go to Test Screen</Text>
+        <Text style={styles.testText}>GO TO TEST SCREEN</Text>
       </TouchableOpacity>
 
     </ImageBackground>
@@ -66,17 +66,20 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     position: "absolute",
-    top: 120,
+    top: 50,
     alignItems: "center",
   },
   textHome: {
-    top: 30,
-    fontSize: 30,
-    fontFamily: "Helvetica",
+    top: 40,
+    fontSize: 50,
+    textAlign: "center",
+    fontFamily: "Futura",
+   // fontWeight: "bold",
+    letterSpacing: 10,
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 170,
+    height: 170,
   },
   roundButton: {
     alignContent: "center",
@@ -99,40 +102,52 @@ const styles = StyleSheet.create({
   tourText: {
     backgroundColor: "#e2b600",
     color: "black",
-    width: "100%",
-    borderRadius: 25,
+    width: "80%",
+    overflow: 'hidden',
+    marginBottom: "5%",
+    borderRadius: 30,
+    borderColor: "black",
+    borderWidth: 5,
     textAlign: "center",
     fontWeight: "bold",
-    //marginLeft: '11%',
-    padding: "5%",
-    fontSize: 27,
-    //marginTop: '10%',
+    padding: "3%",
+    fontSize: 25,
+    fontWeight: "bold",
     alignSelf: "center",
+    fontFamily: "Futura",
   },
   testText: {
     backgroundColor: "#265521",
     color: "white",
-    width: "100%",
-    borderRadius: 25,
+    width: "80%",
+    overflow: 'hidden',
+    marginBottom: "15%",
+    borderRadius: 30,
+    borderColor: "black",
+    borderWidth: 5,
     textAlign: "center",
     fontWeight: "bold",
     //marginLeft: '11%',
-    padding: "5%",
-    fontSize: 27,
+    padding: "3%",
+    fontSize: 25,
     //marginTop: '10%',
     alignSelf: "center",
+    fontFamily: "Futura",
   },
   mapText: {
     backgroundColor: "#27348b",
     color: "white",
-    width: "100%",
-    borderRadius: 25,
+    width: "80%",
+    borderRadius: 30,
+    borderColor: "black",
+    borderWidth: 5,
+    overflow: 'hidden',
     textAlign: "center",
     fontWeight: "bold",
-    //marginLeft: '11%',
-    padding: "5%",
-    fontSize: 27,
-    marginTop: "10%",
+    padding: "3%",
+    fontSize: 25,
+    marginBottom: "5%",
     alignSelf: "center",
+    fontFamily: "Futura",
   },
 });
