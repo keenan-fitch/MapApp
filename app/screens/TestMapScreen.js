@@ -9,6 +9,7 @@ import {
   FlatList,
   SafeAreaView,
   Dimensions,
+  Image,
 } from "react-native";
 import { render } from "react-dom";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
@@ -28,8 +29,6 @@ if (!firebase.apps.length) {
 } else {
   firebase.app(); // if already initialized, use that one
 }
-
-const storage = getStorage(firebaseApp);
 
 function TestMapScreen() {
   const [users, setUsers] = useState([]); // Initial empty array of users
