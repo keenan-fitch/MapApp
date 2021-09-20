@@ -1,11 +1,14 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-function ToursScreen(props) {
+function ToursScreen({ navigation }) {
+    const pressHandlerMapTest = () => {
+        navigation.navigate("TestMapScreen");
+      };
     return (
         <ImageBackground style={styles.background}>
             <View style={styles.tourWindow}>
-                <TouchableOpacity underlayColor="red">
+                <TouchableOpacity underlayColor="red" onPress={pressHandlerMapTest}>
                     <Image source={require("../assets/royals.png")} ></Image>
                 </TouchableOpacity>
                 

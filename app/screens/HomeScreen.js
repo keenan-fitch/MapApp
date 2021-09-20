@@ -15,7 +15,7 @@ function HomeScreen({ navigation }) {
   const pressHandlerTour = () => {
     navigation.navigate("ToursScreen");
   };
-  const pressHandlerTest= () => {
+  const pressHandlerTest = () => {
     navigation.navigate("TestScreen");
   };
   
@@ -48,6 +48,12 @@ function HomeScreen({ navigation }) {
         </TouchableOpacity>
       </View>
 
+      <TouchableOpacity
+        style={styles.roundButton}
+        onPress={pressHandlerMapTest}
+      >
+        <Text style={styles.testText}>Go Test Map Screen</Text>
+      </TouchableOpacity>
     </ImageBackground>
   );
 }
