@@ -82,7 +82,21 @@ function TestScreen() {
           <Text></Text>
           <Text>Name: {item.name}</Text>
           <Text></Text>
-          <Image style={styles.tinyLogo} source={require(item.ImageUrl)} />
+          <Text>Url:{item.ImageUrl}</Text>
+
+          <Image
+            style={styles.tinyLogo}
+            source={{
+              uri: item.image,
+            }}
+          />
+          <Image
+            style={styles.tinyLogo}
+            source={{
+              uri: item.ImageUrl,
+            }}
+          />
+          {/* <Image style={styles.tinyLogo} source={require(item.ImageUrl)} /> */}
           {/* <Image
             style={styles.tinyLogo}
             source={require("../assets/plaqueImages/sunset.png")}
