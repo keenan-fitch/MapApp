@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 function ToursScreen({ navigation }) {
     const pressHandlerMapTest = () => {
@@ -7,7 +7,9 @@ function ToursScreen({ navigation }) {
       };
     return (
         <ImageBackground style={styles.background}>
-            <View style={styles.tourWindow}>
+            {/* <View style={styles.tourWindow}> */}
+            <ScrollView>
+
                 <TouchableOpacity underlayColor="red" onPress={pressHandlerMapTest}>
                     <Image source={require("../assets/royals.png")} ></Image>
                 </TouchableOpacity>
@@ -15,9 +17,13 @@ function ToursScreen({ navigation }) {
                 <TouchableOpacity>
                     <Image source={require("../assets/treasures.png")} ></Image>
                 </TouchableOpacity>
+
+                <TouchableOpacity>
+                    <Image source={require("../assets/plaqueImages/sunset.png")} ></Image>
+                </TouchableOpacity>
                 
-            </View>
-        
+            </ScrollView>
+            {/* </View> */}
         </ImageBackground>
 
     );

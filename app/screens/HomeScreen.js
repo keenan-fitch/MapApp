@@ -10,13 +10,13 @@ import {
 
 function HomeScreen({ navigation }) {
   const pressHandler = () => {
-    navigation.navigate("MapScreen");
+    navigation.navigate("CarouselMap");
   };
   const pressHandlerTour = () => {
     navigation.navigate("ToursScreen");
   };
   const pressHandlerTest = () => {
-    navigation.navigate("TestScreen");
+    navigation.navigate("About");
   };
   
   return (
@@ -38,22 +38,15 @@ function HomeScreen({ navigation }) {
         <TouchableOpacity style={styles.roundButton} onPress={pressHandler}>
           <Text style={styles.mapText}>GO TO MAP</Text>
         </TouchableOpacity>
-
         <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
           <Text style={styles.tourText}>TAKE A TOUR</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
-          <Text style={styles.testText}>GO TO TEST SCREEN</Text>
+          <Text style={styles.testText}>ABOUT PAGE</Text>
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity
-        style={styles.roundButton}
-        onPress={pressHandlerMapTest}
-      >
-        <Text style={styles.testText}>Go Test Map Screen</Text>
-      </TouchableOpacity>
     </ImageBackground>
   );
 }
