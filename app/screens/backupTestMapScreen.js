@@ -37,11 +37,10 @@ function TestMapScreen() {
   useEffect(() => {
     const dbh = firebase.firestore();
 
-    dbh
+    const subscriber = dbh
       .collection("Plaques_SmallDB")
       .where("Narrative Tag", ">=", "Royals & Politicians")
-      .get()
-      .then((querySnapshot) => {
+      .onSnapshot((querySnapshot) => {
         const users = [];
 
         querySnapshot.forEach((documentSnapshot) => {
@@ -53,6 +52,8 @@ function TestMapScreen() {
 
         setUsers(users);
       });
+    // Unsubscribe from events when no longer in use
+    return () => subscriber();
   }, []);
 
   return (
