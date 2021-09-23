@@ -1,20 +1,29 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-function ToursScreen(props) {
+function ToursScreen({ navigation }) {
+    const pressHandlerMapTest = () => {
+        navigation.navigate("TestMapScreen");
+      };
     return (
         <ImageBackground style={styles.background}>
-            <View style={styles.tourWindow}>
-                <TouchableOpacity underlayColor="red">
+            {/* <View style={styles.tourWindow}> */}
+            <ScrollView>
+
+                <TouchableOpacity underlayColor="red" onPress={pressHandlerMapTest}>
                     <Image source={require("../assets/royals.png")} ></Image>
                 </TouchableOpacity>
                 
                 <TouchableOpacity>
                     <Image source={require("../assets/treasures.png")} ></Image>
                 </TouchableOpacity>
+
+                <TouchableOpacity>
+                    <Image source={require("../assets/plaqueImages/sunset.png")} ></Image>
+                </TouchableOpacity>
                 
-            </View>
-        
+            </ScrollView>
+            {/* </View> */}
         </ImageBackground>
 
     );

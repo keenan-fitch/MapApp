@@ -20,12 +20,12 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 }
 
-const dbh = firebase.firestore();
-
 function TestScreen() {
   const [users, setUsers] = useState([]); // Initial empty array of users
 
   useEffect(() => {
+    const dbh = firebase.firestore();
+
     const subscriber = dbh.collection("plaques").onSnapshot((querySnapshot) => {
       const users = [];
 
@@ -54,15 +54,13 @@ function TestScreen() {
             justifyContent: "center",
           }}
         >
-
           <Text>Title: {item.Title}</Text>
-          <Text></Text> 
+          <Text></Text>
           <Text>Description: {item.Description}</Text>
-          <Text></Text> 
+          <Text></Text>
           <Text>Latitude: {item.Latitude}</Text>
-          <Text></Text> 
+          <Text></Text>
           <Text>Longitude: {item.Longitude}</Text>
-
         </SafeAreaView>
       )}
     />

@@ -22,7 +22,8 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Sculpture",
@@ -35,19 +36,22 @@
      "Year": null,
      "Date": "",
      "Placed": {
-        "Unveiled By": ""
+        "Unveiled By": "",
+      "Image": "image: require('../assets/royals.png')"
      },
      "Notes": "",
      "Donor": "Archive",
      "Architects": {
-        " creator": ""
+        " creator": "",
+      "Image": "image: require('../assets/royals.png')"
      },
      "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac urna egestas, vehicula libero a, gravida justo. Pellentesque diam justo, fringilla et tempus ac, congue id sapien. Nam ut diam ac magna luctus interdum. Integer semper ac odio vitae aliquet. Etiam molestie consequat purus, sit amet iaculis nisl ultricies et. Vestibulum non erat risus. Aliquam ullamcorper mi vel commodo interdum. Maecenas efficitur eu ipsum laoreet hendrerit. Nunc condimentum consequat ipsum vitae lobortis.",
      "Citation": "Mons Bourke",
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Sculpture",
@@ -72,7 +76,8 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": "https://hourstosunset.wordpress.com/gallery/#jp-carousel-550"
+     "ImageUrl": "https://hourstosunset.wordpress.com/gallery/#jp-carousel-550",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Sundial",
@@ -97,7 +102,8 @@
      "Reference": "further refs",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": "https://hourstosunset.wordpress.com/gallery/#jp-carousel-224"
+     "ImageUrl": "https://hourstosunset.wordpress.com/gallery/#jp-carousel-224",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Sundial",
@@ -122,7 +128,8 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Building Opening",
@@ -147,7 +154,8 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Building Opening",
@@ -172,7 +180,8 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Building Opening",
@@ -197,7 +206,8 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Commemoration",
@@ -222,7 +232,8 @@
      "Reference": "P&P, Campus at Crawley",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Commemoration",
@@ -247,7 +258,8 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Commemoration",
@@ -272,7 +284,8 @@
      "Reference": "P&P",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Commemoration",
@@ -297,7 +310,8 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Foundation Stone",
@@ -322,7 +336,8 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Foundation Stone",
@@ -347,7 +362,8 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   },
    {
      "Object": "Tree",
@@ -372,6 +388,7 @@
      "Reference": "",
      "Faculty": "",
      "Narrative Tag": "",
-     "ImageUrl": ""
+     "ImageUrl": "",
+     "Image": "image: require('../assets/royals.png')"
   }
   ]
