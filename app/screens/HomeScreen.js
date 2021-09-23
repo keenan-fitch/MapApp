@@ -16,37 +16,36 @@ function HomeScreen({ navigation }) {
     navigation.navigate("ToursScreen");
   };
   const pressHandlerTest = () => {
-    navigation.navigate("TestMapScreen");
+    navigation.navigate("About");
   };
+  
   return (
-    <ImageBackground
-      style={styles.background}
-      //source={require("./assets/gradient_bg.png")}
-      source={{
-        uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcTfwdWoZixKTatNicGmIV-u-wpPnpS2voaw&usqp=CAU",
-      }}
+    <ImageBackground style={styles.background} source={require('../assets/#ececec.png')}
     >
       <View style={styles.logoContainer}>
-        <Image
+        {<Image
           style={styles.logo}
           source={{
             uri: "https://crowdresearch.uwa.edu.au/wp-content/uploads/2015/12/cropped-uwa-crest-512.png",
           }}
-        ></Image>
-        <Text style={styles.textHome}> A Map in an App! </Text>
+        ></Image>}
       </View>
 
-      <TouchableOpacity style={styles.roundButton} onPress={pressHandler}>
-        <Text style={styles.mapText}>Go to Map!</Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
-        <Text style={styles.tourText}>Take a tour!</Text>
-      </TouchableOpacity>
 
-      <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
-        <Text style={styles.testText}>Go Test Screen</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonsContainer}>
+        <Text style={styles.textHome}> HISTORIA </Text>
+        <TouchableOpacity style={styles.roundButton} onPress={pressHandler}>
+          <Text style={styles.mapText}>GO TO MAP</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
+          <Text style={styles.tourText}>TAKE A TOUR</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
+          <Text style={styles.testText}>ABOUT PAGE</Text>
+        </TouchableOpacity>
+      </View>
 
     </ImageBackground>
   );
@@ -66,18 +65,31 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     position: "absolute",
-    top: 120,
+    top: 50,
     alignItems: "center",
   },
+
+  buttonsContainer: {
+    position: "absolute",
+    bottom: 0,
+    // alignItems: "center",
+    justifyContent: "flex-end",
+  },
   textHome: {
-    top: 30,
-    fontSize: 30,
+    // top: 40,
+    fontSize: 50,
+    textAlign: "center",
+    fontFamily: "Futura",
+   // fontWeight: "bold",
+    letterSpacing: 10,
+    alignContent: "center",
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: 170,
+    height: 170,
   },
   roundButton: {
+    top: 25,
     alignContent: "center",
     justifyContent: "center",
     width: "100%",
@@ -98,40 +110,52 @@ const styles = StyleSheet.create({
   tourText: {
     backgroundColor: "#e2b600",
     color: "black",
-    width: "100%",
-    borderRadius: 25,
+    width: "90%",
+    overflow: 'hidden',
+    marginBottom: "5%",
+    borderRadius: 30,
+    borderColor: "black",
+    borderWidth: 5,
     textAlign: "center",
     fontWeight: "bold",
-    //marginLeft: '11%',
-    padding: "5%",
-    fontSize: 27,
-    //marginTop: '10%',
+    padding: "3%",
+    fontSize: 25,
+    fontWeight: "bold",
     alignSelf: "center",
+    fontFamily: "Futura",
   },
   testText: {
     backgroundColor: "#265521",
     color: "white",
-    width: "100%",
-    borderRadius: 25,
+    width: "90%",
+    overflow: 'hidden',
+    marginBottom: "15%",
+    borderRadius: 30,
+    borderColor: "black",
+    borderWidth: 5,
     textAlign: "center",
     fontWeight: "bold",
     //marginLeft: '11%',
-    padding: "5%",
-    fontSize: 27,
+    padding: "3%",
+    fontSize: 25,
     //marginTop: '10%',
     alignSelf: "center",
+    fontFamily: "Futura",
   },
   mapText: {
     backgroundColor: "#27348b",
     color: "white",
-    width: "100%",
-    borderRadius: 25,
+    width: "90%",
+    borderRadius: 30,
+    borderColor: "black",
+    borderWidth: 5,
+    overflow: 'hidden',
     textAlign: "center",
     fontWeight: "bold",
-    //marginLeft: '11%',
-    padding: "5%",
-    fontSize: 27,
-    marginTop: "10%",
+    padding: "3%",
+    fontSize: 25,
+    marginBottom: "5%",
     alignSelf: "center",
+    fontFamily: "Futura",
   },
 });

@@ -2,12 +2,12 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import HomeScreen from "../app/screens/HomeScreen";
-import SettingsScreen from "../app/screens/SettingsScreen";
+// import SettingsScreen from "../app/screens/SettingsScreen";
 import MapScreen from "../app/screens/MapScreen";
 import ToursScreen from "../app/screens/ToursScreen.js";
-import WelcomeScreen from "../app/screens/WelcomeScreen.js";
+import About from "../app/screens/AboutScreen.js";
 import TestScreen from "../app/screens/TestScreen.js";
-import CarouselMap from "../app/screens/CarouselMap.js";
+import CarouselMap from "../app/screens/carourselMap.js";
 import TestMapScreen from "../app/screens/TestMapScreen.js";
 
 const screens = {
@@ -17,8 +17,11 @@ const screens = {
   TestScreen: {
     screen: TestScreen,
   },
-  SettingsScreen: {
-    screen: SettingsScreen,
+  TestMapScreen: {
+    screen: TestMapScreen,
+  },
+  About: {
+    screen: About,
   },
   MapScreen: {
     screen: MapScreen,
@@ -29,13 +32,6 @@ const screens = {
   CarouselMap: {
     screen: CarouselMap,
   },
-  WelcomeScreen: {
-    screen: WelcomeScreen,
-  },
-  TestMapScreen: {
-    screen: TestMapScreen,
-  },
-
 };
 
 const HomeStack = createStackNavigator(screens);

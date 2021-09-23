@@ -11,7 +11,7 @@ import {
   Dimensions,
 } from "react-native";
 import { render } from "react-dom";
-import MapView, { Marker, PROVIDER_GOOGLE, Polyline } from "react-native-maps";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXyXraHgu5hZW89RiJCd5MxcR1Ct3HAK4",
@@ -28,6 +28,7 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 }
 
+
 function TestMapScreen() {
   const [users, setUsers] = useState([]); // Initial empty array of users
   const windowHeight = Dimensions.get("window").height;
@@ -36,7 +37,7 @@ function TestMapScreen() {
     const dbh = firebase.firestore();
 
     const subscriber = dbh
-      .collection("Plaques_SmallDB")
+      .collection("Plaques_SmallDB").where('Narrative Tag', '>=', 'Royals & Politicians')
       .onSnapshot((querySnapshot) => {
         const users = [];
 
@@ -76,9 +77,7 @@ function TestMapScreen() {
             title={i.Title}
             description={i.Description}
           />
-
         ))}
-
       </MapView>
     </>
   );
