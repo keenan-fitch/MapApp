@@ -10,13 +10,13 @@ import {
 
 function HomeScreen({ navigation }) {
   const pressHandler = () => {
-    navigation.navigate("CarouselMap");
+    navigation.navigate("TestMapScreen");
   };
   const pressHandlerTour = () => {
     navigation.navigate("ToursScreen");
   };
   const pressHandlerTest = () => {
-    navigation.navigate("About");
+    navigation.navigate("BottomSheetScreen");
   };
   
   return (
@@ -43,7 +43,7 @@ function HomeScreen({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
-          <Text style={styles.testText}>ABOUT PAGE</Text>
+          <Text style={styles.testText}>BottomSheetScreen</Text>
         </TouchableOpacity>
       </View>
 
