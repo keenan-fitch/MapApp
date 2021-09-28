@@ -48,21 +48,20 @@ function TestScreen() {
   useEffect(() => {
     const dbh = firebase.firestore();
 
-    dbh
-      .collection("test")
-      .get()
-      .then((querySnapshot) => {
-        const users = [];
+    const subscriber = dbh.collection("test").onSnapshot((querySnapshot) => {
+      const users = [];
 
-        querySnapshot.forEach((documentSnapshot) => {
-          users.push({
-            ...documentSnapshot.data(),
-            key: documentSnapshot.id,
-          });
+      querySnapshot.forEach((documentSnapshot) => {
+        users.push({
+          ...documentSnapshot.data(),
+          key: documentSnapshot.id,
         });
-
-        setUsers(users);
       });
+
+      setUsers(users);
+    });
+    // Unsubscribe from events when no longer in use
+    return () => subscriber();
   }, []);
 
   return (

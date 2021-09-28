@@ -9,6 +9,7 @@ import {
   FlatList,
   SafeAreaView,
   Dimensions,
+  Image,
 } from "react-native";
 import { render } from "react-dom";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
@@ -22,6 +23,7 @@ const firebaseConfig = {
   appId: "1:379875741857:web:1a621c346fc873ff4760e0",
   measurementId: "G-08Y6D94TDZ",
 };
+
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 } else {
@@ -36,9 +38,11 @@ function TestMapScreen() {
   useEffect(() => {
     const dbh = firebase.firestore();
 
-    const subscriber = dbh
-      .collection("Plaques_SmallDB").where('Narrative Tag', '>=', 'Royals & Politicians')
-      .onSnapshot((querySnapshot) => {
+    dbh
+      .collection("Plaques_SmallDB")
+      .where("Narrative Tag", ">=", "Royals & Politicians")
+      .get()
+      .then((querySnapshot) => {
         const users = [];
 
         querySnapshot.forEach((documentSnapshot) => {
@@ -50,8 +54,6 @@ function TestMapScreen() {
 
         setUsers(users);
       });
-    // Unsubscribe from events when no longer in use
-    return () => subscriber();
   }, []);
 
   return (

@@ -3,15 +3,16 @@ import "firebase/firestore";
 import "react-native-gesture-handler";
 import React, { useState, Component, useEffect } from "react";
 import {
+  StyleSheet,
   View,
   Text,
   FlatList,
   SafeAreaView,
+  Dimensions,
   Image,
-  StyleSheet,
 } from "react-native";
 import { render } from "react-dom";
-import "firebase/storage";
+import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXyXraHgu5hZW89RiJCd5MxcR1Ct3HAK4",
@@ -22,36 +23,24 @@ const firebaseConfig = {
   appId: "1:379875741857:web:1a621c346fc873ff4760e0",
   measurementId: "G-08Y6D94TDZ",
 };
+
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 } else {
   firebase.app(); // if already initialized, use that one
 }
 
-const styles = StyleSheet.create({
-  container: {
-    paddingTop: 50,
-  },
-  tinyLogo: {
-    width: 50,
-    height: 50,
-  },
-  logo: {
-    width: 200,
-    height: 80,
-  },
-});
-
-function TestScreen() {
+function TestMapScreen() {
   const [users, setUsers] = useState([]); // Initial empty array of users
+  const windowHeight = Dimensions.get("window").height;
 
   useEffect(() => {
     const dbh = firebase.firestore();
 
-    dbh
-      .collection("test")
-      .get()
-      .then((querySnapshot) => {
+    const subscriber = dbh
+      .collection("Plaques_SmallDB")
+      .where("Narrative Tag", ">=", "Royals & Politicians")
+      .onSnapshot((querySnapshot) => {
         const users = [];
 
         querySnapshot.forEach((documentSnapshot) => {
@@ -63,37 +52,37 @@ function TestScreen() {
 
         setUsers(users);
       });
+    // Unsubscribe from events when no longer in use
+    return () => subscriber();
   }, []);
 
   return (
-    <FlatList
-      data={users}
-      renderItem={({ item }) => (
-        <SafeAreaView
-          style={{
-            height: 250,
-            flex: 1,
-            alignItems: "flex-start",
-            justifyContent: "center",
-          }}
-        >
-          <Text>Description: {item.Description}</Text>
-          <Text></Text>
-          <Text>Id: {item.id}</Text>
-          <Text></Text>
-          <Text>Name: {item.name}</Text>
-          <Text></Text>
-          <Text>Url:{item.ImageUrl}</Text>
-          <Image
-            style={styles.logo}
-            source={{
-              uri: item.ImageUrl,
+    <>
+      <MapView
+        initialRegion={{
+          latitude: -31.98093734685109,
+          longitude: 115.81848976510486,
+          latitudeDelta: 0.01,
+          longitudeDelta: 0.01,
+        }}
+        r
+        style={{ flex: 1, minHeight: windowHeight }}
+        provider={PROVIDER_GOOGLE}
+      >
+        {users.map((i, index) => (
+          <Marker
+            key={index}
+            coordinate={{
+              latitude: i.Latitude,
+              longitude: i.Longitude,
             }}
+            title={i.Title}
+            description={i.Description}
           />
-        </SafeAreaView>
-      )}
-    />
+        ))}
+      </MapView>
+    </>
   );
 }
 
-export default TestScreen;
+export default TestMapScreen;
