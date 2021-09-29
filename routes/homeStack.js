@@ -1,10 +1,10 @@
 // Where we configure the stack navigator
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
-import HomeScreen from "../app/screens/HomeScreen";
+import Home from "../app/screens/HomeScreen";
 // import SettingsScreen from "../app/screens/SettingsScreen";
 import MapScreen from "../app/screens/MapScreen";
-import ToursScreen from "../app/screens/ToursScreen.js";
+import Tours from "../app/screens/ToursScreen.js";
 import About from "../app/screens/AboutScreen.js";
 import TestScreen from "../app/screens/TestScreen.js";
 import CarouselMap from "../app/screens/carourselMap.js";
@@ -15,8 +15,8 @@ import ParisMap from "../app/screens/parisMap.js";
 
 
 const screens = {
-  HomeScreen: {
-    screen: HomeScreen,
+  Home: {
+    screen: Home,
   },
   TestScreen: {
     screen: TestScreen,
@@ -30,8 +30,8 @@ const screens = {
   MapScreen: {
     screen: MapScreen,
   },
-  ToursScreen: {
-    screen: ToursScreen,
+  Tours: {
+    screen: Tours,
   },
   CarouselMap: {
     screen: CarouselMap,

@@ -13,7 +13,7 @@ function HomeScreen({ navigation }) {
     navigation.navigate("TestMapScreen");
   };
   const pressHandlerTour = () => {
-    navigation.navigate("ToursScreen");
+    navigation.navigate("Tours");
   };
   const pressHandlerTest = () => {
     navigation.navigate("ParisMap");

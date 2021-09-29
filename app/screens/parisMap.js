@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet,View, Text, Image, Dimensions } from "react-native";
+import { StyleSheet,View, Text, Image, Dimensions, ScrollView } from "react-native";
 import MapView, {PROVIDER_GOOGLE, Marker, Callout } from "react-native-maps";
 import Carousel from "react-native-snap-carousel";
 import { LinearGradient } from "expo-linear-gradient";
@@ -39,7 +39,7 @@ export default class ParisMap extends Component {
         {
           name: "Prof HE Whitfeld, 1875-1939",
           description:
-          "Hubert Edwin Whitfeld (1875-1939), university vice-chancellor, was born on 14 March 1875 in Sydney, seventh child of Edwin Whitfeld, schoolmaster, and his wife Eleanor, née Cooke, both English born.",
+          "Hubert Edwin Whitfeld (1875-1939), university vice-chancellor, was born on 14 March 1875 in Sydney, seventh child of Edwin Whitfeld, schoolmaster, and his wife Eleanor, née Cooke, both English born. Educated at Sydney Grammar School and the University of Sydney (B.A., 1897), he graduated with first-class honours in classics and philosophy, and was university medallist in classics. After teaching for two years, he studied engineering (B.E., 1902) at the university. Whitfeld then went to Western Australia where he spent the next ten years as a metallurgist and mine-manager in the Murchison district. On 17 June 1912 he married Frances Matilda Zahel at St Paul's Retreat, Glen Osmond, Adelaide. When the University of Western Australia was established in 1913 he was appointed foundation professor of mining and engineering. In 1916-19 he worked for the British Ministry of Munitions, as an inspector of munitions in the United States of America and as a technical adviser in the Explosives Supply Department, London.",
           latitude: -31.9763010875358,
           longitude: 115.817898240332,
           year: 1978,
@@ -107,34 +107,39 @@ export default class ParisMap extends Component {
          longitudeDelta: 0.0045,
       });
       this._carousel.snapToItem(index);
-      // this._bottomsheet.snapToItem(index);
    };
    
    renderCarouselItem = ({ item }) => (
-      <View style={styles.cardContainer}>
-         <Text style={styles.cardTitle}>{item.name}</Text>
-         <Image style={styles.cardImage} source={item.image} />
-         <Text style={styles.plaqueDescriptionText}>{item.description}</Text>
-         
+      <View>
+         <View style={styles.cardContainer}>
+            <Text style={styles.cardTitle}>{item.name}</Text>
+            <Image style={styles.cardImage} source={item.image} />
+            
 
-         {/* ******* Below is some rows with information: year, location, type etc a scroll view **** */}
-         <View style={styles.rowContainer}>
-            <View style={styles.row}>
-               <Text style={styles.plaqueHeading}>Year:</Text>
-               <Text style={styles.plaqueStat}>{item.year}</Text>
-            </View>
-
-            <View style={styles.row}>
-               <Text style={styles.plaqueHeading}>Location:</Text>
-               <Text style={styles.plaqueStat}>{item.location}</Text>
-            </View>
-
-            <View style={styles.row}>
-               <Text style={styles.plaqueHeading}>Plaque Type:</Text>
-               <Text style={styles.plaqueStat}>{item.plaqueType}</Text>
-            </View>
+            {/* ******* Below is some rows with information: year, location, type etc a scroll view **** */}
+            {/* <Image source={require("../assets/upArrow.png")} style={styles.arrowLogo}></Image> */}
          </View>
-         {/* <Image source={require("../assets/upArrow.png")} style={styles.arrowLogo}></Image> */}
+         <ScrollView style={styles.outerScrollContainer}>
+            <View style={styles.outerContainer}>
+               <Text style={styles.plaqueDescriptionText}>{item.description}</Text>
+               <View style={styles.rowContainer}>
+                  <View style={styles.row}>
+                     <Text style={styles.plaqueHeading}>Year:</Text>
+                     <Text style={styles.plaqueStat}>{item.year}</Text>
+                  </View>
+                  <View style={styles.row}>
+                     <Text style={styles.plaqueHeading}>Location:</Text>
+                     <Text style={styles.plaqueStat}>{item.location}</Text>
+                  </View>
+
+                  <View style={styles.row}>
+                     <Text style={styles.plaqueHeading}>Plaque Type:</Text>
+                     <Text style={styles.plaqueStat}>{item.plaqueType}</Text>
+                  </View>
+               </View>
+            </View>
+         </ScrollView>
+
       </View>
    );
    
@@ -345,36 +350,46 @@ tourContainer: {
 },
 plaqueHeading: {
    fontSize: 16,
-   marginLeft: 20,
+   marginHorizontal: 10,
    fontWeight: 'bold',
-   paddingTop: 10,
-   top: 220
+   // marginTop: 10,
+   // top: 220
 },
 plaqueStat: {
    fontSize: 16,
-   marginLeft: 15,
-   paddingTop: 10,
-   top: 220
+   marginHorizontal: 10,
+   // marginTop: 10,
 },
 row: {
    // ...StyleSheet.absoluteFillObject,
    position: 'relative',
    flex: 1,
    flexDirection: "row",
-   // paddingTop: 120
+   paddingTop: 10,
  },
  plaqueDescriptionText: {
+   position: 'relative',
    color: 'black', 
-   top: 200,
    fontSize: 16,
+   marginHorizontal: 10
  },
  rowContainer: {
-    ...StyleSheet.absoluteFillObject,
+    position: "relative",
+   //  ...StyleSheet.absoluteFillObject,
     justifyContent: 'space-evenly',
-    top: 140,
-    height: 100
-    
-    
+    height: 100,
+    paddingTop: 20
+
+ },
+ outerScrollContainer: {
+    height: 1000,
+
+ },
+ outerContainer: {
+    marginTop: 20,
+    flex: 1,
+    height: 1500,
+    justifyContent: "flex-start"
     
  }
 
