@@ -10,6 +10,9 @@ import TestScreen from "../app/screens/TestScreen.js";
 import CarouselMap from "../app/screens/carourselMap.js";
 import TestMapScreen from "../app/screens/TestMapScreen.js";
 import BottomSheetScreen from "../app/screens/BottomSheetScreen.js";
+import mapBottomSheet from "../app/screens/mapBottomSheet.js";
+import ParisMap from "../app/screens/parisMap.js";
+
 
 const screens = {
   HomeScreen: {
@@ -35,7 +38,11 @@ const screens = {
   },
   BottomSheetScreen: {
     screen: BottomSheetScreen,
+  },
+  ParisMap: {
+    screen: ParisMap,
   }
+
 };
 
 const HomeStack = createStackNavigator(screens);

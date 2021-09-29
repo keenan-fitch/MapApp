@@ -16,7 +16,7 @@ function HomeScreen({ navigation }) {
     navigation.navigate("ToursScreen");
   };
   const pressHandlerTest = () => {
-    navigation.navigate("BottomSheetScreen");
+    navigation.navigate("ParisMap");
   };
   
   return (
@@ -43,7 +43,7 @@ function HomeScreen({ navigation }) {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
-          <Text style={styles.testText}>BottomSheetScreen</Text>
+          <Text style={styles.testText}>Test</Text>
         </TouchableOpacity>
       </View>
 

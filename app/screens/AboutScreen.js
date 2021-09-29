@@ -1,47 +1,50 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
+import { Image, ImageBackground, StyleSheet, 
+    Text, TouchableOpacity, View, ScrollView, Linking } from 'react-native';
+
+const url="https://www.web.uwa.edu.au/uwahs"
 
 function About(props) {
     return (
         <ImageBackground style={styles.background} source={require('../assets/#ececec.png')}>
             <ScrollView style={styles.scollV}>
 
-                <Text style={styles.aboutTitle}> About the UWHS</Text>
+                <Text style={styles.aboutTitle}> ABOUT THE UWAHS</Text>
+                <Text></Text> 
 
                 <Image style={styles.logo} source={{uri: "https://crowdresearch.uwa.edu.au/wp-content/uploads/2015/12/cropped-uwa-crest-512.png",}}>
+                
                 </Image>
                 <Text style={styles.aboutBody}>
-                    The UWA Historical Society commenced in 2008 from the initiatives of a small group led by Prof Reg Appleyard and the then Heritage Officer, Shobha Cameron. It received founding financial assistance from the Convocation of UWA graduates, and the support of Vice-Chancellor Prof. Alan Robson. The first event was a public lecture by Robert French, the Chief Justice of the High Court of Australia. He recalled his ‘Halycon Days‘ as a student at UWA. 
-                </Text>
+                The UWA Historical Society commenced in 2008 from the initiatives of a small group led by Prof Reg Appleyard and Heritage Officer, Shobha Cameron. 
+                It received founding financial assistance from the Convocation of UWA graduates, and the support of Vice-Chancellor Prof. Alan Robson.                  </Text>
                 <Text></Text> 
                 <Text></Text> 
                 <Text style={styles.aboutBody}>
-                    Further distinguished graduates and staff offered Annual Lectures in the lead-up to the University Centenary celebrations. The Society has conducted seminars on ‘The Founding Professors’ and numerous ‘walking tours’ of the historical architectural features of the Crawley Campus, together with associated publications. 
-                </Text><Text></Text><Text></Text> 
+                Further, distinguished graduates and staff continue to offer annual lectures in the lead-up to University Centenary celebrations. 
+                The Society has conducted numerous seminars and walking tours of campus and produced associated publications from small, commemorative leaflets to the more substantial, ‘Personalities and Places on the Crawley Campus.’                </Text><Text></Text><Text></Text> 
                 <Text style={styles.aboutBody}>
-                    An extensive professional quality Oral History program has been vigorously pursued. A number of initiatives such as an annual ceremony to mark Remembrance Day, in conjunction with the University Regiment, the renewal of the WW1 Honour Board , and an Online WW2 Nominal Roll have received modest but helpful Grants.
-                </Text><Text></Text>
+                An extensive oral history program has also been vigorously pursued. 
+                A number of initiatives such as an annual Remembrance Day ceremony, the renewal of the WW1 Honour Board, and an Online WW2 Nominal Roll have all received grants.                </Text><Text></Text><Text></Text> 
                 <Image style={styles.imageW} source={require("../assets/winthrop.jpeg")} ></Image>
                 
                 <Text></Text> 
                 <Text style={styles.aboutBody}>
-                    From small leaflets commemorating the Old Dolphin Theatre, Anniversaries of the Sunken Garden Amphitheatre, the Octagon and New Fortune theatres, more substantial publications have been created by the small group of volunteers. ‘Personalities and Places on the Crawley Campus’ has already needed a reprint.
-                </Text><Text></Text><Text></Text> 
+                Membership is open to all interested in the Society’s aims. Please check the website for further information.                 </Text><Text></Text><Text></Text> 
 
-                <Text style={styles.aboutBody}>
-                    The University Archivist is an ex-officio member of the annually elected working Committee. The membership fee is modest and open to all interested in the Society’s aims.
-                </Text><Text></Text><Text></Text> 
-                <Text style={styles.aboutBody}>
-                    Please check the website for further information. 
-                </Text><Text></Text>
-                <Text style={styles.aboutBody}>
+                <Text onPress={() => Linking.openURL(url)} style={{color: 'blue', position: 'relative', alignSelf: 'center', width: "80%", paddingTop: 80, fontSize: 18 }}>
                     https://www.web.uwa.edu.au/uwahs
-                </Text><Text></Text><Text></Text><Text></Text><Text></Text><Text></Text>
+                </Text>
+                
+                
+                {/* <Text style={styles.aboutBody}>
+                https://www.web.uwa.edu.au/uwahs                </Text> */}
 
 
-
-
-
+                <Text></Text><Text></Text> 
+                <Text style={styles.aboutBody}>
+                </Text>
+                <Text></Text><Text></Text><Text></Text><Text></Text><Text></Text>
 
 
             </ScrollView>
@@ -125,7 +128,18 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         alignSelf: "center",
         fontSize:  18,
-        position: "relative"
+        position: "relative",
+        color: "black"
+
+    },
+    aboutHyperlink: {
+        width: "80%",
+        top: 90,
+        borderRadius: 25,
+        alignSelf: "center",
+        fontSize:  18,
+        position: "relative",
+        color: "blue"
 
     },
     aboutTitle: {

@@ -14,6 +14,7 @@ import {
 import { render } from "react-dom";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyDXyXraHgu5hZW89RiJCd5MxcR1Ct3HAK4",
   authDomain: "uwamap-cbeb4.firebaseapp.com",

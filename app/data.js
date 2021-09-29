@@ -24,20 +24,50 @@ function GetData() {
    useEffect(() => {
       const dbh = firebase.firestore();
       dbh
-         .collection("Plaques_SmallDB")
-         .get()
-         .then((querySnapshot) => {
-            const users = [];
-            
-            querySnapshot.forEach((documentSnapshot) => {
-               users.push({
-                  ...documentSnapshot.data(),
-                  key: documentSnapshot.id,
-               });
+      .collection("Plaques_SmallDB")
+      .get()
+      .then((querySnapshot) => {
+         const users = [];
+         
+         querySnapshot.forEach((documentSnapshot) => {
+            users.push({
+               ...documentSnapshot.data(),
+               key: documentSnapshot.id,
             });
-            setInfo(users);
          });
-         return(users)
-      }, []);
-   }
-export {users};
+         setInfo(users);
+      });
+   }, [])
+   return (
+      <>
+        <MapView
+          initialRegion={{
+            latitude: -31.98093734685109,
+            longitude: 115.81848976510486,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01,
+          }}
+          r
+          style={{ flex: 1, minHeight: windowHeight }}
+          provider={PROVIDER_GOOGLE}
+        >
+          {users.map((i, index) => (
+            <Marker
+              key={index}
+              coordinate={{
+                latitude: i.Latitude,
+                longitude: i.Longitude,
+              }}
+              title={i.Title}
+              description={i.Description}
+            />
+          ))}
+        </MapView>
+      </>
+    );
+  }
+
+export default GetData;
+// export {GetData};
+// info = GetData();
+// export {GetData};

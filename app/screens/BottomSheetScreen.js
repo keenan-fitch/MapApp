@@ -6,66 +6,22 @@ import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
 import BottomSheet from 'reanimated-bottom-sheet';
 import Animated from 'react-native-reanimated';
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
-import {info} from '../data.js';
+import {GetData} from '../data.js';
 
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDXyXraHgu5hZW89RiJCd5MxcR1Ct3HAK4",
-//   authDomain: "uwamap-cbeb4.firebaseapp.com",
-//   projectId: "uwamap-cbeb4",
-//   storageBucket: "uwamap-cbeb4.appspot.com",
-//   messagingSenderId: "379875741857",
-//   appId: "1:379875741857:web:1a621c346fc873ff4760e0",
-//   measurementId: "G-08Y6D94TDZ",
-// };
+// const users = GetData()
 
-// if (!firebase.apps.length) {
-//   firebase.initializeApp(firebaseConfig);
-// } else {
-//   firebase.app(); // if already initialized, use that one
-// }
-
-// const [users, setUsers] = useState([]); // Initial empty array of users
-// const windowHeight = Dimensions.get("window").height;
-
-// useEffect(() => {
-//   const dbh = firebase.firestore();
-
-//   dbh
-//     .collection("Plaques_SmallDB")
-//     .get()
-//     .then((querySnapshot) => {
-//       const users = [];
-
-//       querySnapshot.forEach((documentSnapshot) => {
-//         users.push({
-//           ...documentSnapshot.data(),
-//           key: documentSnapshot.id,
-//         });
-//       });
-
-//       setUsers(users);
-//     });
-// }, []);
-
+// console.log(users)
 
 
 const { block, set, greaterThan, lessThan, Value, cond, sub } = Animated
 const windowHeight = Dimensions.get("window").height;
 
+
 const Lorem = () => (
   <View style={styles.bottomSheetContainer}>
     <View style={styles.bottomSheetInnerContainer}>
-      <Text>
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-        praesentium voluptatum deleniti atque corrupti quos dolores et quas
-        molestias excepturi sint occaecati cupiditate non provident, similique
-        sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-        dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-        impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
-        assumenda est, omnis dolor repellendus. 
-      </Text>
+      <Text></Text>
     </View>
   </View>
 )

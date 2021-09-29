@@ -1,37 +1,71 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  Alert,
-  Platform,
-  Dimensions,
-  ScrollView,
-} from "react-native";
-import MapView, {
-  PROVIDER_GOOGLE,
-  Marker,
-  Callout,
-  Polygon,
-  Circle,
-} from "react-native-maps";
+import { StyleSheet, View, Text, Image, Alert, Platform, Dimensions, ScrollView } from "react-native";
+import MapView, { PROVIDER_GOOGLE, Marker, Callout } from "react-native-maps";
 import Carousel from "react-native-snap-carousel";
 import mapData from "../../constants/Plaques_SmallDB.json";
 import { LinearGradient } from "expo-linear-gradient";
+import BottomSheet from 'reanimated-bottom-sheet';
+import Animated from 'react-native-reanimated';
 
+const { block, set, greaterThan, lessThan, Value, cond, sub } = Animated
+const windowHeight = Dimensions.get("window").height;
+// const Lorem = () => (
+//   <View style={styles.bottomSheetContainer}>
+//     <View style={styles.bottomSheetInnerContainer}>
+//       <Text></Text>
+//     </View>
+//   </View>
+// )
 export default class CarouselMap extends Component {
+
+// BELOW IS BottomScreen view
+  trans = new Value(0)
+  untraversedPos = new Value(0)
+  prevTrans = new Value(0)
+  headerPos = block([
+    cond(
+      lessThan(this.untraversedPos, sub(this.trans, 100)),
+      set(this.untraversedPos, sub(this.trans, 100))
+    ),
+    cond(
+      greaterThan(this.untraversedPos, this.trans),
+      set(this.untraversedPos, this.trans)
+    ),
+    set(this.prevTrans, this.trans),
+    this.untraversedPos,
+  ])
+  
+  renderInner = () => (
+    <View>
+      <Animated.View
+        style={{
+          zIndex: 1,
+          transform: [
+            {
+              translateY: this.headerPos,
+            },
+          ],
+        }}
+      >
+        {this.renderHeader('one')}
+        
+      </Animated.View>
+      {/* <Lorem />
+      <Lorem /> */}
+    </View>
+  )
+  
   static navigationOptions = {
     title: "Map Page",
   };
-
+  
   state = {
     markers: [],
     coordinates: [
       {
         name: "Prof HE Whitfeld, 1875-1939",
         description:
-          "Here is a little description. Longer dscription words...words...words...words...words...words...words...words...words...words...words...words...",
+        "Here is a little description. Longer dscription words...words...words...words...words...words...words...words...words...words...words...words...",
         latitude: -31.9763010875358,
         longitude: 115.817898240332,
         image: require("../assets/plaqueImages/whitfield2.png"),
@@ -64,7 +98,7 @@ export default class CarouselMap extends Component {
   };
   onCarouselItemChange = (index) => {
     let location = this.state.coordinates[index];
-
+    
     this._map.animateToRegion({
       latitude: location.latitude,
       longitude: location.longitude,
@@ -81,15 +115,23 @@ export default class CarouselMap extends Component {
       longitudeDelta: 0.0045,
     });
     this._carousel.snapToItem(index);
+    this._bottomsheet.snapToItem(index);
   };
+
   renderCarouselItem = ({ item }) => (
     <View style={styles.cardContainer}>
       <Text style={styles.cardTitle}>{item.name}</Text>
       <Image style={styles.cardImage} source={item.image} />
-      {/* <Text style={styles.cardDescription}>{item.description}</Text> */}
     </View>
   );
-
+  renderHeader = ({ item }) => (
+    // Header View section - Can have plauq name & minimize symbol
+    <View style={styles.headerContainer}>
+      <Text style={styles.plaqueHeader}>Name of Place</Text>
+      <Image source={require("../assets/upArrow.png")} style={styles.arrowLogo}></Image>
+    </View>
+  );
+  
   render() {
     return (
       <View style={styles.container}>
@@ -105,11 +147,11 @@ export default class CarouselMap extends Component {
             longitudeDelta: 0.0075,
           }}
         >
-          <Marker
+          {/* <Marker
             draggable
             coordinate={{ latitude: 37.7825259, longitude: -122.4351431 }}
             image={require("../assets/map_marker.png")}
-          ></Marker>
+          ></Marker> */}
           {this.state.coordinates.map((marker, index) => (
             <Marker
               key={marker.name}
@@ -143,12 +185,31 @@ export default class CarouselMap extends Component {
           itemWidth={300}
           removeClippedSubviews={false}
           onSnapToItem={(index) => this.onCarouselItemChange(index)}
-        />
+          />
+        
+{/* *****************      BOTTOMSHEET CODEBLOCK START     ********************* */}
+        
+        <BottomSheet
+          ref={(c) => {
+            this._carousel = c;
+          }}
+          data={this.state.coordinates}
+          renderItem={this.renderHeader}
+          contentPosition={this.trans}
+          snapPoints={[100, 400]}
+          renderContent={this.renderInner}
+          onSnapToItem={(index) => this.onCarouselItemChange(index)}
+
+          />
+
+{/* *****************      BOTTOMSHEET CODEBLOCK END     ********************* */}
+
       </View>
     );
   }
 }
 
+const IMAGE_SIZE = 200
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
@@ -163,21 +224,17 @@ const styles = StyleSheet.create({
   },
   bottomView: {
     width: "100%",
-    // backgroundColor: "red",
     height: 25,
     justifyContent: "center",
     alignItems: "center",
-    position: "absolute", //Here is the trick
-    bottom: 200, //Here is the trick
+    position: "absolute",
+    bottom: 200,
   },
   carousel: {
     position: "absolute",
     bottom: 0,
     marginBottom: 0,
-    // backgroundColor: 'rgba(255,255,255, 1)',
     backgroundColor: "#ececec",
-    // borderColor: 'rgba(105,105,105, 1)',
-    // borderTopWidth: 1,
     height: 220,
   },
   cardContainer: {
@@ -206,4 +263,35 @@ const styles = StyleSheet.create({
     fontSize: 18,
     alignSelf: "flex-start",
   },
+  headerContainer: {
+    width: '100%',
+    backgroundColor: '#ececec',
+    borderWidth: 0.5,
+    paddingVertical: 20,
+    justifyContent: 'center',
+    flexDirection: 'row', 
+    justifyContent: 'space-between',
+  },
+  plaqueHeader: {
+    fontSize: 18,
+    position: "relative",
+    fontWeight: "bold",
+    marginLeft: 15,
+  },
+  arrowLogo: {
+    height: 20,
+    width: 20,
+    opacity: 0.5,
+    marginRight: 15,
+  },
+  bottomSheetContainer: {
+    backgroundColor: 'white' 
+  },
+  bottomSheetInnerContainer: {
+    paddingVertical: 40,
+    width: "85%",
+    alignContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center'
+  }
 });
