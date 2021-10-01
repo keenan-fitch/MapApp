@@ -111,14 +111,3 @@ const styles = StyleSheet.create({
     }
 
 });
- /*
-     linktext: {
-        width: "80%",
-        top: 80,
-        borderRadius: 25,
-        alignSelf: "center",
-        fontSize:  16,
-        position: "relative",
-        color: 'blue',
-    },
- */
