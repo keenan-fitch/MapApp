@@ -52,8 +52,27 @@ function About(props) {
                     Jiayu Wu - email@email.com {"\n"}
                     Jordan Lee - email@email.com {"\n"}
                     Keenan Fitch - email@email.com {"\n"}
-                    {"\n"}{"\n"}{"\n"}{"\n"}{"\n"}
+                    {"\n"}
                 </Text>
+
+                <View style={styles.aboutBody}> 
+                <TextCollapse text={"Bibliography:"}/>
+                </View>
+                <Text style={styles.aboutBody}> 
+                    Bibliography:
+                    {"\n"}
+                </Text>
+                
+                <Text style={styles.aboutBody}> 
+                    Reference, 
+                </Text>
+                <Text style={{color:'blue', width: "80%", top: 80, borderRadius: 25,alignSelf: "center", fontSize:  16,position: "relative",}} //Does not accept styles.aboutbody
+                        onPress={() => Linking.openURL('https://www.web.uwa.edu.au/uwahs')}>
+                    Reference Link
+                    {"\n"}
+                </Text>
+
+                <Text>{"\n"}{"\n"}{"\n"}{"\n"}</Text>
             </ScrollView>
         </ImageBackground>   
     );
@@ -84,6 +103,7 @@ const styles = StyleSheet.create({
         // alignItems: "flex-end"
 
     },
+    
     aboutBody: {
         width: "80%",
         top: 80,
