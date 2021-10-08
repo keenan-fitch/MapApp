@@ -19,10 +19,19 @@ import MapView, {
 import Carousel from "react-native-snap-carousel";
 import mapData from "../../constants/Plaques_SmallDB.json";
 import { LinearGradient } from "expo-linear-gradient";
+import { SearchBar } from 'react-native-elements';
 
 export default class CarouselMap extends Component {
   static navigationOptions = {
     title: "Map Page",
+  };
+
+  state = {
+    search: '',
+  };
+
+  updateSearch = (search) => {
+    this.setState({ search });
   };
 
   state = {
@@ -91,8 +100,10 @@ export default class CarouselMap extends Component {
   );
 
   render() {
+    const { search } = this.state;
     return (
       <View style={styles.container}>
+        
         <MapView
           provider={PROVIDER_GOOGLE}
           ref={(map) => (this._map = map)}
@@ -105,6 +116,7 @@ export default class CarouselMap extends Component {
             longitudeDelta: 0.0075,
           }}
         >
+          
           <Marker
             draggable
             coordinate={{ latitude: 37.7825259, longitude: -122.4351431 }}
@@ -126,6 +138,11 @@ export default class CarouselMap extends Component {
             </Marker>
           ))}
         </MapView>
+        <SearchBar
+        placeholder="Type Here..."
+        onChangeText={this.updateSearch}
+        value={search}
+      />
         <View style={styles.bottomView}>
           <LinearGradient
             style={styles.gradient}
