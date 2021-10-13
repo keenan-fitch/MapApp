@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet, Text, ScrollView, Linking} from 'react-native';
+import { Image, ImageBackground, StyleSheet, Text, ScrollView, View, Linking} from 'react-native';
 
 
 function About(props) {
@@ -55,9 +55,6 @@ function About(props) {
                     {"\n"}
                 </Text>
 
-                <View style={styles.aboutBody}> 
-                <TextCollapse text={"Bibliography:"}/>
-                </View>
                 <Text style={styles.aboutBody}> 
                     Bibliography:
                     {"\n"}
