@@ -13,7 +13,6 @@ import {
 } from "react-native";
 import { render } from "react-dom";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
-import mapStyle from "../../constants/mapStyle.json";
 
 
 const firebaseConfig = {
@@ -32,7 +31,7 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 }
 
-function TestMapScreen() {
+function ScienceTour() {
   const [users, setUsers] = useState([]); // Initial empty array of users
   const windowHeight = Dimensions.get("window").height;
 
@@ -41,7 +40,7 @@ function TestMapScreen() {
 
     dbh
       .collection("WorkingDB_Reduced")
-      // .where("Narrative Tag", ">=", "Sciences")
+      .where("Narrative Tag", ">=", "Landmark Buildings ")
       .get()
       .then((querySnapshot) => {
         const users = [];
@@ -69,7 +68,6 @@ function TestMapScreen() {
         r
         style={{ flex: 1, minHeight: windowHeight }}
         provider={PROVIDER_GOOGLE}
-        customMapStyle={mapStyle}
       >
         {users.map((i, index) => (
           <Marker
@@ -87,4 +85,4 @@ function TestMapScreen() {
   );
 }
 
-export default TestMapScreen;
+export default ScienceTour;

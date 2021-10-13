@@ -10,13 +10,13 @@ import {
 
 function HomeScreen({ navigation }) {
   const pressHandler = () => {
-    navigation.navigate("TestMapScreen");
+    navigation.navigate("ExploreScreen");
   };
   const pressHandlerTour = () => {
     navigation.navigate("Tours");
   };
   const pressHandlerTest = () => {
-    navigation.navigate("ParisMap");
+    navigation.navigate("MapExp");
   };
   
   return (
@@ -36,19 +36,19 @@ function HomeScreen({ navigation }) {
       <View style={styles.buttonsContainer}>
         <Text style={styles.textHome}> HISTORIA </Text>
         <TouchableOpacity style={styles.roundButton} onPress={pressHandler}>
-          <Text style={styles.mapText}>GO TO MAP</Text>
+          <Text style={styles.mapText}>ExploreScreen</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
           <Text style={styles.tourText}>TAKE A TOUR</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
-          <Text style={styles.testText}>Test</Text>
+          <Text style={styles.testText}>TEST</Text>
         </TouchableOpacity>
       </View>
 
     </ImageBackground>
-  );
+  ); 
 }
 export default HomeScreen;
 
@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
     fontSize: 50,
     textAlign: "center",
     fontFamily: "Futura",
-   // fontWeight: "bold",
     letterSpacing: 10,
     alignContent: "center",
   },

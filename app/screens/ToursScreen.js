@@ -2,14 +2,28 @@ import React from 'react';
 import { Image, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 function ToursScreen({ navigation }) {
-    const pressHandlerMapTest = () => {
-        navigation.navigate("TestMapScreen");
+    const pressHandlerScience= () => {
+        navigation.navigate("Science");
       };
+    const pressHandlerLandmarks= () => {
+        navigation.navigate("Landmarks");
+    };
+    const pressHandlerPeople= () => {
+        navigation.navigate("People");
+      };
+    const pressHandlerNature= () => {
+        navigation.navigate("Nature");
+    };
+
+
+
+
+
     return (
         <ImageBackground style={styles.background}>
             <ScrollView style={styles.toursScrollView} directionalLockEnabled={true}>
 
-                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerMapTest}>
+                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerScience}>
                     <ImageBackground style={styles.tourImage} source={require("../assets/winthrop.jpeg")} >
                         <View style={styles.innerFrame}>
                             <Text style={styles.tourText}>SCIENCE</Text>
@@ -17,7 +31,7 @@ function ToursScreen({ navigation }) {
                     </ImageBackground >
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerMapTest}>
+                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerLandmarks}>
                     <ImageBackground style={styles.tourImage} source={require("../assets/sunsetCrop.png")} >
                         <View style={styles.innerFrame}>
                             <Text style={styles.tourText}>LANDMARK BUILDINGS</Text>
@@ -25,7 +39,7 @@ function ToursScreen({ navigation }) {
                     </ImageBackground >
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerMapTest}>
+                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerPeople}>
                     <ImageBackground style={styles.tourImage} source={require("../assets/people.jpeg")} >
                         <View style={styles.innerFrame}>
                             <Text style={styles.tourText}>IMPORTANT PEOPLE</Text>
@@ -33,7 +47,7 @@ function ToursScreen({ navigation }) {
                     </ImageBackground >
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerMapTest}>
+                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerNature}>
                     <ImageBackground style={styles.tourImage} source={require("../assets/sunkenGarden.jpeg")} >
                         <View style={styles.innerFrame}>
                             <Text style={styles.tourText}>NATURE & GARDENS</Text>
@@ -41,13 +55,13 @@ function ToursScreen({ navigation }) {
                     </ImageBackground >
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerMapTest}>
+                {/* <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerMapTest}>
                     <ImageBackground style={styles.tourImage} source={require("../assets/warHistory.jpeg")} >
                         <View style={styles.innerFrame}>
                             <Text style={styles.tourText}>WAR HISTORY</Text>
                         </View>
                     </ImageBackground >
-                </TouchableOpacity>
+                </TouchableOpacity> */}
 
                 
             </ScrollView>

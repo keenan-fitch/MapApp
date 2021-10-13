@@ -13,7 +13,6 @@ import {
 } from "react-native";
 import { render } from "react-dom";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
-import mapStyle from "../../constants/mapStyle.json";
 
 
 const firebaseConfig = {
@@ -40,9 +39,9 @@ function TestMapScreen() {
     const dbh = firebase.firestore();
 
     dbh
-      .collection("WorkingDB_Reduced")
-      // .where("Narrative Tag", ">=", "Sciences")
+      .collection("Plaques_SmallDB")
       .get()
+      // .where("Narrative Tag", ">=", "Music/Performance Art")
       .then((querySnapshot) => {
         const users = [];
 
@@ -69,7 +68,6 @@ function TestMapScreen() {
         r
         style={{ flex: 1, minHeight: windowHeight }}
         provider={PROVIDER_GOOGLE}
-        customMapStyle={mapStyle}
       >
         {users.map((i, index) => (
           <Marker

@@ -13,7 +13,6 @@ import {
 } from "react-native";
 import { render } from "react-dom";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
-import mapStyle from "../../constants/mapStyle.json";
 
 
 const firebaseConfig = {
@@ -32,7 +31,7 @@ if (!firebase.apps.length) {
   firebase.app(); // if already initialized, use that one
 }
 
-function TestMapScreen() {
+function RiverWalk() {
   const [users, setUsers] = useState([]); // Initial empty array of users
   const windowHeight = Dimensions.get("window").height;
 
@@ -40,9 +39,9 @@ function TestMapScreen() {
     const dbh = firebase.firestore();
 
     dbh
-      .collection("WorkingDB_Reduced")
-      // .where("Narrative Tag", ">=", "Sciences")
+      .collection("Plaques_SmallDB")
       .get()
+      // .where("Narrative Tag", ">=", "Art/Sculptures")
       .then((querySnapshot) => {
         const users = [];
 
@@ -69,7 +68,6 @@ function TestMapScreen() {
         r
         style={{ flex: 1, minHeight: windowHeight }}
         provider={PROVIDER_GOOGLE}
-        customMapStyle={mapStyle}
       >
         {users.map((i, index) => (
           <Marker
@@ -87,4 +85,4 @@ function TestMapScreen() {
   );
 }
 
-export default TestMapScreen;
+export default RiverWalk;

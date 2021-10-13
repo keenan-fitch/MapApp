@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MapApp_Sprint2_Demo",
-    "slug": "mapapp_sprint2_demo",
+    "name": "MapApp_KWF_Working",
+    "slug": "mapapp_kwf_working",
     "version": "1.0.0",
     "orientation": "default",
     "splash": {
@@ -30,6 +30,6 @@
     "web": {
       "favicon": "./app/assets/favicon.png"
     },
-    "description": "A Map which displays commemorative plaques on the UWA campus. With Added Navigation. "
+    "description": "A Map which displays commemorative plaques on the UWA campus. With Added Navigation.  Updated 5 October"
   }
 }
