@@ -8,7 +8,6 @@ function About(props) {
     return (
         <ImageBackground style={styles.background} source={require('../assets/#ececec.png')}>
             <ScrollView style={styles.scollV}>
-
                 <Text style={styles.aboutTitle}> ABOUT THE UWAHS</Text>
                 <Text></Text> 
 
@@ -26,27 +25,23 @@ function About(props) {
                 <Text style={styles.aboutBody}>
                 An extensive oral history program has also been vigorously pursued. 
                 A number of initiatives such as an annual Remembrance Day ceremony, the renewal of the WW1 Honour Board, and an Online WW2 Nominal Roll have all received grants.                </Text><Text></Text><Text></Text> 
-                <Image style={styles.imageW} source={require("../assets/winthrop.jpeg")} ></Image>
+                <Image style={styles.imageW} source={require("../assets/ABOUT_IMAGE.jpeg")} ></Image>
                 
                 <Text></Text> 
+                <Text style={styles.aboutImageComment}>
+                    Opening of Hackett Memorial Buildings - 15 April 1932 (UWA Archives 1975P courtesy of West Australian Newspapers Ltd)
+                </Text>
                 <Text style={styles.aboutBody}>
                 Membership is open to all interested in the Society’s aims. Please check the website for further information.                 </Text><Text></Text><Text></Text> 
 
                 <Text onPress={() => Linking.openURL(url)} style={{color: 'blue', position: 'relative', alignSelf: 'center', width: "80%", paddingTop: 80, fontSize: 18 }}>
                     https://www.web.uwa.edu.au/uwahs
                 </Text>
-                
-                
-                {/* <Text style={styles.aboutBody}>
-                https://www.web.uwa.edu.au/uwahs                </Text> */}
-
 
                 <Text></Text><Text></Text> 
                 <Text style={styles.aboutBody}>
                 </Text>
                 <Text></Text><Text></Text><Text></Text><Text></Text><Text></Text>
-
-
             </ScrollView>
         </ImageBackground>   
     );
@@ -80,16 +75,13 @@ const styles = StyleSheet.create({
         position: "relative",
         alignSelf: "center"
     },
-
     imageW: {
-        width: 300,
-        height: 150,
+        width: "80%",
+        height: "20%",
         top: 85,
         position: "relative",
         alignSelf: "center",
         alignContent: "flex-end"
-        // alignItems: "flex-end"
-
     },
     roundButton: {
         alignContent: "center",
@@ -129,9 +121,22 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         fontSize:  18,
         position: "relative",
-        color: "black"
-
+        color: "black",
+        fontFamily: "Palatino",
     },
+
+    aboutImageComment: {
+        width: "80%",
+        top: 75,
+        paddingBottom: 10,
+        borderRadius: 25,
+        alignSelf: "center",
+        fontSize:  12,
+        position: "relative",
+        color: "black",
+        fontFamily: "Palatino",
+    },
+    
     aboutHyperlink: {
         width: "80%",
         top: 90,
@@ -139,24 +144,25 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         fontSize:  18,
         position: "relative",
-        color: "blue"
-
+        color: "blue",
+        fontFamily: "Palatino",
     },
     aboutTitle: {
-        width: "80%",
+        width: "90%",
         top: 40,
         borderRadius: 25,
         alignSelf: "center",
         fontSize:  32,
         position: "relative",
         textAlign: "center",
-        fontFamily: "Futura",
+        fontFamily: "Palatino",
        // fontWeight: "bold",
         // letterSpacing: 10,
     },
     scollV: {
         width: "100%",
-        position: "relative"
+        position: "relative",
+        height: 1000,
     }
 
 });
