@@ -6,42 +6,59 @@ const url="https://www.web.uwa.edu.au/uwahs"
 
 function About(props) {
     return (
+
+
         <ImageBackground style={styles.background} source={require('../assets/#ececec.png')}>
             <ScrollView style={styles.scollV}>
-                <Text style={styles.aboutTitle}> ABOUT THE UWAHS</Text>
-                <Text></Text> 
-
+            <Text style={styles.aboutTitle}> ABOUT THE UWAHS</Text>
                 <Image style={styles.logo} source={{uri: "https://crowdresearch.uwa.edu.au/wp-content/uploads/2015/12/cropped-uwa-crest-512.png",}}>
-                
                 </Image>
                 <Text style={styles.aboutBody}>
-                The UWA Historical Society commenced in 2008 from the initiatives of a small group led by Prof Reg Appleyard and Heritage Officer, Shobha Cameron. 
-                It received founding financial assistance from the Convocation of UWA graduates, and the support of Vice-Chancellor Prof. Alan Robson.                  </Text>
-                <Text></Text> 
-                <Text></Text> 
+                    The UWA Historical Society commenced in 2008 from the initiatives of a small group led by Prof Reg Appleyard and the then Heritage Officer, Shobha Cameron. It received founding financial assistance from the Convocation of UWA graduates, and the support of Vice-Chancellor Prof. Alan Robson. The first event was a public lecture by Robert French, the Chief Justice of the High Court of Australia.
+                    {"\n"}
+                </Text>
                 <Text style={styles.aboutBody}>
-                Further, distinguished graduates and staff continue to offer annual lectures in the lead-up to University Centenary celebrations. 
-                The Society has conducted numerous seminars and walking tours of campus and produced associated publications from small, commemorative leaflets to the more substantial, ‘Personalities and Places on the Crawley Campus.’                </Text><Text></Text><Text></Text> 
+                    Further distinguished graduates and staff offered Annual Lectures in the lead-up to the University Centenary celebrations. The Society has conducted seminars on ‘The Founding Professors’ and numerous ‘walking tours’ of the historical architectural features of the Crawley Campus, together with associated publications. 
+                    {"\n"}
+                </Text>
+
                 <Text style={styles.aboutBody}>
-                An extensive oral history program has also been vigorously pursued. 
-                A number of initiatives such as an annual Remembrance Day ceremony, the renewal of the WW1 Honour Board, and an Online WW2 Nominal Roll have all received grants.                </Text><Text></Text><Text></Text> 
+                    An extensive professional quality Oral History program has been vigorously pursued. A number of initiatives such as an annual ceremony to mark Remembrance Day, in conjunction with the University Regiment, the renewal of the WW1 Honour Board.
+                    {"\n"}
+                </Text>
+
                 <Image style={styles.imageW} source={require("../assets/ABOUT_IMAGE.jpeg")} ></Image>
-                
-                <Text></Text> 
                 <Text style={styles.aboutImageComment}>
                     Opening of Hackett Memorial Buildings - 15 April 1932 (UWA Archives 1975P courtesy of West Australian Newspapers Ltd)
                 </Text>
-                <Text style={styles.aboutBody}>
-                Membership is open to all interested in the Society’s aims. Please check the website for further information.                 </Text><Text></Text><Text></Text> 
 
-                <Text onPress={() => Linking.openURL(url)} style={{color: 'blue', position: 'relative', alignSelf: 'center', width: "80%", paddingTop: 80, fontSize: 18 }}>
-                    https://www.web.uwa.edu.au/uwahs
+                <Text style={styles.aboutBody3}>
+                    From small leaflets commemorating the Old Dolphin Theatre, Anniversaries of the Sunken Garden Amphitheatre, the Octagon and New Fortune theatres, more substantial publications have been created by the small group of volunteers. ‘Personalities and Places on the Crawley Campus’ has already needed a reprint.
+                    {"\n"}
+                </Text>
+                <Text style={styles.aboutBody2}>
+                    {"\n"}
+                    The University Archivist is an ex-officio member of the annually elected working Committee. The membership fee is modest and open to all interested in the Society’s aims.
+                    {"\n"}
+                </Text>
+                <Text style={styles.aboutBody2}>
+                    {"\n"}
+                    Please check the website for further information. 
                 </Text>
 
-                <Text></Text><Text></Text> 
-                <Text style={styles.aboutBody}>
+                <Text style={{color:'blue', width: "80%", top: 0, borderRadius: 25,alignSelf: "center", fontSize:  16,position: "relative",}} //Does not accept styles.aboutbody
+                        onPress={() => Linking.openURL('https://www.web.uwa.edu.au/uwahs')}>
+                    Tap to go to the UWAHS Website!
+                    {"\n"}
                 </Text>
-                <Text></Text><Text></Text><Text></Text><Text></Text><Text></Text>
+                <View>
+                    <Text style={styles.referencesTitle}>
+                        {"\n"}{"\n"}{"\n"}{"\n"}
+                        References:
+                        {"\n"}
+                    </Text>
+                </View>
+
             </ScrollView>
         </ImageBackground>   
     );
@@ -75,14 +92,6 @@ const styles = StyleSheet.create({
         position: "relative",
         alignSelf: "center"
     },
-    imageW: {
-        width: "80%",
-        height: "20%",
-        top: 85,
-        position: "relative",
-        alignSelf: "center",
-        alignContent: "flex-end"
-    },
     roundButton: {
         alignContent: "center",
         justifyContent: "center",
@@ -100,7 +109,7 @@ const styles = StyleSheet.create({
         padding: "2%",
         fontSize:  33,
         marginTop: '70%'
-      },
+    },
     mapText: {
         backgroundColor: '#27348b',
         color: 'white',
@@ -112,8 +121,8 @@ const styles = StyleSheet.create({
         fontSize:  27,
         marginTop: '10%',
         alignSelf: "center"
-      },
-
+    },
+    
     aboutBody: {
         width: "80%",
         top: 90,
@@ -124,17 +133,62 @@ const styles = StyleSheet.create({
         color: "black",
         fontFamily: "Palatino",
     },
-
-    aboutImageComment: {
+    aboutBody2: {
         width: "80%",
-        top: 75,
-        paddingBottom: 10,
+        top: -50,
         borderRadius: 25,
         alignSelf: "center",
+        fontSize:  18,
+        position: "relative",
+        color: "black",
+        fontFamily: "Palatino",
+    },
+    referencesTitle: {
+        width: "80%",
+        top: -50,
+        borderRadius: 25,
+        alignSelf: "center",
+        fontSize:  18,
+        position: "relative",
+        color: "black",
+        fontFamily: "Palatino",
+        fontWeight: 'bold',
+    },
+    aboutBody3: {
+        width: "80%",
+        top: -50,
+        borderRadius: 25,
+        alignSelf: "center",
+        fontSize:  18,
+        position: "relative",
+        color: "black",
+        fontFamily: "Palatino",
+    },
+    
+    aboutImageComment: {
+        marginHorizontal: "10%",
+        top: -80,
         fontSize:  12,
         position: "relative",
         color: "black",
         fontFamily: "Palatino",
+    },
+    // imageContainer: {
+        // flex: 1,
+        // backgroundColor: "red",
+        // width: "80%",
+        // height: '20%',
+        // alignSelf: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center'
+        // height: 300
+    // },
+    imageW: {
+        width: "80%",
+        resizeMode: 'contain',
+        position: 'relative',
+        alignSelf: "center",
+        alignContent: "flex-end"
     },
     
     aboutHyperlink: {

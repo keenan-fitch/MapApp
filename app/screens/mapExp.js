@@ -71,6 +71,7 @@ function Map() {
       "Description": "Press on a marker to get information about a plaque.",
       "PreviewTitle": "Select A Marker",
       "Title": "Select A Marker",
+      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/uwamap-cbeb4.appspot.com/o/Map_Marker.png?alt=media&token=a1047351-0a65-4beb-a487-760c7e593d0a",
     }
 
    const [plaque, setPlaque] = useState(initialState);
