@@ -60,15 +60,24 @@ function About(props) {
                     {"\n"}
                 </Text>
                 
-                <Text style={styles.aboutBody}> 
-                    Reference, 
+                <Text style={styles.bibloBody}> 
+                5 Lamps of Knowledge (Image) Library Team, 2021. Archive collections. [online] UWA. Available at: https://www.uwa.edu.au/library/find-resources/records-and-archives/archive-collections [Accessed 14 October 2021]. {"\n"}{"\n"}
+                Anechoic Chamber (Image and Description) Prisco, J., 2021. Inside the world's quietest room. [online] CNN. Available at: https://edition.cnn.com/style/article/anechoic-chamber-worlds-quietest-room/index.html [Accessed 14 October 2021]. {"\n"}{"\n"}
+                Berndt Museum of Anthropology (Image and Description), Mayman, J., 2021. 'I want to tell my children': The history hidden in Berndt's notebooks. [online] Smh.com.au. Available at: https://www.smh.com.au/national/i-want-to-tell-my-children-the-history-hidden-in-berndt-s-notebooks-20181211-p50lg3.html [Accessed 14 October 2021]. {"\n"}{"\n"}
+                The Boat Shed (Description) Campus News, 1994: 13(20): 3; Ferguson, R.J. (1993) Crawley Campus. {"\n"}{"\n"}
+                George Munns (Description) Seddon, G. and Lilleyman, G., 2006. A Landscape for Learning. 1st ed. Perth: UWA Press. {"\n"}{"\n"}
+                Japanese Garden (Image) Mark Evans, UWA Friends of the Grounds 2009 Photographic Competition. {"\n"}{"\n"}
+                Japanese Garden (Description) Seddon, G. and Lilleyman, G., 2006. A Landscape for Learning. 1st ed. Perth: UWA Press, p.124. {"\n"}{"\n"}
+                Plant Form (Image) Library Team, 2021. Archive collections. [online] UWA. Available at: https://www.uwa.edu.au/library/find-resources/records-and-archives/archive-collections [Accessed 14 October 2021]. {"\n"}{"\n"}
+                Prof. H.E. Whitfeld (Image) Library Team, 2021. Archive collections. [online] UWA. Available at: https://www.uwa.edu.au/library/find-resources/records-and-archives/archive-collections [Accessed 14 October 2021]. {"\n"}{"\n"}
+                Queen and Duke Trees (Image) Library Team, 2021. Archive collections. [online] UWA. Available at: https://www.uwa.edu.au/library/find-resources/records-and-archives/archive-collections [Accessed 14 October 2021]. {"\n"}{"\n"}
+                Rodney Alsop Memorial (Image) Library Team, 2021. Archive collections. [online] UWA. Available at: https://www.uwa.edu.au/library/find-resources/records-and-archives/archive-collections [Accessed 14 October 2021]. {"\n"}{"\n"}
+                Sir Stanley Prescott (Image) photograph provided by Nigel Prescott ADB; Pope, J and Birman, W and Bodycoat R Personalities and Places on Crawley Campus UWAHS 2013. {"\n"}{"\n"}
+                Socrates (Image) Library Team, 2021. Archive collections. [online] UWA. Available at: https://www.uwa.edu.au/library/find-resources/records-and-archives/archive-collections [Accessed 14 October 2021]. {"\n"}{"\n"}
+                Whelan Court (Image) Glover, W. E., 'Robert Ford Whelan 1922-1984', Historical Records of Australian Science, 6 (3) (1986), 409-421. {"\n"}{"\n"}
+                Whitfeld Court (Image) Library Team, 2021. Archive collections. [online] UWA. Available at: https://www.uwa.edu.au/library/find-resources/records-and-archives/archive-collections [Accessed 14 October 2021]. {"\n"}{"\n"}
+                Winthrop Hall (Image) Library Team, 2021. Archive collections. [online] UWA. Available at: https://www.uwa.edu.au/library/find-resources/records-and-archives/archive-collections [Accessed 14 October 2021]. {"\n"}{"\n"}{"\n"}
                 </Text>
-                <Text style={{color:'blue', width: "80%", top: 80, borderRadius: 25,alignSelf: "center", fontSize:  16,position: "relative",}} //Does not accept styles.aboutbody
-                        onPress={() => Linking.openURL('https://www.web.uwa.edu.au/uwahs')}>
-                    Reference Link
-                    {"\n"}
-                </Text>
-
                 <Text>{"\n"}{"\n"}{"\n"}{"\n"}</Text>
             </ScrollView>
         </ImageBackground>   
@@ -120,6 +129,14 @@ const styles = StyleSheet.create({
         fontFamily: "Futura",
        // fontWeight: "bold",
         // letterSpacing: 10,
+    },
+    bibloBody: {
+        width: "80%",
+        top: 80,
+        borderRadius: 25,
+        alignSelf: "center",
+        fontSize:  7,
+        position: "relative",
     },
     scrollV: {
         flex: 1,
