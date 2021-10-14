@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 200,
         alignItems: 'center',
-
     },
     textHome: {
         top: 30,
@@ -116,13 +115,13 @@ const styles = StyleSheet.create({
         alignContent: "center"
     },
     tourText: {
-        fontSize: 45,
+        fontSize: 50,
         alignSelf: "center",
         textAlignVertical: "center",
         color: "white",
         fontWeight: "bold",
         alignSelf: "center",
-        fontFamily: "Futura",
+        fontFamily: "Palatino",
         textAlign: "center",
         borderColor: "black",
         borderRadius: 20,

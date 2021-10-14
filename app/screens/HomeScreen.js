@@ -1,22 +1,15 @@
 import React from "react";
-import {
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 function HomeScreen({ navigation }) {
   const pressHandler = () => {
-    navigation.navigate("ExploreScreen");
+    navigation.navigate("MAP");
   };
   const pressHandlerTour = () => {
-    navigation.navigate("Tours");
+    navigation.navigate("TOURS");
   };
   const pressHandlerTest = () => {
-    navigation.navigate("MapExp");
+    navigation.navigate("ABOUT");
   };
   
   return (
@@ -36,14 +29,14 @@ function HomeScreen({ navigation }) {
       <View style={styles.buttonsContainer}>
         <Text style={styles.textHome}> HISTORIA </Text>
         <TouchableOpacity style={styles.roundButton} onPress={pressHandler}>
-          <Text style={styles.mapText}>ExploreScreen</Text>
+          <Text style={styles.mapText}>GO TO MAP</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
           <Text style={styles.tourText}>TAKE A TOUR</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
-          <Text style={styles.testText}>TEST</Text>
+          <Text style={styles.testText}>ABOUT PAGE</Text>
         </TouchableOpacity>
       </View>
 
@@ -79,7 +72,7 @@ const styles = StyleSheet.create({
     // top: 40,
     fontSize: 50,
     textAlign: "center",
-    fontFamily: "Futura",
+    fontFamily: "Palatino",
     letterSpacing: 10,
     alignContent: "center",
   },
@@ -121,7 +114,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     alignSelf: "center",
-    fontFamily: "Futura",
+    fontFamily: "Palatino",
   },
   testText: {
     backgroundColor: "#265521",
@@ -134,12 +127,10 @@ const styles = StyleSheet.create({
     borderWidth: 5,
     textAlign: "center",
     fontWeight: "bold",
-    //marginLeft: '11%',
     padding: "3%",
     fontSize: 25,
-    //marginTop: '10%',
     alignSelf: "center",
-    fontFamily: "Futura",
+    fontFamily: "Palatino",
   },
   mapText: {
     backgroundColor: "#27348b",
@@ -155,6 +146,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginBottom: "5%",
     alignSelf: "center",
-    fontFamily: "Futura",
+    fontFamily: "Palatino",
   },
 });

@@ -1,22 +1,20 @@
 // Where we configure the stack navigator
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
-import Home from "../app/screens/HomeScreen";
+import HOME from "../app/screens/HomeScreen";
 import MapScreen from "../app/screens/MapScreen";
-import Tours from "../app/screens/ToursScreen.js";
-import About from "../app/screens/AboutScreen.js";
+import TOURS from "../app/screens/ToursScreen.js";
+import ABOUT from "../app/screens/AboutScreen.js";
 
 // Importing Temporary Screens
 import CarouselMap from "../app/screens/carourselMap.js";
 import TestMapScreen from "../app/screens/TestMapScreen.js";
 import BottomSheetScreen from "../app/screens/BottomSheetScreen.js";
-import mapBottomSheet from "../app/screens/mapBottomSheet.js";
 import ParisMap from "../app/screens/parisMap.js";
 import cardView from "../app/screens/cardView.js";
 import simpleExpand from "../app/screens/simpleExpand.js";
-import MapExp from "../app/screens/mapExp.js";
+import MAP from "../app/screens/mapExp.js";
 import ExploreScreen from "../app/screens/foodTest.js";
-import MapPage from "../app/screens/basicMap.js";
 import newMap from "../app/screens/newMap.js";
 
 /// Importing all the tour screens:
@@ -29,20 +27,20 @@ import Science from "../app/screens/TourScreens/ScienceTour.js";
 
 
 const screens = {
-  Home: {
-    screen: Home,
+  HOME: {
+    screen: HOME,
   },
   TestMapScreen: {
     screen: TestMapScreen,
   },
-  About: {
-    screen: About,
+  ABOUT: {
+    screen: ABOUT,
   },
   MapScreen: {
     screen: MapScreen,
   },
-  Tours: {
-    screen: Tours,
+  TOURS: {
+    screen: TOURS,
   },
   CarouselMap: {
     screen: CarouselMap,
@@ -77,15 +75,15 @@ const screens = {
   simpleExpand : {
     screen: simpleExpand,
   },
-  MapExp: {
-    screen: MapExp,
+  MAP: {
+    screen: MAP,
   },
   ExploreScreen: {
     screen: ExploreScreen,
   },
-  BasicMap: {
-    screen: MapPage,
-  },
+  // BasicMap: {
+  //   screen: MapPage,
+  // },
   newMap: {
     screen: newMap,
   }
