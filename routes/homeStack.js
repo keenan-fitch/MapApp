@@ -18,12 +18,12 @@ import ExploreScreen from "../app/screens/foodTest.js";
 import newMap from "../app/screens/newMap.js";
 
 /// Importing all the tour screens:
-import Art from "../app/screens/TourScreens/ArtScuplturesTour.js";
-import People from "../app/screens/TourScreens/ImportantPeopleTour.js";
-import Landmarks from "../app/screens/TourScreens/LandmarkBuldingsTour.js";
-import Music from "../app/screens/TourScreens/MusicPerformanceTour.js";
-import Nature from "../app/screens/TourScreens/NatureGarensTour.js";
-import Science from "../app/screens/TourScreens/ScienceTour.js";
+import ART from "../app/screens/TourScreens/ArtScuplturesTour.js";
+import PEOPLE from "../app/screens/TourScreens/ImportantPeopleTour.js";
+import LANDMARKS from "../app/screens/TourScreens/LandmarkBuldingsTour.js";
+import MUSIC from "../app/screens/TourScreens/MusicPerformanceTour.js";
+import NATURE from "../app/screens/TourScreens/NatureGarensTour.js";
+import SCIENCE from "../app/screens/TourScreens/ScienceTour.js";
 
 
 const screens = {
@@ -51,23 +51,23 @@ const screens = {
   ParisMap: {
     screen: ParisMap,
   },
-  Art: {
-    screen: Art,
+  ART: {
+    screen: ART,
   },
-  People: {
-    screen: People,
+  PEOPLE: {
+    screen: PEOPLE,
   },
-  Landmarks: {
-    screen: Landmarks,
+  LANDMARKS: {
+    screen: LANDMARKS,
   },
-  Music: {
-    screen: Music,
+  MUSIC: {
+    screen: MUSIC,
   },
-  Nature: {
-    screen: Nature,
+  NATURE: {
+    screen: NATURE,
   },
-  Science: {
-    screen: Science,
+  SCIENCE: {
+    screen: SCIENCE,
   },
   cardView: {
     screen: cardView,

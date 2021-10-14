@@ -11,10 +11,9 @@ function HomeScreen({ navigation }) {
   const pressHandlerTest = () => {
     navigation.navigate("ABOUT");
   };
-  
+
   return (
-    <ImageBackground style={styles.background} source={require('../assets/#ececec.png')}
-    >
+    <ImageBackground style={styles.background} imageStyle={{opacity:0.3}} source={require('../assets/rock.jpeg')}>
       <View style={styles.logoContainer}>
         {<Image
           style={styles.logo}
@@ -24,8 +23,6 @@ function HomeScreen({ navigation }) {
         ></Image>}
       </View>
 
-
-
       <View style={styles.buttonsContainer}>
         <Text style={styles.textHome}> HISTORIA </Text>
         <TouchableOpacity style={styles.roundButton} onPress={pressHandler}>
@@ -34,12 +31,10 @@ function HomeScreen({ navigation }) {
         <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTour}>
           <Text style={styles.tourText}>TAKE A TOUR</Text>
         </TouchableOpacity>
-
         <TouchableOpacity style={styles.roundButton} onPress={pressHandlerTest}>
           <Text style={styles.testText}>ABOUT PAGE</Text>
         </TouchableOpacity>
       </View>
-
     </ImageBackground>
   ); 
 }
@@ -47,8 +42,11 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   background: {
+    // backgroundColor:'black',
     flex: 1,
-    justifyContent: "flex-end",
+    height: '100%',
+    // resizeMode: 'contain',
+    // justifyContent: "center",
     alignItems: "center",
   },
   loginButton: {
@@ -58,22 +56,25 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     position: "absolute",
-    top: 50,
+    top: 60,
     alignItems: "center",
   },
-
   buttonsContainer: {
     position: "absolute",
     bottom: 0,
-    // alignItems: "center",
     justifyContent: "flex-end",
   },
   textHome: {
     // top: 40,
     fontSize: 50,
+    // color: 'white',
+    // textShadowColor: "white",
+    // textShadowRadius: 5,
     textAlign: "center",
     fontFamily: "Palatino",
-    letterSpacing: 10,
+    fontWeight: '900',
+    letterSpacing: 7,
+    paddingBottom: 15,
     alignContent: "center",
   },
   logo: {
@@ -82,22 +83,11 @@ const styles = StyleSheet.create({
   },
   roundButton: {
     top: 25,
+    // 
     alignContent: "center",
     justifyContent: "center",
     width: "100%",
     alignSelf: "center",
-  },
-  signup: {
-    backgroundColor: "white",
-    color: "#3A59FF",
-    width: "65%",
-    borderRadius: 25,
-    textAlign: "center",
-    fontWeight: "bold",
-    marginLeft: "18%",
-    padding: "2%",
-    fontSize: 33,
-    marginTop: "70%",
   },
   tourText: {
     backgroundColor: "#e2b600",
@@ -105,16 +95,16 @@ const styles = StyleSheet.create({
     width: "90%",
     overflow: 'hidden',
     marginBottom: "5%",
-    borderRadius: 30,
-    borderColor: "black",
-    borderWidth: 5,
+    borderRadius: 20,
+    borderColor: "#202020",
+    borderWidth: 3,
     textAlign: "center",
-    fontWeight: "bold",
     padding: "3%",
     fontSize: 25,
-    fontWeight: "bold",
+    fontWeight: "500",
     alignSelf: "center",
     fontFamily: "Palatino",
+    letterSpacing: 1.5,
   },
   testText: {
     backgroundColor: "#265521",
@@ -122,30 +112,32 @@ const styles = StyleSheet.create({
     width: "90%",
     overflow: 'hidden',
     marginBottom: "15%",
-    borderRadius: 30,
-    borderColor: "black",
-    borderWidth: 5,
+    borderRadius: 20,
+    borderColor: "#202020",
+    borderWidth: 3,
     textAlign: "center",
-    fontWeight: "bold",
+    fontWeight: "500",
     padding: "3%",
     fontSize: 25,
     alignSelf: "center",
     fontFamily: "Palatino",
+    letterSpacing: 1.5,
   },
   mapText: {
     backgroundColor: "#27348b",
     color: "white",
     width: "90%",
-    borderRadius: 30,
-    borderColor: "black",
-    borderWidth: 5,
+    borderRadius: 20,
+    borderColor: "#202020",
+    borderWidth: 3,
     overflow: 'hidden',
     textAlign: "center",
-    fontWeight: "bold",
+    fontWeight: "500",
     padding: "3%",
     fontSize: 25,
     marginBottom: "5%",
     alignSelf: "center",
     fontFamily: "Palatino",
+    letterSpacing: 1.5,
   },
 });

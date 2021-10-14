@@ -3,16 +3,16 @@ import { Image, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity,
 
 function ToursScreen({ navigation }) {
     const pressHandlerScience= () => {
-        navigation.navigate("Science");
+        navigation.navigate("SCIENCE");
       };
     const pressHandlerLandmarks= () => {
-        navigation.navigate("Landmarks");
+        navigation.navigate("ART");
     };
     const pressHandlerPeople= () => {
-        navigation.navigate("People");
+        navigation.navigate("PEOPLE");
       };
     const pressHandlerNature= () => {
-        navigation.navigate("Nature");
+        navigation.navigate("NATURE");
     };
 
 
@@ -34,7 +34,7 @@ function ToursScreen({ navigation }) {
                 <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerLandmarks}>
                     <ImageBackground style={styles.tourImage} source={require("../assets/sunsetCrop.png")} >
                         <View style={styles.innerFrame}>
-                            <Text style={styles.tourText}>LANDMARK BUILDINGS</Text>
+                            <Text style={styles.tourText}>ART & SCULPTURES</Text>
                         </View>
                     </ImageBackground >
                 </TouchableOpacity>
@@ -42,7 +42,7 @@ function ToursScreen({ navigation }) {
                 <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerPeople}>
                     <ImageBackground style={styles.tourImage} source={require("../assets/people.jpeg")} >
                         <View style={styles.innerFrame}>
-                            <Text style={styles.tourText}>IMPORTANT PEOPLE</Text>
+                            <Text style={styles.tourText}>HISTORICAL FIGURES</Text>
                         </View>
                     </ImageBackground >
                 </TouchableOpacity>

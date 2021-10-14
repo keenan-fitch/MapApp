@@ -79,7 +79,7 @@ function Map() {
 
    const pressMarker = (i) => {
       setPlaque(i);
-      // console.log(i.ImageUrl)
+      console.log(plaque)
       // Image.getSize(plaque.ImageUrl, (width, height) => {this.setState({width, height})});
       // console.log(imageWidth)
       return(plaque)
@@ -90,6 +90,7 @@ function Map() {
       const dbh = firebase.firestore();
       dbh
       .collection("FINAL_DEMO_DB_V1")
+      // .where("NarrativeTag", ">=", "Science")
       .get()
       .then((querySnapshot) => {
          const users = [];
@@ -136,9 +137,10 @@ function Map() {
                   <View>
                      <Text style={styles.plaqueTitleScrollview}>{plaque.Title}</Text>
                      <Text style={styles.paragraphLeft}>{plaque.Description}</Text>
-                     <Text style={styles.paragraphLeft}>{plaque.LocationString}</Text>
-                     <Text style={styles.paragraphLeft}>{plaque.Year}</Text>
-                     <Text style={styles.paragraphLeft}>{plaque.CreatorString}</Text>
+                     <Text style={styles.paragraphInfo}>{plaque.NarrativeTag}</Text>
+                     <Text style={styles.paragraphInfo}>{plaque.LocationString}</Text>
+                     <Text style={styles.paragraphInfo}>{plaque.Year}</Text>
+                     <Text style={styles.paragraphInfo}>{plaque.CreatorString}</Text>
                      <View style={styles.bottomImageContainter}>
                         <Image style={styles.plaqueImageBottom} source={{ url: plaque.ImageUrl2 }}/>
                      </View>
@@ -178,6 +180,13 @@ const styles = StyleSheet.create({
    paragraphLeft: {
       fontFamily: "Palatino",
       margin: 28,
+      fontSize: 14,
+      alignSelf: 'flex-start',
+      marginHorizontal: "10%",
+    },
+   paragraphInfo: {
+      fontFamily: "Palatino",
+      margin: 18,
       fontSize: 14,
       alignSelf: 'flex-start',
       marginHorizontal: "10%",

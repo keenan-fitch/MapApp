@@ -11,8 +11,8 @@ import "firebase/firestore";
 // import * as Font from 'expo-font';
 import * as ScreenOrientation from 'expo-screen-orientation';
 
-
 export default function App() {
+
 
 // Lines below App only functions in Portrait mode (No landscape Orientation)
   React.useEffect(() => {
