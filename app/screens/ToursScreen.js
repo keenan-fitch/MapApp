@@ -5,7 +5,7 @@ function ToursScreen({ navigation }) {
     const pressHandlerScience= () => {
         navigation.navigate("SCIENCE");
       };
-    const pressHandlerLandmarks= () => {
+    const pressHandlerArt= () => {
         navigation.navigate("ART");
     };
     const pressHandlerPeople= () => {
@@ -13,6 +13,9 @@ function ToursScreen({ navigation }) {
       };
     const pressHandlerNature= () => {
         navigation.navigate("NATURE");
+    };
+    const pressHandlerLandmarks= () => {
+        navigation.navigate("LANDMARKS");
     };
 
 
@@ -23,18 +26,35 @@ function ToursScreen({ navigation }) {
         <ImageBackground style={styles.background}>
             <ScrollView style={styles.toursScrollView} directionalLockEnabled={true}>
 
-                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerScience}>
-                    <ImageBackground style={styles.tourImage} source={require("../assets/winthrop.jpeg")} >
+
+                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerLandmarks}>
+                    <ImageBackground style={styles.tourImage} source={require("../assets/winthrop_small.jpeg")} >
                         <View style={styles.innerFrame}>
-                            <Text style={styles.tourText}>SCIENCE</Text>
+                            <Text style={styles.tourText}>LANDMARK BUILDINGS</Text>
                         </View>
                     </ImageBackground >
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerLandmarks}>
-                    <ImageBackground style={styles.tourImage} source={require("../assets/sunsetCrop.png")} >
+                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerArt}>
+                    <ImageBackground style={styles.tourImage} source={require("../assets/sunsetCrop_small.jpeg")} >
                         <View style={styles.innerFrame}>
                             <Text style={styles.tourText}>ART & SCULPTURES</Text>
+                        </View>
+                    </ImageBackground >
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerScience}>
+                    <ImageBackground style={styles.tourImage} source={require("../assets/rock_small.jpeg")} >
+                        <View style={styles.innerFrame}>
+                            <Text style={styles.tourText}>SCIENCES</Text>
+                        </View>
+                    </ImageBackground >
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerNature}>
+                    <ImageBackground style={styles.tourImage} source={require("../assets/sunkenGarden.jpeg")} >
+                        <View style={styles.innerFrame}>
+                            <Text style={styles.tourText}>NATURE & GARDENS</Text>
                         </View>
                     </ImageBackground >
                 </TouchableOpacity>
@@ -47,13 +67,6 @@ function ToursScreen({ navigation }) {
                     </ImageBackground >
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerNature}>
-                    <ImageBackground style={styles.tourImage} source={require("../assets/sunkenGarden.jpeg")} >
-                        <View style={styles.innerFrame}>
-                            <Text style={styles.tourText}>NATURE & GARDENS</Text>
-                        </View>
-                    </ImageBackground >
-                </TouchableOpacity>
 
                 {/* <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerMapTest}>
                     <ImageBackground style={styles.tourImage} source={require("../assets/warHistory.jpeg")} >

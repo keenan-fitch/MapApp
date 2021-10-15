@@ -217,23 +217,26 @@ const styles = StyleSheet.create({
    },
    plaqueImageBottom: {
       height: "20%",
+      minHeight: 150,
       width: "80%",
       alignSelf: 'center',
       paddingBottom: 10,
    },
    plaqueImage: {
       flex: 1,
+      minHeight: 150,
       // height: undefined,
       height: "100%",
       // minHeight: 10,
       width: "90%",
-      // maxHeight: 350,
+      maxHeight: 350,
       alignSelf: 'center',
-      resizeMode: 'contain'
+      // resizeMode: 'contain'
    },
    plaqueImageContainer: {
       // flex: 2,
-      height: "50%",
+      // height: "50%",
+      height: 390,
       // marginHorizontal: "5%",
       
       // width: '90%',
