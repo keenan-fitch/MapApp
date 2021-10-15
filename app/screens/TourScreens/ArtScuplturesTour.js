@@ -71,9 +71,12 @@ function Map() {
    const pressMarker = (i) => {
       setPlaque(i);
       console.log(plaque)
-      // Image.getSize(plaque.ImageUrl, (width, height) => {this.setState({width, height})});
-      // console.log(imageWidth)
-      return(plaque)
+      this._map.animateToRegion({
+         latitude: i.Latitude,
+         longitude: i.Longitude,
+         latitudeDelta: 0.0015,
+         longitudeDelta: 0.0015,
+       });
     };
 
 
@@ -102,16 +105,17 @@ function Map() {
       <>
       <MapView
         initialRegion={{ latitude: -31.98093734685109, longitude: 115.81848976510486, latitudeDelta: 0.01, longitudeDelta: 0.01 }}
-        r
+      //   r
         style={{ flex: 1, minHeight: windowHeight }}
         provider={PROVIDER_GOOGLE}
         customMapStyle={mapStyle}
         showsUserLocation={true}
+        ref={(map) => (this._map = map)}
       >
         {users.map((i, index) => (
           <Marker key={index} onPress = {() => pressMarker(i)}
             coordinate={{ latitude: i.Latitude, longitude: i.Longitude }}
-            // title={i.Title} 
+            title={i.Title} 
           />
         ))}
       </MapView>
@@ -216,23 +220,25 @@ const styles = StyleSheet.create({
    },
    plaqueImageBottom: {
       height: "20%",
+      minHeight: 150,
       width: "80%",
       alignSelf: 'center',
       paddingBottom: 10,
    },
    plaqueImage: {
       flex: 1,
+      minHeight: 150,
       // height: undefined,
       height: "100%",
       // minHeight: 10,
       width: "90%",
-      // maxHeight: 350,
+      maxHeight: 350,
       alignSelf: 'center',
-      resizeMode: 'contain'
+      // resizeMode: 'contain'
    },
    plaqueImageContainer: {
-      // flex: 2,
-      height: "50%",
+
+      height: 390,
       // marginHorizontal: "5%",
       
       // width: '90%',
