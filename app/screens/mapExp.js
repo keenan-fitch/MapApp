@@ -7,8 +7,6 @@ import { render } from "react-dom";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import mapStyle from "../../constants/mapStyle.json";
 import { TouchableOpacity } from 'react-native-gesture-handler';
-// import { Montserrat_400Regular, Montserrat_600SemiBold, Montserrat_700Bold, Montserrat_900Black } from '@expo-google-fonts/montserrat';
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXyXraHgu5hZW89RiJCd5MxcR1Ct3HAK4",
@@ -60,13 +58,6 @@ function Map() {
    const [users, setUsers] = useState([]); // Initial empty array of users
    const windowHeight = Dimensions.get("window").height;
 
-   // const state = {
-   //    plaque: {
-   //       PreviewTitle: "Select A Marker.",
-   //       Description: "Press on a marker to get plaque information"
-   //    },
-   // };
-
    const initialState = {
       "Description": "Press on a marker to get information about a plaque.",
       "PreviewTitle": "Select A Marker",
@@ -89,8 +80,12 @@ function Map() {
    useEffect(() => {
       const dbh = firebase.firestore();
       dbh
-      .collection("FINAL_DEMO_DB_V1")
+      .collection("DB_FINAL_V2")
       // .where("NarrativeTag", ">=", "Science")
+      // .where("NarrativeTag", ">=", "People")
+      // .where("NarrativeTag", ">=", "Art")
+      // .where("NarrativeTag", ">=", "Landmarks")
+      // .where("NarrativeTag", ">=", "Nature")
       .get()
       .then((querySnapshot) => {
          const users = [];
@@ -139,11 +134,11 @@ function Map() {
                      <Text style={styles.paragraphLeft}>{plaque.Description}</Text>
                      <Text style={styles.paragraphInfo}>{plaque.NarrativeTag}</Text>
                      <Text style={styles.paragraphInfo}>{plaque.LocationString}</Text>
-                     <Text style={styles.paragraphInfo}>{plaque.Year}</Text>
+                     <Text style={styles.paragraphInfo}>{plaque.YearString}</Text>
                      <Text style={styles.paragraphInfo}>{plaque.CreatorString}</Text>
-                     <View style={styles.bottomImageContainter}>
-                        <Image style={styles.plaqueImageBottom} source={{ url: plaque.ImageUrl2 }}/>
-                     </View>
+                     <Image style={styles.plaqueImageBottom} source={{ url: plaque.ImageUrl2 }}/>
+                     {/* <View style={styles.bottomImageContainter}>
+                     </View> */}
                   </View>
                </View>
             </ScrollView>
@@ -206,17 +201,11 @@ const styles = StyleSheet.create({
       width: "90%",
      },
    scrollviewContainer: {
-      // position: 'relative',
       backgroundColor: 'white',
       marginHorizontal: "5%",
       alignSelf: 'center',
       width: "100%",
       height: "400%",
-      // height: 200,
-      // height: undefined,
-      // bottom: 0,
-      // marginBottom: 20,
-      // backgroundColor: 'red'
    },
    outerScrollContianer: {
       position: 'relative',
@@ -227,8 +216,8 @@ const styles = StyleSheet.create({
       marginHorizontal: "10%",
    },
    plaqueImageBottom: {
-      height: "100%",
-      width: "100%",
+      height: "20%",
+      width: "80%",
       alignSelf: 'center',
       paddingBottom: 10,
    },
