@@ -27,10 +27,10 @@ function ToursScreen({ navigation }) {
             <ScrollView style={styles.toursScrollView} directionalLockEnabled={true}>
 
 
-                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerLandmarks}>
-                    <ImageBackground style={styles.tourImage} source={require("../assets/winthrop_small.jpeg")} >
+                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerPeople}>
+                    <ImageBackground style={styles.tourImage} source={require("../assets/people.jpeg")} >
                         <View style={styles.innerFrame}>
-                            <Text style={styles.tourText}>LANDMARK BUILDINGS</Text>
+                            <Text style={styles.tourText}>HISTORICAL FIGURES</Text>
                         </View>
                     </ImageBackground >
                 </TouchableOpacity>
@@ -59,14 +59,14 @@ function ToursScreen({ navigation }) {
                     </ImageBackground >
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerPeople}>
-                    <ImageBackground style={styles.tourImage} source={require("../assets/people.jpeg")} >
+
+                <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerLandmarks}>
+                    <ImageBackground style={styles.tourImage} source={require("../assets/winthrop_small.jpeg")} >
                         <View style={styles.innerFrame}>
-                            <Text style={styles.tourText}>HISTORICAL FIGURES</Text>
+                            <Text style={styles.tourText}>LANDMARK BUILDINGS</Text>
                         </View>
                     </ImageBackground >
                 </TouchableOpacity>
-
 
                 {/* <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerMapTest}>
                     <ImageBackground style={styles.tourImage} source={require("../assets/warHistory.jpeg")} >
