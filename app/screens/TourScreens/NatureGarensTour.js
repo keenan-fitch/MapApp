@@ -169,21 +169,21 @@ const styles = StyleSheet.create({
    //  ...StyleSheet.absoluteFillObject,
    },
    paragraph: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       margin: 28,
       fontSize: 14,
       fontWeight: 'bold',
       alignSelf: 'center',
      },
    paragraphLeft: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       margin: 28,
       fontSize: 14,
       alignSelf: 'flex-start',
       marginHorizontal: "10%",
     },
    paragraphInfo: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       margin: 18,
       fontSize: 14,
       alignSelf: 'flex-start',
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     },
 
    imageComment: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       margin: 28,
       fontSize: 12,
       alignSelf: 'center',
@@ -228,7 +228,6 @@ const styles = StyleSheet.create({
    plaqueImage: {
       flex: 1,
       minHeight: 150,
-      // height: undefined,
       height: "100%",
       // minHeight: 10,
       width: "90%",
@@ -237,20 +236,9 @@ const styles = StyleSheet.create({
       // resizeMode: 'contain'
    },
    plaqueImageContainer: {
-
       height: 390,
-      // marginHorizontal: "5%",
-      
-      // width: '90%',
-      // height: undefined,
-      // resizeMode: 'contain',
-      // alignSelf: 'center',
-      // // height: ,
-      // backgroundColor: 'red',
-      // justifyContent: 'center'
    },
    expandingView: {
-      // flex: 1,
       position: 'absolute',
       bottom: 0,
       backgroundColor: "rgba(236, 236, 236, 0.8)",
@@ -299,7 +287,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
    },
    plaqueTitle: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       color: 'white',
       fontSize: 20,
       marginStart: 10,
@@ -307,7 +295,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center'
    },
    plaqueTitleScrollview: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       fontWeight: 'bold',
       color: 'black',
       fontSize: 28,

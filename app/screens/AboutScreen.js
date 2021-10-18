@@ -5,8 +5,6 @@ const url="https://www.web.uwa.edu.au/uwahs"
 
 function About(props) {
     return (
-
-
         <ImageBackground style={styles.background} source={require('../assets/#ececec.png')}>
             <ScrollView style={styles.scollV}>
             <Text style={styles.aboutTitle}> ABOUT THE UWAHS</Text>
@@ -161,7 +159,7 @@ const styles = StyleSheet.create({
         fontSize:  18,
         position: "relative",
         color: "black",
-        fontFamily: "Palatino",
+        fontFamily: "Merriweather_300Light",
     },
     biblioBody: {
         width: "80%",
@@ -172,7 +170,7 @@ const styles = StyleSheet.create({
         position: "relative",
         fontStyle: 'italic',
         color: "black",
-        fontFamily: "Palatino",
+        fontFamily: "Merriweather_300Light",
     },
     emailBody: {
         width: "80%",
@@ -183,7 +181,7 @@ const styles = StyleSheet.create({
         position: "relative",
         color: "black",
         lineHeight: 20,
-        fontFamily: "Palatino",
+        fontFamily: "Merriweather_300Light",
     },
     aboutBody2: {
         width: "80%",
@@ -193,7 +191,7 @@ const styles = StyleSheet.create({
         fontSize:  18,
         position: "relative",
         color: "black",
-        fontFamily: "Palatino",
+        fontFamily: "Merriweather_300Light",
     },
     referencesTitle: {
         width: "80%",
@@ -203,7 +201,7 @@ const styles = StyleSheet.create({
         fontSize:  18,
         position: "relative",
         color: "black",
-        fontFamily: "Palatino",
+        fontFamily: "Merriweather_300Light",
         fontWeight: 'bold',
     },
     aboutBody3: {
@@ -214,7 +212,7 @@ const styles = StyleSheet.create({
         fontSize:  18,
         position: "relative",
         color: "black",
-        fontFamily: "Palatino",
+        fontFamily: "Merriweather_300Light",
     },
     
     aboutImageComment: {
@@ -223,7 +221,7 @@ const styles = StyleSheet.create({
         fontSize:  12,
         position: "relative",
         color: "black",
-        fontFamily: "Palatino",
+        fontFamily: "Merriweather_300Light",
     },
     // imageContainer: {
         // flex: 1,
@@ -251,7 +249,7 @@ const styles = StyleSheet.create({
         fontSize:  18,
         position: "relative",
         color: "blue",
-        fontFamily: "Palatino",
+        fontFamily: "Merriweather_300Light",
     },
     aboutTitle: {
         width: "90%",
@@ -261,9 +259,7 @@ const styles = StyleSheet.create({
         fontSize:  32,
         position: "relative",
         textAlign: "center",
-        fontFamily: "Palatino",
-       // fontWeight: "bold",
-        // letterSpacing: 10,
+        fontFamily: "Merriweather_300Light",
     },
     scollV: {
         width: "100%",

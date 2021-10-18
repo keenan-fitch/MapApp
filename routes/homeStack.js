@@ -2,20 +2,10 @@
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 import HOME from "../app/screens/HomeScreen";
-import MapScreen from "../app/screens/MapScreen";
+// import MapScreen from "../app/screens/MapScreen";
 import TOURS from "../app/screens/ToursScreen.js";
 import ABOUT from "../app/screens/AboutScreen.js";
-
-// Importing Temporary Screens
-import CarouselMap from "../app/screens/carourselMap.js";
-import TestMapScreen from "../app/screens/TestMapScreen.js";
-import BottomSheetScreen from "../app/screens/BottomSheetScreen.js";
-import ParisMap from "../app/screens/parisMap.js";
-import cardView from "../app/screens/cardView.js";
-import simpleExpand from "../app/screens/simpleExpand.js";
 import MAP from "../app/screens/mapExp.js";
-import ExploreScreen from "../app/screens/foodTest.js";
-import newMap from "../app/screens/newMap.js";
 
 /// Importing all the tour screens:
 import ART from "../app/screens/TourScreens/ArtScuplturesTour.js";
@@ -30,26 +20,14 @@ const screens = {
   HOME: {
     screen: HOME,
   },
-  TestMapScreen: {
-    screen: TestMapScreen,
-  },
-  ABOUT: {
-    screen: ABOUT,
-  },
-  MapScreen: {
-    screen: MapScreen,
+  MAP: {
+    screen: MAP,
   },
   TOURS: {
     screen: TOURS,
   },
-  CarouselMap: {
-    screen: CarouselMap,
-  },
-  BottomSheetScreen: {
-    screen: BottomSheetScreen,
-  },
-  ParisMap: {
-    screen: ParisMap,
+  ABOUT: {
+    screen: ABOUT,
   },
   ART: {
     screen: ART,
@@ -69,24 +47,6 @@ const screens = {
   SCIENCE: {
     screen: SCIENCE,
   },
-  cardView: {
-    screen: cardView,
-  },
-  simpleExpand : {
-    screen: simpleExpand,
-  },
-  MAP: {
-    screen: MAP,
-  },
-  ExploreScreen: {
-    screen: ExploreScreen,
-  },
-  // BasicMap: {
-  //   screen: MapPage,
-  // },
-  newMap: {
-    screen: newMap,
-  }
 };
 
 const HomeStack = createStackNavigator(screens);

@@ -3,10 +3,12 @@ import "firebase/firestore";
 import "react-native-gesture-handler";
 import React, { useState, useRef, Component, useEffect, event } from "react";
 import {StyleSheet,View,Text, FlatList, SafeAreaView, Animated, Dimensions, Image, ScrollView } from "react-native";
-import { render } from "react-dom";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import mapStyle from "../../constants/mapStyle.json";
 import { TouchableOpacity } from 'react-native-gesture-handler';
+
+// import { useFonts, Merriweather_400Regular, Merriweather_400Regular_Italic,
+//    Merriweather_700Bold, Merriweather_700Bold_Italic, Merriweather_900Black, Merriweather_900Black_Italic } from '@expo-google-fonts/merriweather';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXyXraHgu5hZW89RiJCd5MxcR1Ct3HAK4",
@@ -25,6 +27,17 @@ if (!firebase.apps.length) {
 }
 
 function Map() {
+   // let [fontsLoaded, error] = useFonts({
+   //    // Merri-Reg, 
+   //    // Merriweather_400Regular, 
+   //    // Merriweather_700Bold, 
+   //    // Merriweather_900Black,
+   //    // Merri-Reg_Italic, 
+   //    // Merriweather_400Regular_Italic, 
+   //    // Merriweather_700Bold_Italic, 
+   //    // Merriweather_900Black_Italic,
+   //    "Merri-Reg": require('../assets/Fonts/Merriweather-Regular.ttf')
+   //  });
 
    const [collapsed, setCollapsed] = useState(true);
    const [maxLines, setMaxLines] = useState(2);
@@ -67,6 +80,7 @@ function Map() {
 
    const [plaque, setPlaque] = useState(initialState);
 
+   const scrollViewRef = React.createRef();
 
    const pressMarker = (i) => {
       setPlaque(i);
@@ -81,16 +95,10 @@ function Map() {
       return(plaque)
     };
 
-
    useEffect(() => {
       const dbh = firebase.firestore();
       dbh
       .collection("DB_FINAL_V2")
-      // .where("NarrativeTag", ">=", "Science")
-      // .where("NarrativeTag", ">=", "People")
-      // .where("NarrativeTag", ">=", "Art")
-      // .where("NarrativeTag", ">=", "Landmarks")
-      // .where("NarrativeTag", ">=", "Nature")
       .get()
       .then((querySnapshot) => {
          const users = [];
@@ -108,8 +116,6 @@ function Map() {
       <>
       <MapView
         initialRegion={{ latitude: -31.98093734685109, longitude: 115.81848976510486, latitudeDelta: 0.01, longitudeDelta: 0.01 }}
-      //   r
-        
         style={{ flex: 1, minHeight: windowHeight }}
         provider={PROVIDER_GOOGLE}
         customMapStyle={mapStyle}
@@ -130,7 +136,9 @@ function Map() {
             <Image source={require("../assets/upArrowWhite.png")} style={styles.arrowLogo}></Image>
          </TouchableOpacity>
          <Animated.View style={{maxHeight: animationHeight}}>
-            <ScrollView style={styles.scrollviewContainer}>
+            <ScrollView style={styles.scrollviewContainer}
+               ref={scrollViewRef}
+            >
                <View style={{bottom: 0, flex: 1, paddingBottom: 900, height: '100%'}}>
                   <View style={styles.plaqueImageContainer}>
                      <Image style={styles.plaqueImage} source={{ url: plaque.ImageUrl }}/>
@@ -144,8 +152,6 @@ function Map() {
                      <Text style={styles.paragraphInfo}>{plaque.YearString}</Text>
                      <Text style={styles.paragraphInfo}>{plaque.CreatorString}</Text>
                      <Image style={styles.plaqueImageBottom} source={{ url: plaque.ImageUrl2 }}/>
-                     {/* <View style={styles.bottomImageContainter}>
-                     </View> */}
                   </View>
                </View>
             </ScrollView>
@@ -170,24 +176,23 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
    },
    expandContainer: {
-   //  ...StyleSheet.absoluteFillObject,
    },
    paragraph: {
-      fontFamily: "Palatino",
+      fontFamily: "Merri-Reg",
       margin: 28,
       fontSize: 14,
       fontWeight: 'bold',
       alignSelf: 'center',
      },
    paragraphLeft: {
-      fontFamily: "Palatino",
+      fontFamily: "Merri-Reg",
       margin: 28,
       fontSize: 14,
       alignSelf: 'flex-start',
       marginHorizontal: "10%",
     },
    paragraphInfo: {
-      fontFamily: "Palatino",
+      fontFamily: "Merri-Reg",
       margin: 18,
       fontSize: 14,
       alignSelf: 'flex-start',
@@ -195,7 +200,7 @@ const styles = StyleSheet.create({
     },
 
    imageComment: {
-      fontFamily: "Palatino",
+      fontFamily: "Merri-Reg",
       margin: 28,
       fontSize: 12,
       alignSelf: 'center',
@@ -232,29 +237,15 @@ const styles = StyleSheet.create({
    plaqueImage: {
       flex: 1,
       minHeight: 150,
-      // height: undefined,
       height: "100%",
-      // minHeight: 10,
       width: "90%",
       maxHeight: 350,
       alignSelf: 'center',
-      // resizeMode: 'contain'
    },
    plaqueImageContainer: {
-
       height: 390,
-      // marginHorizontal: "5%",
-      
-      // width: '90%',
-      // height: undefined,
-      // resizeMode: 'contain',
-      // alignSelf: 'center',
-      // // height: ,
-      // backgroundColor: 'red',
-      // justifyContent: 'center'
    },
    expandingView: {
-      // flex: 1,
       position: 'absolute',
       bottom: 0,
       backgroundColor: "rgba(236, 236, 236, 0.8)",
@@ -303,7 +294,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
    },
    plaqueTitle: {
-      fontFamily: "Palatino",
+      fontFamily: "Merri-Reg",
       color: 'white',
       fontSize: 20,
       marginStart: 10,
@@ -311,7 +302,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center'
    },
    plaqueTitleScrollview: {
-      fontFamily: "Palatino",
+      fontFamily: "Merri-Reg",
       fontWeight: 'bold',
       color: 'black',
       fontSize: 28,

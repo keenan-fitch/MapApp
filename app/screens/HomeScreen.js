@@ -1,5 +1,12 @@
 import React from "react";
+import { AppLoading } from "expo";
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+// Fonts:
+// import { useFonts, Montserrat_200ExtraLight, Montserrat_400Regular, Montserrat_400Regular_Italic, Montserrat_500Medium,Montserrat_600SemiBold,
+//   Montserrat_700Bold,Montserrat_900Black,} from '@expo-google-fonts/montserrat';
+// import { useFonts, Merriweather_300Light, Merriweather_300Light_Italic, Merriweather_400Regular, Merriweather_400Regular_Italic,
+//   Merriweather_700Bold, Merriweather_700Bold_Italic, Merriweather_900Black, Merriweather_900Black_Italic } from '@expo-google-fonts/merriweather';
+
 
 function HomeScreen({ navigation }) {
   const pressHandler = () => {
@@ -42,11 +49,8 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   background: {
-    // backgroundColor:'black',
     flex: 1,
     height: '100%',
-    // resizeMode: 'contain',
-    // justifyContent: "center",
     alignItems: "center",
   },
   loginButton: {
@@ -65,14 +69,9 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   textHome: {
-    // top: 40,
     fontSize: 50,
-    // color: 'white',
-    // textShadowColor: "white",
-    // textShadowRadius: 5,
     textAlign: "center",
-    fontFamily: "Palatino",
-    fontWeight: '900',
+    fontFamily: "Merriweather_400Regular",
     letterSpacing: 7,
     paddingBottom: 15,
     alignContent: "center",
@@ -83,7 +82,6 @@ const styles = StyleSheet.create({
   },
   roundButton: {
     top: 25,
-    // 
     alignContent: "center",
     justifyContent: "center",
     width: "100%",
@@ -101,9 +99,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     padding: "3%",
     fontSize: 25,
-    fontWeight: "500",
     alignSelf: "center",
-    fontFamily: "Palatino",
+    fontFamily: "Merriweather_400Regular",
     letterSpacing: 1.5,
   },
   testText: {
@@ -116,11 +113,10 @@ const styles = StyleSheet.create({
     borderColor: "#202020",
     borderWidth: 3,
     textAlign: "center",
-    fontWeight: "500",
     padding: "3%",
     fontSize: 25,
     alignSelf: "center",
-    fontFamily: "Palatino",
+    fontFamily: "Merriweather_400Regular",
     letterSpacing: 1.5,
   },
   mapText: {
@@ -132,12 +128,11 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     overflow: 'hidden',
     textAlign: "center",
-    fontWeight: "500",
     padding: "3%",
     fontSize: 25,
     marginBottom: "5%",
     alignSelf: "center",
-    fontFamily: "Palatino",
+    fontFamily: "Merriweather_400Regular",
     letterSpacing: 1.5,
   },
 });

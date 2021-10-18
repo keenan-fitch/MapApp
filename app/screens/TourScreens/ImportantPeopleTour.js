@@ -169,21 +169,21 @@ const styles = StyleSheet.create({
    //  ...StyleSheet.absoluteFillObject,
    },
    paragraph: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       margin: 28,
       fontSize: 14,
       fontWeight: 'bold',
       alignSelf: 'center',
      },
    paragraphLeft: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       margin: 28,
       fontSize: 14,
       alignSelf: 'flex-start',
       marginHorizontal: "10%",
     },
    paragraphInfo: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       margin: 18,
       fontSize: 14,
       alignSelf: 'flex-start',
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
     },
 
    imageComment: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       margin: 28,
       fontSize: 12,
       alignSelf: 'center',
@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
    },
    plaqueTitle: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       color: 'white',
       fontSize: 20,
       marginStart: 10,
@@ -307,7 +307,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center'
    },
    plaqueTitleScrollview: {
-      fontFamily: "Palatino",
+      // fontFamily: "Palatino",
       fontWeight: 'bold',
       color: 'black',
       fontSize: 28,

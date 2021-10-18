@@ -19,9 +19,6 @@ function ToursScreen({ navigation }) {
     };
 
 
-
-
-
     return (
         <ImageBackground style={styles.background}>
             <ScrollView style={styles.toursScrollView} directionalLockEnabled={true}>
@@ -67,15 +64,6 @@ function ToursScreen({ navigation }) {
                         </View>
                     </ImageBackground >
                 </TouchableOpacity>
-
-                {/* <TouchableOpacity style={styles.tourContainer} onPress={pressHandlerMapTest}>
-                    <ImageBackground style={styles.tourImage} source={require("../assets/warHistory.jpeg")} >
-                        <View style={styles.innerFrame}>
-                            <Text style={styles.tourText}>WAR HISTORY</Text>
-                        </View>
-                    </ImageBackground >
-                </TouchableOpacity> */}
-
                 
             </ScrollView>
         </ImageBackground>
@@ -134,11 +122,10 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "bold",
         alignSelf: "center",
-        fontFamily: "Palatino",
+        fontFamily: "Merriweather_400Regular",
         textAlign: "center",
         borderColor: "black",
         borderRadius: 20,
-
     },
     innerFrame: {
         flex: 1, 

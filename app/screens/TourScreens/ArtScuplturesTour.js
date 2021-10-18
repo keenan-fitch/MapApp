@@ -7,6 +7,9 @@ import { render } from "react-dom";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import mapStyle from "../../../constants/mapStyle.json";
 import { TouchableOpacity } from 'react-native-gesture-handler';
+// import { useFonts, Merriweather_400Regular, Merriweather_400Regular_Italic,
+//    Merriweather_700Bold, Merriweather_700Bold_Italic, Merriweather_900Black, Merriweather_900Black_Italic } from '@expo-google-fonts/merriweather';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXyXraHgu5hZW89RiJCd5MxcR1Ct3HAK4",
@@ -25,6 +28,10 @@ if (!firebase.apps.length) {
 }
 
 function Map() {
+   // let [fontsLoaded, error] = useFonts({
+   //    "Merri-Reg": require('../../assets/Fonts/Merriweather-Regular.ttf')
+   //    "Merri-Bold": require('../../assets/Fonts/Merriweather-Bold.ttf')
+   //  });
 
    const [collapsed, setCollapsed] = useState(true);
    const [maxLines, setMaxLines] = useState(2);
@@ -169,21 +176,21 @@ const styles = StyleSheet.create({
    //  ...StyleSheet.absoluteFillObject,
    },
    paragraph: {
-      fontFamily: "Palatino",
+      // fontFamily: "Merri-Reg",
       margin: 28,
       fontSize: 14,
       fontWeight: 'bold',
       alignSelf: 'center',
      },
    paragraphLeft: {
-      fontFamily: "Palatino",
+      // fontFamily: "Merri-Reg",
       margin: 28,
       fontSize: 14,
       alignSelf: 'flex-start',
       marginHorizontal: "10%",
     },
    paragraphInfo: {
-      fontFamily: "Palatino",
+      // fontFamily: "Merri-Reg",
       margin: 18,
       fontSize: 14,
       alignSelf: 'flex-start',
@@ -191,7 +198,7 @@ const styles = StyleSheet.create({
     },
 
    imageComment: {
-      fontFamily: "Palatino",
+      // fontFamily: "Merri-Reg",
       margin: 28,
       fontSize: 12,
       alignSelf: 'center',
@@ -228,7 +235,6 @@ const styles = StyleSheet.create({
    plaqueImage: {
       flex: 1,
       minHeight: 150,
-      // height: undefined,
       height: "100%",
       // minHeight: 10,
       width: "90%",
@@ -237,17 +243,7 @@ const styles = StyleSheet.create({
       // resizeMode: 'contain'
    },
    plaqueImageContainer: {
-
       height: 390,
-      // marginHorizontal: "5%",
-      
-      // width: '90%',
-      // height: undefined,
-      // resizeMode: 'contain',
-      // alignSelf: 'center',
-      // // height: ,
-      // backgroundColor: 'red',
-      // justifyContent: 'center'
    },
    expandingView: {
       // flex: 1,
@@ -299,7 +295,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
    },
    plaqueTitle: {
-      fontFamily: "Palatino",
+      // fontFamily: "Merri-Reg",
       color: 'white',
       fontSize: 20,
       marginStart: 10,
@@ -307,7 +303,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center'
    },
    plaqueTitleScrollview: {
-      fontFamily: "Palatino",
+      // fontFamily: "Merri-Reg",
       fontWeight: 'bold',
       color: 'black',
       fontSize: 28,
