@@ -11,7 +11,6 @@ import MAP from "../app/screens/mapExp.js";
 import ART from "../app/screens/TourScreens/ArtScuplturesTour.js";
 import PEOPLE from "../app/screens/TourScreens/ImportantPeopleTour.js";
 import LANDMARKS from "../app/screens/TourScreens/LandmarkBuldingsTour.js";
-import MUSIC from "../app/screens/TourScreens/MusicPerformanceTour.js";
 import NATURE from "../app/screens/TourScreens/NatureGarensTour.js";
 import SCIENCE from "../app/screens/TourScreens/ScienceTour.js";
 
@@ -37,9 +36,6 @@ const screens = {
   },
   LANDMARKS: {
     screen: LANDMARKS,
-  },
-  MUSIC: {
-    screen: MUSIC,
   },
   NATURE: {
     screen: NATURE,

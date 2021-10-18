@@ -1,9 +1,21 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View, ScrollView, Linking } from 'react-native';
-
+import { useFonts, Merriweather_300Light, Merriweather_300Light_Italic, Merriweather_400Regular, Merriweather_400Regular_Italic,
+    Merriweather_700Bold, Merriweather_700Bold_Italic, Merriweather_900Black, Merriweather_900Black_Italic } from '@expo-google-fonts/merriweather';
+  
 const url="https://www.web.uwa.edu.au/uwahs"
 
 function About(props) {
+    let [fontsLoaded, error] = useFonts({
+        Merriweather_300Light, 
+        Merriweather_400Regular, 
+        Merriweather_700Bold, 
+        Merriweather_900Black,
+        Merriweather_300Light_Italic, 
+        Merriweather_400Regular_Italic, 
+        Merriweather_700Bold_Italic, 
+        Merriweather_900Black_Italic,
+      });
     return (
         <ImageBackground style={styles.background} source={require('../assets/#ececec.png')}>
             <ScrollView style={styles.scollV}>

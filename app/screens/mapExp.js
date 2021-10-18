@@ -27,17 +27,6 @@ if (!firebase.apps.length) {
 }
 
 function Map() {
-   // let [fontsLoaded, error] = useFonts({
-   //    // Merri-Reg, 
-   //    // Merriweather_400Regular, 
-   //    // Merriweather_700Bold, 
-   //    // Merriweather_900Black,
-   //    // Merri-Reg_Italic, 
-   //    // Merriweather_400Regular_Italic, 
-   //    // Merriweather_700Bold_Italic, 
-   //    // Merriweather_900Black_Italic,
-   //    "Merri-Reg": require('../assets/Fonts/Merriweather-Regular.ttf')
-   //  });
 
    const [collapsed, setCollapsed] = useState(true);
    const [maxLines, setMaxLines] = useState(2);
@@ -141,6 +130,8 @@ function Map() {
             >
                <View style={{bottom: 0, flex: 1, paddingBottom: 900, height: '100%'}}>
                   <View style={styles.plaqueImageContainer}>
+
+                     {/* Note: Image retrieval mode usings "URI" call to suit Android, however causes warning in IOS */}
                      <Image style={styles.plaqueImage} source={{ uri: plaque.ImageUrl }}/>
                      <Text style={styles.imageComment}>{plaque.ImageComment}</Text>
                   </View>
@@ -151,7 +142,8 @@ function Map() {
                      <Text style={styles.paragraphInfo}>{plaque.LocationString}</Text>
                      <Text style={styles.paragraphInfo}>{plaque.YearString}</Text>
                      <Text style={styles.paragraphInfo}>{plaque.CreatorString}</Text>
-                     <Image style={styles.plaqueImageBottom} source={{ uri: plaque.ImageUrl2 }}/>
+                     {/* <Image style={styles.plaqueImageBottom} source={{ uri: plaque.ImageUrl2 }}/> */}
+                     <Image style={styles.plaqueImageBottom} source={plaque.ImageUrl2 ? { uri: plaque.ImageUrl2 } : null}/>
                   </View>
                </View>
             </ScrollView>
@@ -178,21 +170,21 @@ const styles = StyleSheet.create({
    expandContainer: {
    },
    paragraph: {
-      fontFamily: "Merri-Reg",
+      // fontFamily: "Merri-Reg",
       margin: 28,
       fontSize: 14,
       fontWeight: 'bold',
       alignSelf: 'center',
      },
    paragraphLeft: {
-      fontFamily: "Merri-Reg",
+      // fontFamily: "Merri-Reg",
       margin: 28,
       fontSize: 14,
       alignSelf: 'flex-start',
       marginHorizontal: "10%",
     },
    paragraphInfo: {
-      fontFamily: "Merri-Reg",
+      // fontFamily: "Merri-Reg",
       margin: 18,
       fontSize: 14,
       alignSelf: 'flex-start',
@@ -200,7 +192,7 @@ const styles = StyleSheet.create({
     },
 
    imageComment: {
-      fontFamily: "Merri-Reg",
+      // fontFamily: "Merri-Reg",
       margin: 28,
       fontSize: 12,
       alignSelf: 'center',
@@ -294,7 +286,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
    },
    plaqueTitle: {
-      fontFamily: "Merri-Reg",
+      // fontFamily: "Merri-Reg",
       color: 'white',
       fontSize: 20,
       marginStart: 10,
@@ -302,7 +294,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center'
    },
    plaqueTitleScrollview: {
-      fontFamily: "Merri-Reg",
+      // fontFamily: "Merri-Reg",
       fontWeight: 'bold',
       color: 'black',
       fontSize: 28,
