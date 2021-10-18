@@ -141,7 +141,7 @@ function Map() {
             >
                <View style={{bottom: 0, flex: 1, paddingBottom: 900, height: '100%'}}>
                   <View style={styles.plaqueImageContainer}>
-                     <Image style={styles.plaqueImage} source={{ url: plaque.ImageUrl }}/>
+                     <Image style={styles.plaqueImage} source={{ uri: plaque.ImageUrl }}/>
                      <Text style={styles.imageComment}>{plaque.ImageComment}</Text>
                   </View>
                   <View>
@@ -151,7 +151,7 @@ function Map() {
                      <Text style={styles.paragraphInfo}>{plaque.LocationString}</Text>
                      <Text style={styles.paragraphInfo}>{plaque.YearString}</Text>
                      <Text style={styles.paragraphInfo}>{plaque.CreatorString}</Text>
-                     <Image style={styles.plaqueImageBottom} source={{ url: plaque.ImageUrl2 }}/>
+                     <Image style={styles.plaqueImageBottom} source={{ uri: plaque.ImageUrl2 }}/>
                   </View>
                </View>
             </ScrollView>
