@@ -1,33 +1,33 @@
 {
   "project_info": {
     "project_number": "497447936019",
-    "project_id": "mapapp-c5b1e",
-    "storage_bucket": "mapapp-c5b1e.appspot.com"
+    "project_id": "XXXXXXXXXXXX",
+    "storage_bucket": "XXXXXXXXXXXX",
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:497447936019:android:907242e9b5c2972ffe1fe6",
+        "mobilesdk_app_id": "XXXXXXXXXXXX",
         "android_client_info": {
           "package_name": "au.com.testmapapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "497447936019-5vebl8pgl574a82tg3n4rdku28a3ntmv.apps.googleusercontent.com",
+          "client_id": "XXXXXXXXXXXX",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDQvqNfa_X9XYm6tYfDGhrhcu51noitchQ"
+          "current_key": "XXXXXXXXXXXX",
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "497447936019-5vebl8pgl574a82tg3n4rdku28a3ntmv.apps.googleusercontent.com",
+              "client_id": "XXXXXXXXXXXX",
               "client_type": 3
             }
           ]
