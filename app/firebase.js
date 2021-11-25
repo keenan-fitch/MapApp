@@ -7,13 +7,13 @@ import 'firebase/storage';
 
 
 const firebaseConfig = {
-   apiKey: "AIzaSyDXyXraHgu5hZW89RiJCd5MxcR1Ct3HAK4",
-   authDomain: "uwamap-cbeb4.firebaseapp.com",
-   projectId: "uwamap-cbeb4",
-   storageBucket: "uwamap-cbeb4.appspot.com",
-   messagingSenderId: "379875741857",
-   appId: "1:379875741857:web:1a621c346fc873ff4760e0",
-   measurementId: "G-08Y6D94TDZ",
+   apiKey: "XXXXXXXXXXXX"
+   authDomain: "XXXXXXXXXXXX",
+   projectId: "XXXXXXXXXXXX",
+   storageBucket: "XXXXXXXXXXXX",
+   messagingSenderId: "XXXXXXXXXXXX",
+   appId: "XXXXXXXXXXXX",
+   measurementId: "XXXXXXXXXXXX",
 };
 
 if (!firebase.apps.length) {
