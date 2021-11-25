@@ -8,6 +8,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+/blob/5c31bd23bb468660a5ad6ec0881656f16100f3be/firebase/mapapp-c5b1e-firebase-adminsdk-d80s8-5323b48a37.json
 
 # macOS
 .DS_Store
