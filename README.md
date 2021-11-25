@@ -1,97 +1,16 @@
-# MapApp Notes
+# HISTORIA - A Mobile Navigation App Displaying Historical Landmarks on the UWA Campus
 
-## Some softwares / packages are required to download:
+![Historia Homepage](https://github.com/keenan-fitch/MapApp/blob/master/HISTORIA_HOMEPAGE.png)
 
-### SOFTWARES:
+## Background
+This is a project by five final year UWA students, developed for clients from the University of Western Australia Historical Society (UWAHS). The Application is compatible across both iOS and Android devices. Outside the client’s initial brief, students also added the capability for users to take tours, which are based on the various themes and topics related to the landmarks.  The App also contains and about page displaying information of about the Historical Societies’ purpose and history as well as references.
 
-VS Code:
-https://code.visualstudio.com/download
+Part of the project included building a comprehensive database of over 100 landmarks with information such as Landmark Titles, Year Constructed, Architects, Location, Geo-Points for marker rendering, descriptions, images, references and more. This data is stored on the Google Firebase system and then rendered to the application’s map as marker points on University Campus. To cater to the client’s needs the database was initially constructed as a CSV file to allow a simplified method of revision and editing, then using a python script is the uploaded and replaces the Google Firebase database.
 
-GitHub Desktop:
-https://desktop.github.com
+The app is hosted via the Expo Developers Platform and is available to view as a Snack Preview here. The application is currently being reviewed by the clients and university ahead of scheduled publication.
 
-Android Studio (To Test on Android Device):
-https://developer.android.com/studio
+## Project Brief from the Clients (UWAHS)
 
-PACKAGES / FRAMEWORKS:
+The University of Western Australia follows the tradition of commemorative plaques placed on buildings and monuments to remind us of significant people and events in the University’s past. Plaques around the Crawley campus celebrate the University’s founders, benefactors and significant members of staff. They also celebrate events such as the laying of a Foundation Stone, the opening or repurposing of a building, or a visit by the Queen. Plaques can be on or near buildings, pavements, sculptures, objects and trees. The University has need of a comprehensive inventory / central record of these plaques and their location. It will also provide an easy way for interested members of the University community and the general public to know about them and visit them. They may even find the trace of an ancestor with this information. 
 
-nodeJS:
-Must have version 12 or higher.
-Can check using terminal command:
-
-```
-node -v
-```
-
-If you don't have node download here: https://nodejs.org/en/download/
-
-EXPO CLI:
-install in terminal:
-
-```
-npm i -g expo-cli
-```
-
-for mac users:
-
-```
-sudo npm i -g expo-cli
-```
-
-On Phone devices download the app: ExpoClient
-Iphone: https://apps.apple.com/us/app/expo-go/id982107779
-Android: https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_AU&gl=US
-
-React Native Navigation:
-
-```
-npm install @react-navigation/native @react-navigation/stack
-```
-
-```
-expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
-```
-
-Firebase:
-
-```
-expo install firebase
-```
-
-install carousel:
-
-```
-npm install --save react-native-snap-carousel
-```
-
-## Launching the App:
-
-Make sure you're in correct directory: Desktop/Apps/MappApp or wherever it is stored locally
-Change current directory using command:
-
-```
-cd /Apps/MappApp
-```
-
-To start the app use command:
-
-```
-npm start
-```
-
-## UWA Style Themes:
-
-### Primary Colors:
-
-UWA Blue: #27348b
-UWA Gold: #e2b600
-UWA Silver: #ececec
-
-### Secondary Colors:
-
-UWA Green-dark: #265521
-UWA Green-light: #3e8638
-
-UWA: Custome Bespoke
-
-More styling guide: https://www.digital.uwa.edu.au/__data/assets/pdf_file/0005/2981309/UWA-Brand-Architecture-November-2016.pdf
+The volunteers of the UWA Historical Society (UWAHS) have a list of many of the locations of these plaques and this work is continuing with sources from Guild, Convocation and Friends Groups. The constructed database will include details of each plaque, its GPS location and images. We will work with students to provide images, further information and data as needed.
