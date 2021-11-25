@@ -9,7 +9,7 @@ This is a project by five final year UWA students, developed for clients from th
 
 Part of the project included building a comprehensive database of over 100 landmarks with information such as Landmark Titles, Year Constructed, Architects, Location, Geo-Points for marker rendering, descriptions, images, references and more. This data is stored on the Google Firebase system and then rendered to the application’s map as marker points on University Campus. To cater to the client’s needs the database was initially constructed as a CSV file to allow a simplified method of revision and editing, then using a python script the data is then uploaded and replaces the Google Firebase database.
 
-The app is hosted via the Expo Developers Platform and is available to view as a Snack Preview here. The application is currently being reviewed by the clients and university ahead of scheduled publication.
+The application is currently being reviewed by the clients and university ahead of scheduled publication.
 
 ## Project Brief from the Clients (UWAHS)
 
