@@ -1,7 +1,7 @@
 # HISTORIA - A Mobile Navigation App Displaying Historical Landmarks on the UWA Campus
 
 <p align="center">
-  <img src="https://github.com/keenan-fitch/MapApp/blob/master/HISTORIA_HOMEPAGE.png" />
+  <img src="https://github.com/keenan-fitch/MapApp/blob/master/HISTORIA_HOMEPAGE.png" width="200"/>
 </p>
 
 ## Background
