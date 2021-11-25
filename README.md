@@ -1,6 +1,8 @@
 # HISTORIA - A Mobile Navigation App Displaying Historical Landmarks on the UWA Campus
 
-![Historia Homepage](https://github.com/keenan-fitch/MapApp/blob/master/HISTORIA_HOMEPAGE.png)
+<p align="center">
+  <img src="https://github.com/keenan-fitch/MapApp/blob/master/HISTORIA_HOMEPAGE.png" />
+</p>
 
 ## Background
 This is a project by five final year UWA students, developed for clients from the University of Western Australia Historical Society (UWAHS). The Application is compatible across both iOS and Android devices. Outside the client’s initial brief, students also added the capability for users to take tours, which are based on the various themes and topics related to the landmarks.  The App also contains and about page displaying information of about the Historical Societies’ purpose and history as well as references.
