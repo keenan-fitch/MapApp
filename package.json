@@ -43,7 +43,7 @@
     "react-native-scroll-bottom-sheet": "^0.7.0",
     "react-native-snap-carousel": "^3.9.1",
     "react-native-web": "^0.17.1",
-    "react-navigation": "^4.4.4",
+    "react-navigation": "^5.0.0",
     "react-navigation-stack": "^2.10.4",
     "reanimated-bottom-sheet": "^1.0.0-alpha.22"
   },
